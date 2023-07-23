@@ -1,0 +1,50 @@
+C:\Users\jose unuart\Desktop\WpfApp1\bin\Debug\WpfApp1.exe.config
+C:\Users\jose unuart\Desktop\WpfApp1\bin\Debug\WpfApp1.exe
+C:\Users\jose unuart\Desktop\WpfApp1\bin\Debug\WpfApp1.pdb
+C:\Users\jose unuart\Desktop\WpfApp1\obj\Debug\WpfApp1.csproj.AssemblyReference.cache
+C:\Users\jose unuart\Desktop\WpfApp1\obj\Debug\WpfApp1.csproj.SuggestedBindingRedirects.cache
+C:\Users\jose unuart\Desktop\WpfApp1\obj\Debug\MainWindow.baml
+C:\Users\jose unuart\Desktop\WpfApp1\obj\Debug\MainWindow.g.cs
+C:\Users\jose unuart\Desktop\WpfApp1\obj\Debug\App.g.cs
+C:\Users\jose unuart\Desktop\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.cache
+C:\Users\jose unuart\Desktop\WpfApp1\obj\Debug\WpfApp1.g.resources
+C:\Users\jose unuart\Desktop\WpfApp1\obj\Debug\WpfApp1.Properties.Resources.resources
+C:\Users\jose unuart\Desktop\WpfApp1\obj\Debug\WpfApp1.csproj.GenerateResource.cache
+C:\Users\jose unuart\Desktop\WpfApp1\obj\Debug\WpfApp1.csproj.CoreCompileInputs.cache
+C:\Users\jose unuart\Desktop\WpfApp1\obj\Debug\WpfApp1.exe
+C:\Users\jose unuart\Desktop\WpfApp1\obj\Debug\WpfApp1.pdb
+C:\Users\jose unuart\Desktop\WpfApp1\obj\Debug\PANTALLA_PRINCIPAL.g.cs
+C:\Users\jose unuart\Desktop\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.lref
+C:\Users\jose unuart\Desktop\WpfApp1\obj\Debug\PANTALLA_PRINCIPAL.baml
+C:\Users\jose unuart\Desktop\WpfApp1\obj\Debug\VENTANA_GASTOS.g.cs
+C:\Users\jose unuart\Desktop\WpfApp1\obj\Debug\VENTANA_INFORMES_GENERALES.g.cs
+C:\Users\jose unuart\Desktop\WpfApp1\obj\Debug\VENTANA_INGRESOS.g.cs
+C:\Users\jose unuart\Desktop\WpfApp1\obj\Debug\VENTANA_GASTOS.baml
+C:\Users\jose unuart\Desktop\WpfApp1\obj\Debug\VENTANA_INFORMES_GENERALES.baml
+C:\Users\jose unuart\Desktop\WpfApp1\obj\Debug\VENTANA_INGRESOS.baml
+C:\Users\josea\Desktop\WpfApp1\obj\Debug\WpfApp1.csproj.AssemblyReference.cache
+C:\Users\josea\Desktop\WpfApp1\obj\Debug\WpfApp1.csproj.SuggestedBindingRedirects.cache
+C:\Users\josea\Desktop\WpfApp1\obj\Debug\MainWindow.baml
+C:\Users\josea\Desktop\WpfApp1\obj\Debug\MainWindow.g.cs
+C:\Users\josea\Desktop\WpfApp1\obj\Debug\PANTALLA_PRINCIPAL.g.cs
+C:\Users\josea\Desktop\WpfApp1\obj\Debug\VENTANA_GASTOS.g.cs
+C:\Users\josea\Desktop\WpfApp1\obj\Debug\VENTANA_INFORMES_GENERALES.g.cs
+C:\Users\josea\Desktop\WpfApp1\obj\Debug\VENTANA_INGRESOS.g.cs
+C:\Users\josea\Desktop\WpfApp1\obj\Debug\VENTANA_REGISTRO_USUARIOS.g.cs
+C:\Users\josea\Desktop\WpfApp1\obj\Debug\App.g.cs
+C:\Users\josea\Desktop\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.cache
+C:\Users\josea\Desktop\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.lref
+C:\Users\josea\Desktop\WpfApp1\obj\Debug\WpfApp1.exe
+C:\Users\josea\Desktop\WpfApp1\obj\Debug\WpfApp1.pdb
+C:\Users\josea\Desktop\WpfApp1\bin\Debug\WpfApp1.exe.config
+C:\Users\josea\Desktop\WpfApp1\bin\Debug\WpfApp1.exe
+C:\Users\josea\Desktop\WpfApp1\bin\Debug\WpfApp1.pdb
+C:\Users\josea\Desktop\WpfApp1\obj\Debug\PANTALLA_PRINCIPAL.baml
+C:\Users\josea\Desktop\WpfApp1\obj\Debug\VENTANA_GASTOS.baml
+C:\Users\josea\Desktop\WpfApp1\obj\Debug\VENTANA_INFORMES_GENERALES.baml
+C:\Users\josea\Desktop\WpfApp1\obj\Debug\VENTANA_INGRESOS.baml
+C:\Users\josea\Desktop\WpfApp1\obj\Debug\VENTANA_REGISTRO_USUARIOS.baml
+C:\Users\josea\Desktop\WpfApp1\obj\Debug\WpfApp1.g.resources
+C:\Users\josea\Desktop\WpfApp1\obj\Debug\WpfApp1.Properties.Resources.resources
+C:\Users\josea\Desktop\WpfApp1\obj\Debug\WpfApp1.csproj.GenerateResource.cache
+C:\Users\josea\Desktop\WpfApp1\obj\Debug\WpfApp1.csproj.CoreCompileInputs.cache
