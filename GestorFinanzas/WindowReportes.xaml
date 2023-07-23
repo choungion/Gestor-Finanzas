@@ -4,10 +4,32 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestorFinanzas"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         mc:Ignorable="d"
         Title="WindowReportes" Height="450" Width="800"
         ResizeMode="NoResize">
     <Grid>
+        <lvc:PieChart Margin="0,0,538,0">
+            <lvc:PieChart.Series>
+                <lvc:PieSeries Title="Series 1" Values="10" />
+                <lvc:PieSeries Title="Series 2" Values="20" />
+                <!-- Add more PieSeries here with their respective values -->
+            </lvc:PieChart.Series>
+        </lvc:PieChart>
+        <lvc:PieChart Margin="267,0,263,0">
+            <lvc:PieChart.Series>
+                <lvc:PieSeries Title="Series 1" Values="10" />
+                <lvc:PieSeries Title="Series 2" Values="20" />
+                <!-- Add more PieSeries here with their respective values -->
+            </lvc:PieChart.Series>
+        </lvc:PieChart>
+        <lvc:PieChart Margin="542,0,0,0">
+            <lvc:PieChart.Series>
+                <lvc:PieSeries Title="Series 1" Values="10" />
+                <lvc:PieSeries Title="Series 2" Values="20" />
+                <!-- Add more PieSeries here with their respective values -->
+            </lvc:PieChart.Series>
+        </lvc:PieChart>
         <Menu Height="46" Name="MenuPrincipal" Width="46" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="2">
             <MenuItem Header="" Width="45" Height="45">
                 <MenuItem.Icon>
@@ -17,5 +39,8 @@
                 <MenuItem x:Name="MenuItemReportes" Header="Reportes" IsCheckable="False" />
             </MenuItem>
         </Menu>
+        <Label Content="Gastos por categorias" HorizontalAlignment="Left" Margin="69,56,0,0" VerticalAlignment="Top"/>
+        <Label Content="Gastos por cuentas" HorizontalAlignment="Center" Margin="0,56,0,0" VerticalAlignment="Top"/>
+        <Label Content="Gastos por mes" HorizontalAlignment="Left" Margin="625,56,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
