@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Choungion\Documents\Projects\C#\GestorFinanzas\Gestor-Finanzas\GestorFinanzas\App.xaml
-3-1236361669
+616756070
 
-7-1648766670
+10-1999564772
 1941709816142
-MainWindow.xaml;WindowCuentas.xaml;WindowReportes.xaml;
+MainWindow.xaml;WindowCuentas.xaml;WindowGastos.xaml;WindowIngresos.xaml;WindowReportes.xaml;WindowTransferir.xaml;
 
 True
 

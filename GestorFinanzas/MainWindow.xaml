@@ -22,9 +22,9 @@
                 <MenuItem.Icon>
                     <Image Source="/Add Icon.png" Width="35" Margin="0,-15,-19,-14"/>
                 </MenuItem.Icon>
-                <MenuItem x:Name="MenuItemIngresos" Header="Ingresos" IsCheckable="true" />
-                <MenuItem x:Name="MenuItemHeader" Header="Gastos" IsCheckable="true" />
-                <MenuItem x:Name="MenuItemTransferir" Header="Transferir" IsCheckable="true" />
+                <MenuItem x:Name="MenuItemIngresos" Header="Ingresos" IsCheckable="False" Click="MenuItemIngresos_Click"/>
+                <MenuItem x:Name="MenuItemGastos" Header="Gastos" IsCheckable="False" Click="MenuItemGastos_Click"/>
+                <MenuItem x:Name="MenuItemTransferir" Header="Transferir" IsCheckable="False" Click="MenuItemTransferir_Click"/>
             </MenuItem>
         </Menu>
         <Label Content="Ingresos" HorizontalAlignment="Left" Margin="191,186,0,0" VerticalAlignment="Top" FontSize="16"/>

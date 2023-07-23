@@ -55,6 +55,15 @@ namespace GestorFinanzas
         {
             AbrirReportes();
         }
+        private void MenuItemIngresos_Click(object sender, RoutedEventArgs e)
+        {
+        }
+        private void MenuItemGastos_Click(object sender, RoutedEventArgs e)
+        {
+        }
+        private void MenuItemTransferir_Click(object sender, RoutedEventArgs e)
+        {
+        }
 
         private void AbrirConsultaCuentas()
         {
