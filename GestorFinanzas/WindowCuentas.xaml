@@ -8,13 +8,18 @@
         Title="WindowCuentas" Height="450" Width="800">
     <Grid>
         <Button x:Name="ButtonRegresar" Content="Regresar" HorizontalAlignment="Center" Click="ButtonRegrear_Click" Margin="0,380,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="14"/>
-        <Button x:Name="ButtonEfectivo" HorizontalAlignment="Left" Margin="312,0,0,283" VerticalAlignment="Bottom" Click="ButtonEfectivo_Click" Height="52" Width="52" Background="Transparent" FontSize="18" BorderThickness="0,0,0,0">
+
+
+        <!--botones de efectivo-->
+        <Button x:Name="ButtonEfectivo" HorizontalAlignment="Left" Margin="300,0,0,283" VerticalAlignment="Bottom" Click="ButtonEfectivo_Click" Height="52" Width="52" Background="Transparent" FontSize="18" BorderThickness="0,0,0,0">
             <Image Source="/Wallet.png" Height="52" Width="52" HorizontalAlignment="Center" VerticalAlignment="Top"/>
         </Button>
-        <Button x:Name="ButtonEfectivo2" Content="Efectivo" HorizontalAlignment="Left" Margin="369,0,0,283" VerticalAlignment="Bottom" Click="ButtonEfectivo_Click" Height="52" Width="100" Background="Transparent" FontSize="18" BorderThickness="0,0,0,0" FontFamily="Arial"/>
-        <Button x:Name="ButtonBanco" HorizontalAlignment="Left" Margin="312,0,0,217" VerticalAlignment="Bottom" Click="ButtonBanco_Click" Height="52" Width="52" Background="Transparent" FontSize="18" BorderThickness="0,0,0,0">
+        <Button x:Name="ButtonEfectivo2" Content="Efectivo" HorizontalAlignment="Left" Margin="300,0,0,283" VerticalAlignment="Bottom" Click="ButtonEfectivo_Click" Height="52" Width="169" Background="Transparent" FontSize="18" BorderThickness="0,0,0,0" FontFamily="Arial"/>
+
+        <!--botones de banco-->
+        <Button x:Name="ButtonBanco" HorizontalAlignment="Left" Margin="300,0,0,217" VerticalAlignment="Bottom" Click="ButtonBanco_Click" Height="52" Width="52" Background="Transparent" FontSize="18" BorderThickness="0,0,0,0">
             <Image Source="/bank.png" Height="52" Width="52" HorizontalAlignment="Center" VerticalAlignment="Top"/>
         </Button>
-        <Button x:Name="ButtonBanco2" Content="Banco" HorizontalAlignment="Left" Margin="369,0,0,217" VerticalAlignment="Bottom" Click="ButtonBanco_Click" Height="52" Width="100" Background="Transparent" FontSize="18" BorderThickness="0,0,0,0" FontFamily="Arial"/>
+        <Button x:Name="ButtonBanco2" Content="Banco" HorizontalAlignment="Left" Margin="300,0,0,217" VerticalAlignment="Bottom" Click="ButtonBanco_Click" Height="52" Width="157" Background="Transparent" FontSize="18" BorderThickness="0,0,0,0" FontFamily="Arial"/>
     </Grid>
 </Window>
