@@ -1,18 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "7QL1rO8Rk5YFUyW7iNddOcJUgcwLjR02As9PAspL5khHq9QUeAeypAceufxH/nrLomMbo40EE/I7iIO8qJLTHQ==",
+  "dgSpecHash": "njPGXhcQjx2k+LRIvZK44Q3N+mPjfoYGHWcfbWAo1qGjs+KOD7caa42v94imFJUE5oTte2Mq609mc6I/nkCm4w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Choungion\\Documents\\Projects\\C#\\GestorFinanzas\\Gestor-Finanzas\\GestorFinanzas\\GestorFinanzas.csproj",
+  "projectFilePath": "C:\\Users\\josea\\Documents\\GitHub\\Gestor-Finanzas\\GestorFinanzas\\GestorFinanzas.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Choungion\\.nuget\\packages\\livecharts\\0.9.7\\livecharts.0.9.7.nupkg.sha512",
-    "C:\\Users\\Choungion\\.nuget\\packages\\livecharts.wpf\\0.9.7\\livecharts.wpf.0.9.7.nupkg.sha512"
+    "C:\\Users\\josea\\.nuget\\packages\\livecharts\\0.9.7\\livecharts.0.9.7.nupkg.sha512",
+    "C:\\Users\\josea\\.nuget\\packages\\livecharts.wpf\\0.9.7\\livecharts.wpf.0.9.7.nupkg.sha512"
   ],
   "logs": [
     {
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'LiveCharts 0.9.7' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0-windows7.0'. This package may not be fully compatible with your project.",
+      "message": "El paquete \"LiveCharts 0.9.7\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net6.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
       "libraryId": "LiveCharts",
       "targetGraphs": [
         "net6.0-windows7.0"
@@ -22,7 +22,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'LiveCharts.Wpf 0.9.7' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0-windows7.0'. This package may not be fully compatible with your project.",
+      "message": "El paquete \"LiveCharts.Wpf 0.9.7\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net6.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
       "libraryId": "LiveCharts.Wpf",
       "targetGraphs": [
         "net6.0-windows7.0"

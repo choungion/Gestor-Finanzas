@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\josea\Desktop\WpfApp1\obj\Release\
+C:\Users\josea\Documents\GitHub\Gestor-Finanzas\InicionSesion\obj\Release\
 WpfApp1
 none
 false
 TRACE
-C:\Users\josea\Desktop\WpfApp1\App.xaml
-6-1081114411
+C:\Users\josea\Documents\GitHub\Gestor-Finanzas\InicionSesion\App.xaml
+3-1059800566
 
-12-218954712
+9-1895377277
 13-1310406943
-MainWindow.xaml;PANTALLA_PRINCIPAL.xaml;VENTANA_GASTOS.xaml;VENTANA_INFORMES_GENERALES.xaml;VENTANA_INGRESOS.xaml;VENTANA_REGISTRO_USUARIOS.xaml;
+MainWindow.xaml;VENTANA_INGRESOS.xaml;VENTANA_REGISTRO_USUARIOS.xaml;
 
 True
 
