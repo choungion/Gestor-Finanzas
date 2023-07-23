@@ -13,8 +13,8 @@
                 <MenuItem.Icon>
                     <Image Source="/Hamburger_icon.svg.png" Width="35" Margin="0,-15,-19,-14"/>
                 </MenuItem.Icon>
-                <MenuItem x:Name="MenuItemTransacciones" Header="Transacciones" IsCheckable="true" />
-                <MenuItem x:Name="MenuItemReportes" Header="Reportes" IsCheckable="true" />
+                <MenuItem x:Name="MenuItemTransacciones" Header="Transacciones" IsCheckable="False"  Click="MenuItemTransacciones_Click"/>
+                <MenuItem x:Name="MenuItemReportes" Header="Reportes" IsCheckable="False" />
             </MenuItem>
         </Menu>
     </Grid>

@@ -23,6 +23,13 @@ namespace GestorFinanzas
         {
             InitializeComponent();
         }
+        private MainWindow main;
+
+        public WindowCuentas(MainWindow mainWindow)
+        {
+            InitializeComponent();
+            main = mainWindow;
+        }
 
         private void ButtonBanco_Click(object sender, RoutedEventArgs e)
         {
@@ -32,6 +39,12 @@ namespace GestorFinanzas
         private void ButtonEfectivo_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void ButtonRegrear_Click(object sender, RoutedEventArgs e)
+        {
+            main.Show();
+            Hide();
         }
     }
 }

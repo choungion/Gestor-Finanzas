@@ -23,5 +23,17 @@ namespace GestorFinanzas
         {
             InitializeComponent();
         }
+        private MainWindow main;
+
+        public WindowReportes(MainWindow mainWindow)
+        {
+            InitializeComponent();
+            main = mainWindow;
+        }
+        private void MenuItemTransacciones_Click(object sender, RoutedEventArgs e)
+        {
+            Hide();
+            main.Show();
+        }
     }
 }

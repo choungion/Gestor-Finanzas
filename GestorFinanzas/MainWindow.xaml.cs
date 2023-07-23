@@ -49,7 +49,24 @@ namespace GestorFinanzas
 
         private void ButtonConsultar_Click(object sender, RoutedEventArgs e)
         {
+            AbrirConsultaCuentas();
+        }
+        private void MenuItemReportes_Click(object sender, RoutedEventArgs e)
+        {
+            AbrirReportes();
+        }
 
+        private void AbrirConsultaCuentas()
+        {
+            WindowCuentas CuentasWindow = new WindowCuentas(this);
+            CuentasWindow.Show();
+            Hide();
+        }
+        private void AbrirReportes()
+        {
+            WindowReportes ReportesWindow = new WindowReportes(this);
+            ReportesWindow.Show();
+            Hide();
         }
     }
 }
