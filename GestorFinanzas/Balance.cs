@@ -8,5 +8,6 @@ namespace GestorFinanzas
 {
     class Balance
     {
+
     }
 }
