@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Add Icon.png" />
+    <None Remove="Calendar Icon.png" />
+    <None Remove="Hamburger_icon.svg.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Add Icon.png" />
+    <Resource Include="Calendar Icon.png" />
+    <Resource Include="Hamburger_icon.svg.png" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,21 @@
+﻿<Window x:Class="GestorFinanzas.WindowReportes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestorFinanzas"
+        mc:Ignorable="d"
+        Title="WindowReportes" Height="450" Width="800"
+        ResizeMode="NoResize">
+    <Grid>
+        <Menu Height="46" Name="MenuPrincipal" Width="46" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="2">
+            <MenuItem Header="" Width="45" Height="45">
+                <MenuItem.Icon>
+                    <Image Source="/Hamburger_icon.svg.png" Width="35" Margin="0,-15,-19,-14"/>
+                </MenuItem.Icon>
+                <MenuItem x:Name="MenuItemTransacciones" Header="Transacciones" IsCheckable="true" />
+                <MenuItem x:Name="MenuItemReportes" Header="Reportes" IsCheckable="true" />
+            </MenuItem>
+        </Menu>
+    </Grid>
+</Window>

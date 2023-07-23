@@ -1,0 +1,49 @@
+﻿<Window x:Class="GestorFinanzas.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestorFinanzas"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        ResizeMode="NoResize">
+    <Grid>
+        <Menu Height="46" Name="MenuPrincipal" Width="46" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="2">
+            <MenuItem Header="" Width="45" Height="45">
+                <MenuItem.Icon>
+                    <Image Source="/Hamburger_icon.svg.png" Width="35" Margin="0,-15,-19,-14"/>
+                </MenuItem.Icon>
+                <MenuItem x:Name="MenuItemTransacciones" Header="Transacciones" IsCheckable="true" />
+                <MenuItem x:Name="MenuItemReportes" Header="Reportes" IsCheckable="true" />
+            </MenuItem>
+        </Menu>
+        <Menu Height="46" Name="MenuAgregar" Width="46" Margin="10,10,0,0" HorizontalAlignment="Right" VerticalAlignment="Bottom" BorderThickness="2">
+            <MenuItem Header="" Width="45" Height="45">
+                <MenuItem.Icon>
+                    <Image Source="/Add Icon.png" Width="35" Margin="0,-15,-19,-14"/>
+                </MenuItem.Icon>
+                <MenuItem x:Name="MenuItemIngresos" Header="Ingresos" IsCheckable="true" />
+                <MenuItem x:Name="MenuItemHeader" Header="Gastos" IsCheckable="true" />
+                <MenuItem x:Name="MenuItemTransferir" Header="Transferir" IsCheckable="true" />
+            </MenuItem>
+        </Menu>
+        <Label Content="Ingresos" HorizontalAlignment="Left" Margin="191,186,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="Gastos" HorizontalAlignment="Left" Margin="514,186,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label x:Name="LabelIngresos" Content="₡ 0" HorizontalAlignment="Left" Margin="191,222,0,0" VerticalAlignment="Top" FontSize="14" Foreground="Green"/>
+        <Label x:Name="LabelGastos" Content="₡ 0" HorizontalAlignment="Left" Margin="514,222,0,0" VerticalAlignment="Top" FontSize="14" Foreground="Red"/>
+        <Button x:Name="ButtonBalance" Content="Balance Total" HorizontalAlignment="Center" Margin="0,15,0,0" VerticalAlignment="Top" Click="Button_Click" Height="41" Width="146" Background="Transparent" FontSize="24" BorderThickness="0,0,0,0" FontFamily="Arial"/>
+        <Button x:Name="ButtonCantidadTotal" Content="₡ 0" HorizontalAlignment="Center" Margin="0,58,0,0" VerticalAlignment="Top" Click="Button_Click" Height="41" Width="52" Background="Transparent" FontSize="18" BorderThickness="0,0,0,0" FontWeight="Bold" FontFamily="Arial"/>
+        <Label Content="Periodo" HorizontalAlignment="Left" Margin="77,359,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label x:Name="LabelPeriodo" Content="Enero 2023" HorizontalAlignment="Left" Margin="77,10,0,0" VerticalAlignment="Bottom" FontSize="16" FontWeight="Bold"/>
+        <Label Content="Balance Mensual" HorizontalAlignment="Center" Margin="0,267,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label x:Name="LabelBalanceMensual" Content="₡ 0" HorizontalAlignment="Left" Margin="336,303,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="ButtonConfigurarCuentas" Content="Configurar Cuentas" HorizontalAlignment="Center" Margin="0,104,0,0" VerticalAlignment="Top" Click="Button_Click" Height="41" Width="182" Background="Transparent" FontSize="18" BorderThickness="0,0,0,0" FontFamily="Arial"/>
+        <Calendar Name="Calendario" DisplayMode="Year" SelectionMode="None" 
+          DisplayModeChanged="Calendario_DisplayModeChanged" Margin="12,30,593,78" VerticalAlignment="Bottom" 
+          DisplayDateChanged="Calendario_DisplayDateChanged"/>
+        <Button x:Name="ButtonPeriodo" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Bottom" Click="ButtonPeriodo_Click" Height="62" Width="62" Background="Transparent" FontSize="18" BorderThickness="0,0,0,0">
+            <Image Source="/Calendar Icon.png" Height="62" Width="62" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        </Button>
+    </Grid>
+
+</Window>
