@@ -8,5 +8,10 @@ namespace GestorFinanzas
 {
     class Balance
     {
+
+
+
+
+        ConsoleColor color;
     }
 }

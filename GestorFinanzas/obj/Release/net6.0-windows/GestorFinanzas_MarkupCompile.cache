@@ -1,20 +1,20 @@
 ﻿GestorFinanzas
-1.0.0.0
+
 
 winexe
 C#
 .cs
-C:\Users\josea\Documents\GitHub\Gestor-Finanzas\GestorFinanzas\obj\Debug\net6.0-windows\
+C:\Users\josea\Documents\GitHub\Gestor-Finanzas\GestorFinanzas\obj\Release\net6.0-windows\
 GestorFinanzas
 none
 false
-TRACE;DEBUG;NET;NET6_0;NETCOREAPP
+TRACE;RELEASE;NET;NET6_0;NETCOREAPP
 C:\Users\josea\Documents\GitHub\Gestor-Finanzas\GestorFinanzas\App.xaml
 9-2115952547
 
-161895784523
+14129244590
 194-1976662911
 MainWindow.xaml;WindowCuentas.xaml;WindowGastos.xaml;WindowHistorial.xaml;WindowIngresos.xaml;WindowInicioSesion.xaml;WindowRegistroUsuario.xaml;WindowReportes.xaml;WindowTransferir.xaml;
 
-False
+True
 
