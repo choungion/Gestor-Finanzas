@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestorFinanzas", "GestorFinanzas\GestorFinanzas.csproj", "{6E5D5190-A94A-49CC-85C3-B1CAA64FBE2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestorFinanzas", "GestorFinanzas\GestorFinanzas.csproj", "{6E5D5190-A94A-49CC-85C3-B1CAA64FBE2C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4C0E2A50-2CEE-45F0-828E-43A132C34162}"
 	ProjectSection(SolutionItems) = preProject
 		Imagenes\Add Icon.png = Imagenes\Add Icon.png
+		Imagenes\bank.png = Imagenes\bank.png
 		Imagenes\Calendar Icon.png = Imagenes\Calendar Icon.png
 		Imagenes\Hamburger_icon.svg.png = Imagenes\Hamburger_icon.svg.png
+		Imagenes\Wallet.png = Imagenes\Wallet.png
 	EndProjectSection
 EndProject
 Global

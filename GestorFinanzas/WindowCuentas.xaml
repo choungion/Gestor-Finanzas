@@ -1,0 +1,20 @@
+﻿<Window x:Class="GestorFinanzas.WindowCuentas"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestorFinanzas"
+        mc:Ignorable="d"
+        Title="WindowCuentas" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="ButtonRegresar" Content="Regresar" HorizontalAlignment="Center" Margin="0,380,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="14"/>
+        <Button x:Name="ButtonEfectivo" HorizontalAlignment="Left" Margin="312,0,0,283" VerticalAlignment="Bottom" Click="ButtonEfectivo_Click" Height="52" Width="52" Background="Transparent" FontSize="18" BorderThickness="0,0,0,0">
+            <Image Source="/Wallet.png" Height="52" Width="52" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        </Button>
+        <Button x:Name="ButtonEfectivo2" Content="Efectivo" HorizontalAlignment="Left" Margin="369,0,0,283" VerticalAlignment="Bottom" Click="ButtonEfectivo_Click" Height="52" Width="100" Background="Transparent" FontSize="18" BorderThickness="0,0,0,0" FontFamily="Arial"/>
+        <Button x:Name="ButtonBanco" HorizontalAlignment="Left" Margin="312,0,0,217" VerticalAlignment="Bottom" Click="ButtonBanco_Click" Height="52" Width="52" Background="Transparent" FontSize="18" BorderThickness="0,0,0,0">
+            <Image Source="/bank.png" Height="52" Width="52" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        </Button>
+        <Button x:Name="ButtonBanco2" Content="Banco" HorizontalAlignment="Left" Margin="369,0,0,217" VerticalAlignment="Bottom" Click="ButtonBanco_Click" Height="52" Width="100" Background="Transparent" FontSize="18" BorderThickness="0,0,0,0" FontFamily="Arial"/>
+    </Grid>
+</Window>

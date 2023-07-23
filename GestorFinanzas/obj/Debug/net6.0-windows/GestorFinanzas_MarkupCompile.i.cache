@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Choungion\Documents\Projects\C#\GestorFinanzas\Gestor-Finanzas\GestorFinanzas\App.xaml
-21921612123
+3-1236361669
 
-6-379778097
+7-1648766670
 1941709816142
-MainWindow.xaml;WindowReportes.xaml;
+MainWindow.xaml;WindowCuentas.xaml;WindowReportes.xaml;
 
-False
+True
 

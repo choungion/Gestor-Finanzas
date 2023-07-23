@@ -43,9 +43,13 @@ namespace GestorFinanzas
                 LabelPeriodo.Content = $"{selectedMonth: MMMM yyyy}";
             }
         }
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ButtonBalance_Click(object sender, RoutedEventArgs e)
         {
         }
 
+        private void ButtonConsultar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
