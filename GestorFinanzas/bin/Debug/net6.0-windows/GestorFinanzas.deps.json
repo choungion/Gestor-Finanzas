@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "GestorFinanzas/1.0.0": {
         "dependencies": {
+          "LiveCharts": "0.9.7",
           "LiveCharts.Wpf": "0.9.7"
         },
         "runtime": {

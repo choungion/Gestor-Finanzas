@@ -12,9 +12,9 @@ TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\josea\Documents\GitHub\Gestor-Finanzas\GestorFinanzas\App.xaml
 9-2115952547
 
-161895784523
+17-917951648
 196-1041040108
 MainWindow.xaml;WindowCuentas.xaml;WindowGastos.xaml;WindowHistorial.xaml;WindowIngresos.xaml;WindowInicioSesion.xaml;WindowRegistroUsuario.xaml;WindowReportes.xaml;WindowTransferir.xaml;
 
-True
+False
 

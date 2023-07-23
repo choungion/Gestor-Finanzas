@@ -47,6 +47,10 @@ namespace GestorFinanzas
                         break;
                     }
                 }
+                else {
+                    MessageBox.Show("NO HAS INICIADO SESSION");
+                    break;
+                }
             }
 
         }

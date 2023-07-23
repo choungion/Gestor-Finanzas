@@ -62,14 +62,13 @@ namespace GestorFinanzas
         }
         private void ButtonCancelar_Click(object sender, RoutedEventArgs e)
         {
-            Hide();
-            main.Show();
+            this.Close();
+            
         }
 
         private void ButtonGuardar_Click(object sender, RoutedEventArgs e)
         {
-            Hide();
-            main.Show();
+          
         }
     }
 }
