@@ -52,3 +52,7 @@ C:\Users\Choungion\Documents\Projects\C#\GestorFinanzas\Gestor-Finanzas\GestorFi
 C:\Users\Choungion\Documents\Projects\C#\GestorFinanzas\Gestor-Finanzas\GestorFinanzas\obj\Debug\net6.0-windows\WindowGastos.baml
 C:\Users\Choungion\Documents\Projects\C#\GestorFinanzas\Gestor-Finanzas\GestorFinanzas\obj\Debug\net6.0-windows\WindowIngresos.baml
 C:\Users\Choungion\Documents\Projects\C#\GestorFinanzas\Gestor-Finanzas\GestorFinanzas\obj\Debug\net6.0-windows\WindowTransferir.baml
+C:\Users\Choungion\Documents\Projects\C#\GestorFinanzas\Gestor-Finanzas\GestorFinanzas\obj\Debug\net6.0-windows\WindowInicioSesion.baml
+C:\Users\Choungion\Documents\Projects\C#\GestorFinanzas\Gestor-Finanzas\GestorFinanzas\obj\Debug\net6.0-windows\WindowInicioSesion.g.cs
+C:\Users\Choungion\Documents\Projects\C#\GestorFinanzas\Gestor-Finanzas\GestorFinanzas\obj\Debug\net6.0-windows\WindowRegistroUsuario.g.cs
+C:\Users\Choungion\Documents\Projects\C#\GestorFinanzas\Gestor-Finanzas\GestorFinanzas\obj\Debug\net6.0-windows\WindowRegistroUsuario.baml

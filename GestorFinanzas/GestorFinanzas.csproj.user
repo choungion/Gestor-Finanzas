@@ -16,6 +16,12 @@
     <Compile Update="WindowIngresos.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="WindowInicioSesion.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="WindowRegistroUsuario.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="WindowReportes.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -34,6 +40,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="WindowIngresos.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="WindowInicioSesion.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="WindowRegistroUsuario.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="WindowReportes.xaml">
