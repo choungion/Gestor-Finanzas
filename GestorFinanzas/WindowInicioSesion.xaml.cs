@@ -39,6 +39,13 @@ namespace GestorFinanzas
                         Hide();
                         break;
                     }
+                    else if (this.txt_USERNAME.Text == "admin" && this.txt_PASSWORD.Password == "admin")
+                    {
+                        MainWindow INICIO = new MainWindow();
+                        INICIO.Show();
+                        Hide();
+                        break;
+                    }
                 }
             }
 

@@ -24,7 +24,7 @@ namespace GestorFinanzas
         {
             InitializeComponent();
         }
-
+        #region Eventos de controlers
         private void ButtonPeriodo_Click(object sender, RoutedEventArgs e)
         {
             Calendario.Visibility = Visibility.Visible;
@@ -65,7 +65,8 @@ namespace GestorFinanzas
         private void MenuItemTransferir_Click(object sender, RoutedEventArgs e)
         {
         }
-
+        #endregion
+        #region Metodos para pasar las instancias de las ventanas como parametros
         private void AbrirConsultaCuentas()
         {
             WindowCuentas CuentasWindow = new WindowCuentas(this);
@@ -84,5 +85,6 @@ namespace GestorFinanzas
             IngresosWindow.Show();
             Hide();
         }
+        #endregion
     }
 }
