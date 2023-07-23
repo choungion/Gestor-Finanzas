@@ -42,7 +42,7 @@
           DisplayModeChanged="Calendario_DisplayModeChanged" Margin="12,30,593,78" VerticalAlignment="Bottom" 
           DisplayDateChanged="Calendario_DisplayDateChanged"/>
         <Button x:Name="ButtonPeriodo" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Bottom" Click="ButtonPeriodo_Click" Height="62" Width="62" Background="Transparent" FontSize="18" BorderThickness="0,0,0,0">
-            <Image Source="/Calendar Icon.png" Height="62" Width="62" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Image Source="/Calendar Icon.png" Height="62" Width="62" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         </Button>
     </Grid>
 

@@ -46,5 +46,19 @@ namespace GestorFinanzas
                 ImageIcono.Source = imagen;
             }
         }
+        private void ButtonFechaIngreso_Click(object sender, RoutedEventArgs e)
+        {
+            Calendario.Visibility = Visibility.Visible;
+        }
+        private void Calendario_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Calendar calendario = (Calendar)sender;
+            if (calendario.SelectedDate.HasValue)
+            {
+                var selectedDate = calendario.SelectedDate.Value;
+                MessageBox.Show($"Selected Date: {selectedDate.ToShortDateString()}");
+                Calendario.Visibility = Visibility.Hidden;
+            }
+        }
     }
 }

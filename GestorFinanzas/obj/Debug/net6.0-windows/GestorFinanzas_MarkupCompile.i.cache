@@ -12,9 +12,9 @@ TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Choungion\Documents\Projects\C#\GestorFinanzas\Gestor-Finanzas\GestorFinanzas\App.xaml
 8-1099366366
 
-14914044878
+15-861420899
 1941709816142
 MainWindow.xaml;WindowCuentas.xaml;WindowGastos.xaml;WindowIngresos.xaml;WindowInicioSesion.xaml;WindowRegistroUsuario.xaml;WindowReportes.xaml;WindowTransferir.xaml;
 
-False
+True
 
