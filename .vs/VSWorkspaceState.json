@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\GestorFinanzas"
   ],
-  "SelectedNode": "\\C:\\Users\\Choungion\\Documents\\Projects\\C#\\GestorFinanzas\\Gestor-Finanzas",
+  "SelectedNode": "\\GestorFinanzas\\Balance.cs",
   "PreviewInSolutionExplorer": false
 }

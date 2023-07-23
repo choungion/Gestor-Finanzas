@@ -12,6 +12,6 @@ namespace GestorFinanzas
 
 
 
-        ConsoleColor color;
+       
     }
 }
