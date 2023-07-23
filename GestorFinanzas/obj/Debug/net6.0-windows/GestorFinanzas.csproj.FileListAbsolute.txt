@@ -56,3 +56,5 @@ C:\Users\Choungion\Documents\Projects\C#\GestorFinanzas\Gestor-Finanzas\GestorFi
 C:\Users\Choungion\Documents\Projects\C#\GestorFinanzas\Gestor-Finanzas\GestorFinanzas\obj\Debug\net6.0-windows\WindowInicioSesion.g.cs
 C:\Users\Choungion\Documents\Projects\C#\GestorFinanzas\Gestor-Finanzas\GestorFinanzas\obj\Debug\net6.0-windows\WindowRegistroUsuario.g.cs
 C:\Users\Choungion\Documents\Projects\C#\GestorFinanzas\Gestor-Finanzas\GestorFinanzas\obj\Debug\net6.0-windows\WindowRegistroUsuario.baml
+C:\Users\Choungion\Documents\Projects\C#\GestorFinanzas\Gestor-Finanzas\GestorFinanzas\obj\Debug\net6.0-windows\WindowHistorial.g.cs
+C:\Users\Choungion\Documents\Projects\C#\GestorFinanzas\Gestor-Finanzas\GestorFinanzas\obj\Debug\net6.0-windows\WindowHistorial.baml

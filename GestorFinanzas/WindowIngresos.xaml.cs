@@ -60,5 +60,16 @@ namespace GestorFinanzas
                 Calendario.Visibility = Visibility.Hidden;
             }
         }
+        private void ButtonCancelar_Click(object sender, RoutedEventArgs e)
+        {
+            Hide();
+            main.Show();
+        }
+
+        private void ButtonGuardar_Click(object sender, RoutedEventArgs e)
+        {
+            Hide();
+            main.Show();
+        }
     }
 }

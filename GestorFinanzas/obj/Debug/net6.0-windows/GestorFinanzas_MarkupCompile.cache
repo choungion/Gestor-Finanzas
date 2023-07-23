@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Choungion\Documents\Projects\C#\GestorFinanzas\Gestor-Finanzas\GestorFinanzas\App.xaml
-8-1099366366
+9-2115952547
 
-12-852495055
+14129244590
 1941709816142
-MainWindow.xaml;WindowCuentas.xaml;WindowGastos.xaml;WindowIngresos.xaml;WindowInicioSesion.xaml;WindowRegistroUsuario.xaml;WindowReportes.xaml;WindowTransferir.xaml;
+MainWindow.xaml;WindowCuentas.xaml;WindowGastos.xaml;WindowHistorial.xaml;WindowIngresos.xaml;WindowInicioSesion.xaml;WindowRegistroUsuario.xaml;WindowReportes.xaml;WindowTransferir.xaml;
 
 False
 

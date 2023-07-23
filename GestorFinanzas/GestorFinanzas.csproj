@@ -12,6 +12,7 @@
     <None Remove="bank.png" />
     <None Remove="Calendar Icon.png" />
     <None Remove="Hamburger_icon.svg.png" />
+    <None Remove="transfer.png" />
     <None Remove="Wallet.png" />
   </ItemGroup>
 
@@ -20,6 +21,7 @@
     <Resource Include="bank.png" />
     <Resource Include="Calendar Icon.png" />
     <Resource Include="Hamburger_icon.svg.png" />
+    <Resource Include="transfer.png" />
     <Resource Include="Wallet.png" />
   </ItemGroup>
 

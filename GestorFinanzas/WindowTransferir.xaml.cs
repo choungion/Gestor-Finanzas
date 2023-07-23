@@ -23,5 +23,24 @@ namespace GestorFinanzas
         {
             InitializeComponent();
         }
+        private MainWindow main;
+
+        public WindowTransferir(MainWindow mainWindow)
+        {
+            InitializeComponent();
+            main = mainWindow;
+        }
+
+        private void ButtonTransferir_Click(object sender, RoutedEventArgs e)
+        {
+            Hide();
+            main.Show();
+        }
+
+        private void ButtonCancelar_Click(object sender, RoutedEventArgs e)
+        {
+            Hide();
+            main.Show();
+        }
     }
 }

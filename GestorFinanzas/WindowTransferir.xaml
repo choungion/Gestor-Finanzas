@@ -7,6 +7,19 @@
         mc:Ignorable="d"
         Title="WindowTransferir" Height="450" Width="800">
     <Grid>
-        
+        <Label Content="Cuenta de origen" HorizontalAlignment="Left" Margin="183,86,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="16"/>
+        <Label Content="Cuenta de destino" HorizontalAlignment="Left" Margin="483,86,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="16"/>
+        <ComboBox x:Name="ComboBoxCuentaOrigen" HorizontalAlignment="Left" Margin="189,119,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="Efectivo" />
+            <ComboBoxItem Content="Banco" />
+        </ComboBox>
+        <ComboBox x:Name="ComboBoxCuentaDestino" HorizontalAlignment="Left" Margin="493,119,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="Efectivo" />
+            <ComboBoxItem Content="Banco" />
+        </ComboBox>
+        <Image HorizontalAlignment="Center" Height="81" Margin="0,86,0,0" VerticalAlignment="Top" Width="80" Source="/transfer.png"/>
+        <Button x:Name="ButtonTransferir" Content="Transferir" HorizontalAlignment="Left" Margin="360,217,0,0" VerticalAlignment="Top" Height="36" Width="86" Click="ButtonTransferir_Click"/>
+        <Button x:Name="ButtonCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="360,284,0,0" VerticalAlignment="Top" Height="36" Width="86" Click="ButtonCancelar_Click"/>
+
     </Grid>
 </Window>

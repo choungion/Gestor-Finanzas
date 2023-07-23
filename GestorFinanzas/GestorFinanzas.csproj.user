@@ -13,6 +13,9 @@
     <Compile Update="WindowGastos.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="WindowHistorial.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="WindowIngresos.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -37,6 +40,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="WindowGastos.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="WindowHistorial.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="WindowIngresos.xaml">

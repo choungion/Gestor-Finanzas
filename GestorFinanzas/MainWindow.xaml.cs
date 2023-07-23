@@ -45,6 +45,7 @@ namespace GestorFinanzas
         }
         private void ButtonBalance_Click(object sender, RoutedEventArgs e)
         {
+            AbrirHistorial();
         }
 
         private void ButtonConsultar_Click(object sender, RoutedEventArgs e)
@@ -61,9 +62,11 @@ namespace GestorFinanzas
         }
         private void MenuItemGastos_Click(object sender, RoutedEventArgs e)
         {
+            AbrirGastos();
         }
         private void MenuItemTransferir_Click(object sender, RoutedEventArgs e)
         {
+            AbrirTransferencias();
         }
         #endregion
         #region Metodos para pasar las instancias de las ventanas como parametros
@@ -83,6 +86,24 @@ namespace GestorFinanzas
         {
             WindowIngresos IngresosWindow = new WindowIngresos(this);
             IngresosWindow.Show();
+            Hide();
+        }
+        private void AbrirGastos()
+        {
+            WindowGastos GastosWindow = new WindowGastos(this);
+            GastosWindow.Show();
+            Hide();
+        }
+        private void AbrirTransferencias()
+        {
+            WindowTransferir TransferirWindow = new WindowTransferir(this);
+            TransferirWindow.Show();
+            Hide();
+        }
+        private void AbrirHistorial()
+        {
+            WindowHistorial HistorialWindow = new WindowHistorial(this);
+            HistorialWindow.Show();
             Hide();
         }
         #endregion
