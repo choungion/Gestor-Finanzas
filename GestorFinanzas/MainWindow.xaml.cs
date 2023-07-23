@@ -57,6 +57,7 @@ namespace GestorFinanzas
         }
         private void MenuItemIngresos_Click(object sender, RoutedEventArgs e)
         {
+            AbrirIngresos();
         }
         private void MenuItemGastos_Click(object sender, RoutedEventArgs e)
         {
@@ -75,6 +76,12 @@ namespace GestorFinanzas
         {
             WindowReportes ReportesWindow = new WindowReportes(this);
             ReportesWindow.Show();
+            Hide();
+        }
+        private void AbrirIngresos()
+        {
+            WindowIngresos IngresosWindow = new WindowIngresos(this);
+            IngresosWindow.Show();
             Hide();
         }
     }

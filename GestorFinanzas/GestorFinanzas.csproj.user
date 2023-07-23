@@ -10,7 +10,16 @@
     <Compile Update="WindowCuentas.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="WindowGastos.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="WindowIngresos.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="WindowReportes.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="WindowTransferir.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -21,7 +30,16 @@
     <Page Update="WindowCuentas.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="WindowGastos.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="WindowIngresos.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="WindowReportes.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="WindowTransferir.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

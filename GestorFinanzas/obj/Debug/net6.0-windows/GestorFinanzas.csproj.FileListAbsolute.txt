@@ -46,3 +46,9 @@ C:\Users\Choungion\Documents\Projects\C#\GestorFinanzas\Gestor-Finanzas\GestorFi
 C:\Users\Choungion\Documents\Projects\C#\GestorFinanzas\Gestor-Finanzas\GestorFinanzas\obj\Debug\net6.0-windows\ref\GestorFinanzas.dll
 C:\Users\Choungion\Documents\Projects\C#\GestorFinanzas\Gestor-Finanzas\GestorFinanzas\obj\Debug\net6.0-windows\WindowCuentas.g.cs
 C:\Users\Choungion\Documents\Projects\C#\GestorFinanzas\Gestor-Finanzas\GestorFinanzas\obj\Debug\net6.0-windows\WindowCuentas.baml
+C:\Users\Choungion\Documents\Projects\C#\GestorFinanzas\Gestor-Finanzas\GestorFinanzas\obj\Debug\net6.0-windows\WindowGastos.g.cs
+C:\Users\Choungion\Documents\Projects\C#\GestorFinanzas\Gestor-Finanzas\GestorFinanzas\obj\Debug\net6.0-windows\WindowIngresos.g.cs
+C:\Users\Choungion\Documents\Projects\C#\GestorFinanzas\Gestor-Finanzas\GestorFinanzas\obj\Debug\net6.0-windows\WindowTransferir.g.cs
+C:\Users\Choungion\Documents\Projects\C#\GestorFinanzas\Gestor-Finanzas\GestorFinanzas\obj\Debug\net6.0-windows\WindowGastos.baml
+C:\Users\Choungion\Documents\Projects\C#\GestorFinanzas\Gestor-Finanzas\GestorFinanzas\obj\Debug\net6.0-windows\WindowIngresos.baml
+C:\Users\Choungion\Documents\Projects\C#\GestorFinanzas\Gestor-Finanzas\GestorFinanzas\obj\Debug\net6.0-windows\WindowTransferir.baml

@@ -10,8 +10,12 @@
         <Label Content="Ingrese la cantidad a registrar" HorizontalAlignment="Center" Margin="0,42,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="18"/>
         <TextBox x:Name="TxtBoxCantidad" HorizontalAlignment="Center" Margin="0,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="202" Height="29"/>
         <Button x:Name="ButtonGuardar" Content="Guardar" HorizontalAlignment="Left" Margin="461,377,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="16"/>
-        <Menu Margin="362,124,362,237"/>
         <Button x:Name="ButtonCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="276,377,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="16"/>
-
+        <Menu Height="46" Name="MenuPrincipal" Width="46" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="2"/>
+        <ComboBox x:Name="ComboBoxCuentas" HorizontalAlignment="Left" Margin="372,139,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBoxCuentas_SelectionChanged">
+            <ComboBoxItem Content="Efectivo" />
+            <ComboBoxItem Content="Banco" />
+        </ComboBox>
+        <Image x:Name="ImageIcono" HorizontalAlignment="Left" Height="65" Margin="299,118,0,0" VerticalAlignment="Top" Width="65"/>
     </Grid>
 </Window>
