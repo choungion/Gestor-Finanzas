@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
@@ -22,6 +23,8 @@ namespace GestorFinanzas
     public partial class MainWindow : Window
     {
         private static MainWindow Instancia;
+        private DateTime? fecha = DateTime.Now;
+        DateTime FechaSeleccionada = DateTime.Now;
         public MainWindow()
         {
             InitializeComponent();
@@ -30,7 +33,6 @@ namespace GestorFinanzas
         private void ButtonPeriodo_Click(object sender, RoutedEventArgs e)
         {
             Calendario.Visibility = Visibility.Visible;
-            Hide();
         }
         private void Calendario_DisplayModeChanged(object sender, CalendarModeChangedEventArgs e)
         {
@@ -39,11 +41,16 @@ namespace GestorFinanzas
         }
         private void Calendario_DisplayDateChanged(object sender, CalendarDateChangedEventArgs e)
         {
-            DateTime? fecha = e.AddedDate;
+            fecha = e.AddedDate;
             if (fecha.HasValue)
             {
-                DateTime selectedMonth = fecha.Value;
-                LabelPeriodo.Content = $"{selectedMonth: MMMM yyyy}";
+                FechaSeleccionada = fecha.Value;
+                LabelPeriodo.Content = $"{FechaSeleccionada: MMMM yyyy}";
+                Calendario.Visibility = Visibility.Hidden;
+                Balance.InstanciaBalance.BuscarMes(FechaSeleccionada.Month);
+                LabelGastos.Content = $"₡ {Balance.InstanciaBalance.MostrarGastoMensual()}";
+                LabelIngresos.Content = $"₡ {Balance.InstanciaBalance.MostrarIngresoMensual()}";
+                LabelBalanceMensual.Content = $"₡ {Balance.InstanciaBalance.MostrarBalanceMensual()}";
             }
         }
         private void ButtonBalance_Click(object sender, RoutedEventArgs e)
@@ -99,6 +106,10 @@ namespace GestorFinanzas
         private void VentanaCargada(object sender, EventArgs e)
         {
             LabelCantidadTotal.Content = $"₡ {Balance.InstanciaBalance.MostrarBalanceTotal()}";
+            LabelGastos.Content = $"₡ {Balance.InstanciaBalance.MostrarGastoMensual()}";
+            LabelIngresos.Content = $"₡ {Balance.InstanciaBalance.MostrarIngresoMensual()}";
+            Balance.InstanciaBalance.BuscarMes(FechaSeleccionada.Month);
+            LabelBalanceMensual.Content = $"₡ {Balance.InstanciaBalance.MostrarBalanceMensual()}";
         }
     }
 }
