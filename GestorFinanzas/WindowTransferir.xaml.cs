@@ -38,13 +38,13 @@ namespace GestorFinanzas
 
         private void ButtonTransferir_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            Hide();
             MainWindow.InstanciaMain.Show();
         }
 
         private void ButtonCancelar_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            Hide();
             MainWindow.InstanciaMain.Show();
         }
 
