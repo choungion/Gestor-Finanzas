@@ -82,6 +82,7 @@ namespace GestorFinanzas
             Balance.InstanciaBalance.IngresarListaMeses(FechaSeleccionada.Month);
             Balance.InstanciaBalance.IngresarListaAnual(FechaSeleccionada.Year);
             Balance.InstanciaBalance.IngresarListaDias(FechaSeleccionada.Day);
+            Balance.InstanciaBalance.BuscarMes(FechaSeleccionada.Month);
             ComboBoxCuentas.SelectedIndex = -1;
             ComboBoxCategorias.SelectedIndex = -1;
             ImageIcono.Source = null;

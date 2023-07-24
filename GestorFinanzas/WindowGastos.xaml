@@ -18,7 +18,7 @@
         <Image x:Name="ImageIcono" HorizontalAlignment="Left" Height="65" Margin="299,118,0,0" VerticalAlignment="Top" Width="65"/>
         <Calendar Name="Calendario" SelectionMode="SingleDate" 
           Margin="88,0,516,0" VerticalAlignment="Center" 
-          SelectedDatesChanged="Calendario_SelectedDatesChanged" Visibility="Visible"/>
+          SelectedDatesChanged="Calendario_SelectedDatesChanged" Visibility="Hidden"/>
         <Button x:Name="ButtonFechaGasto" HorizontalAlignment="Center" Margin="-180,20,0,0" VerticalAlignment="Center" Click="ButtonFechaGasto_Click" Height="42" Width="42" Background="Transparent" FontSize="18" BorderThickness="0,0,0,0">
             <Image Source="/Calendar Icon.png" Height="42" Width="41" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         </Button>

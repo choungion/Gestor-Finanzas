@@ -109,7 +109,7 @@ namespace GestorFinanzas {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/GestorFinanzas;V1.0.0.0;component/windowtransferir.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/GestorFinanzas;component/windowtransferir.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\WindowTransferir.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
