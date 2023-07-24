@@ -37,8 +37,8 @@ namespace GestorFinanzas
         }
         private void MenuItemTransacciones_Click(object sender, RoutedEventArgs e)
         {
-            Hide();
             MainWindow.InstanciaMain.Show();
+            Hide();
         }
 
         private void CerrarVentana(object sender, System.ComponentModel.CancelEventArgs e)

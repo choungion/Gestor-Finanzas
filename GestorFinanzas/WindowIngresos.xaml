@@ -18,7 +18,7 @@
         </ComboBox>
         <Image x:Name="ImageIcono" HorizontalAlignment="Left" Height="65" Margin="299,118,0,0" VerticalAlignment="Top" Width="65"/>
         <Calendar Name="Calendario" SelectionMode="SingleDate" 
-          Margin="302,146,302,0" VerticalAlignment="Top" 
+          Margin="88,146,516,0" VerticalAlignment="Top" 
           SelectedDatesChanged="Calendario_SelectedDatesChanged" Visibility="Hidden"/>
         <Button x:Name="ButtonFechaingreso" HorizontalAlignment="Center" Margin="-180,20,0,0" VerticalAlignment="Center" Click="ButtonFechaIngreso_Click" Height="42" Width="42" Background="Transparent" FontSize="18" BorderThickness="0,0,0,0">
             <Image Source="/Calendar Icon.png" Height="42" Width="41" HorizontalAlignment="Left" VerticalAlignment="Top"/>

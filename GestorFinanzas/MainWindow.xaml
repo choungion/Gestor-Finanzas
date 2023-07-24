@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:GestorFinanzas"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
-        ResizeMode="NoResize" Closing="CerrarVentana">
+        ResizeMode="NoResize" Closing="CerrarVentana" Activated="VentanaCargada">
     <Grid>
         <Menu Height="46" Name="MenuPrincipal" Width="46" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="2">
             <MenuItem Header="" Width="45" Height="45">
