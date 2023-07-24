@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:GestorFinanzas"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize" Closing="CerrarVentana">
     <Grid>
         <Menu Height="46" Name="MenuPrincipal" Width="46" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="2">
             <MenuItem Header="" Width="45" Height="45">
@@ -32,7 +32,7 @@
         <Label x:Name="LabelIngresos" Content="₡ 0" HorizontalAlignment="Left" Margin="191,222,0,0" VerticalAlignment="Top" FontSize="14" Foreground="Green"/>
         <Label x:Name="LabelGastos" Content="₡ 0" HorizontalAlignment="Left" Margin="514,222,0,0" VerticalAlignment="Top" FontSize="14" Foreground="Red"/>
         <Button x:Name="ButtonBalance" Content="Balance Total" HorizontalAlignment="Center" Margin="0,15,0,0" VerticalAlignment="Top" Click="ButtonBalance_Click" Height="41" Width="146" Background="Transparent" FontSize="24" BorderThickness="0,0,0,0" FontFamily="Arial"/>
-        <Button x:Name="ButtonCantidadTotal" Content="₡ 0" HorizontalAlignment="Center" Margin="0,58,0,0" VerticalAlignment="Top" Click="ButtonBalance_Click" Height="41" Width="52" Background="Transparent" FontSize="18" BorderThickness="0,0,0,0" FontWeight="Bold" FontFamily="Arial"/>
+        <Label x:Name="LabelCantidadTotal" Content="" HorizontalAlignment="Center" Margin="0,66,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="18"/>
         <Label Content="Periodo" HorizontalAlignment="Left" Margin="77,359,0,0" VerticalAlignment="Top" FontSize="16"/>
         <Label x:Name="LabelPeriodo" Content="Enero 2023" HorizontalAlignment="Left" Margin="77,10,0,0" VerticalAlignment="Bottom" FontSize="16" FontWeight="Bold"/>
         <Label Content="Balance Mensual" HorizontalAlignment="Center" Margin="0,267,0,0" VerticalAlignment="Top" FontSize="16"/>

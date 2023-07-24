@@ -8,7 +8,7 @@
         Title="PROGRAMA DE GESTION FINANCIERA"
          Width="528"  Height="563"
         WindowStartupLocation="CenterScreen" WindowStyle="SingleBorderWindow"
-         ResizeMode="CanResizeWithGrip">
+         ResizeMode="CanResizeWithGrip" Closing="CerrarVentana">
     <Grid>
         <Label HorizontalContentAlignment="Center"  Content="USERNAME" HorizontalAlignment="Center" Margin="0,178,0,0" VerticalAlignment="Top" Width="152"/>
         <Label HorizontalContentAlignment="Center"  Content="PASSWORD" HorizontalAlignment="Center" Margin="0,256,0,0" VerticalAlignment="Top" Width="152"/>

@@ -19,16 +19,23 @@ namespace GestorFinanzas
     /// </summary>
     public partial class WindowHistorial : Window
     {
-        public WindowHistorial()
+        private static WindowHistorial Instancia;
+        public static WindowHistorial InstanciaHistorial
         {
-            InitializeComponent();
+            get
+            {
+                if (Instancia == null)
+                {
+                    Instancia = new WindowHistorial();
+                }
+                return Instancia;
+            }
         }
-        private MainWindow main;
 
-        public WindowHistorial(MainWindow mainWindow)
+        private void CerrarVentana(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            InitializeComponent();
-            main = mainWindow;
+            System.Windows.Application.Current.Shutdown();
         }
     }
+    
 }
