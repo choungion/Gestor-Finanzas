@@ -10,12 +10,10 @@ namespace GestorFinanzas
     public class Balance
     {
         private float BalanceTotal = 0, BalanceCuentaBanco, BalanceCuentaEfectivo;
-        public float BalanceTotalSetGet { get => BalanceTotal; set => BalanceTotal = value; }
-        public float BalanceCuentaBancoSetGet { get => BalanceCuentaBanco; set => BalanceCuentaBanco = value; }
-        public float BalanceCuentaEfectivoSetGet { get => BalanceCuentaEfectivo; set => BalanceCuentaEfectivo = value; }
         private static Balance Instancia;
 
         List<float> ListaFlujoDinero = new List<float>();
+        List<int> ListaDias = new List<int>();
         List<int> ListaMeses = new List<int>();
         List<int> ListaAnual = new List<int>();
         List<string> ListaCategoria = new List<string>();
@@ -32,8 +30,6 @@ namespace GestorFinanzas
         public void IngresarListaAnual(int Anual) 
         {
             ListaAnual.Add(Anual);
-
-            MessageBox.Show(ListaFlujoDinero[0] + "" + ListaMeses[0] + "" + ListaAnual[0] + "" + ListaCategoria[0] + "" + ListaCuenta[0]);
         }
         public void IngresarListaCategoria(string Categoria)
         {
@@ -43,8 +39,13 @@ namespace GestorFinanzas
         {
             ListaCuenta.Add(Cuenta);
         }
+        public void IngresarListaDias(int Dia)
+        {
+            ListaDias.Add(Dia);
+        }
         public float MostrarBalanceTotal ()
         {
+            BalanceTotal = 0;
             foreach (float cantidad in ListaFlujoDinero)
             {
                 BalanceTotal += cantidad;

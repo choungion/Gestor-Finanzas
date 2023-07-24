@@ -40,13 +40,13 @@ namespace GestorFinanzas
         }
         private void ComboBoxCuentas_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(((ComboBoxItem)ComboBoxCuentas.SelectedItem).Content.ToString() == "Banco")
+            if(ComboBoxCuentas.SelectedIndex == 1)
             {
                 Uri imagePath = new Uri("/bank.png", UriKind.RelativeOrAbsolute);
                 BitmapImage imagen = new BitmapImage(imagePath);
                 ImageIcono.Source = imagen; 
             }
-            else if(((ComboBoxItem)ComboBoxCuentas.SelectedItem).Content.ToString() == "Efectivo") 
+            else if(ComboBoxCuentas.SelectedIndex == 0) 
             {
                 Uri imagePath = new Uri("/Wallet.png", UriKind.RelativeOrAbsolute);
                 BitmapImage imagen = new BitmapImage(imagePath);
@@ -76,13 +76,20 @@ namespace GestorFinanzas
 
         private void ButtonGuardar_Click(object sender, RoutedEventArgs e)
         {
-            Hide();
-            MainWindow.InstanciaMain.Show();
             Balance.InstanciaBalance.IngresarListaFlujoDinero(float.Parse(TxtBoxCantidad.Text));
             Balance.InstanciaBalance.IngresarListaCuenta(((ComboBoxItem)ComboBoxCuentas.SelectedItem).Content.ToString());
             Balance.InstanciaBalance.IngresarListaCategoria(((ComboBoxItem)ComboBoxCategorias.SelectedItem).Content.ToString());
             Balance.InstanciaBalance.IngresarListaMeses(FechaSeleccionada.Month);
             Balance.InstanciaBalance.IngresarListaAnual(FechaSeleccionada.Year);
+            Balance.InstanciaBalance.IngresarListaDias(FechaSeleccionada.Day);
+            ComboBoxCuentas.SelectedIndex = -1;
+            ComboBoxCategorias.SelectedIndex = -1;
+            ImageIcono.Source = null;
+            TxtBoxCantidad.Text = string.Empty;
+            Calendario.SelectedDate = null;
+            FechaSeleccionada = DateTime.MinValue;
+            MainWindow.InstanciaMain.Show();
+            Hide();
         }
 
         private void CerrarVentana(object sender, System.ComponentModel.CancelEventArgs e)

@@ -25,7 +25,6 @@ namespace GestorFinanzas
         public MainWindow()
         {
             InitializeComponent();
-            LabelCantidadTotal.Content = "₡ " +Balance.InstanciaBalance.MostrarBalanceTotal();
         }
         #region Eventos de controlers
         private void ButtonPeriodo_Click(object sender, RoutedEventArgs e)
@@ -87,13 +86,19 @@ namespace GestorFinanzas
                 {
                     Instancia = new MainWindow();
                 }
+
                 return Instancia;
             }
+
         }
 
         private void CerrarVentana(object sender, System.ComponentModel.CancelEventArgs e)
         {
             System.Windows.Application.Current.Shutdown();
+        }
+        private void VentanaCargada(object sender, EventArgs e)
+        {
+            LabelCantidadTotal.Content = $"₡ {Balance.InstanciaBalance.MostrarBalanceTotal()}";
         }
     }
 }
