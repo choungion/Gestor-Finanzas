@@ -74,6 +74,8 @@ namespace GestorFinanzas
             Balance.InstanciaBalance.IngresarListaMeses(FechaSeleccionada.Month);
             Balance.InstanciaBalance.IngresarListaAnual(FechaSeleccionada.Year);
             Balance.InstanciaBalance.IngresarListaDias(FechaSeleccionada.Day);
+
+            Balance.InstanciaBalance.BuscarMes(FechaSeleccionada.Month);
             ComboBoxCuentaOrigen.SelectedIndex = -1;
             ComboBoxCuentaDestino.SelectedIndex = -1;
             TxtBoxCantidad.Text = string.Empty;
