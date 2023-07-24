@@ -93,7 +93,7 @@ namespace GestorFinanzas {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/GestorFinanzas;component/windowregistrousuario.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/GestorFinanzas;V1.0.0.0;component/windowregistrousuario.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\WindowRegistroUsuario.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
