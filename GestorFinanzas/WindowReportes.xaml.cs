@@ -40,5 +40,10 @@ namespace GestorFinanzas
             Hide();
             MainWindow.InstanciaMain.Show();
         }
+
+        private void CerrarVentana(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
+        }
     }
 }

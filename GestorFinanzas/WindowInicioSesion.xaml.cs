@@ -34,15 +34,13 @@ namespace GestorFinanzas
                     if (this.txt_USERNAME.Text == REGISTROS_STATICOS.ARREGLO_DE_USUARIOS[i].User1 && this.txt_PASSWORD.Password == REGISTROS_STATICOS.ARREGLO_DE_USUARIOS[i].Password)
                     {
                         MessageBox.Show("the password has been passed ");
-                        MainWindow INICIO = new MainWindow();
-                        INICIO.Show();
+                        MainWindow.InstanciaMain.Show();
                         Hide();
                         break;
                     }
                     else if (this.txt_USERNAME.Text == "admin" && this.txt_PASSWORD.Password == "admin")
                     {
-                        MainWindow INICIO = new MainWindow();
-                        INICIO.Show();
+                        MainWindow.InstanciaMain.Show();
                         Hide();
                         break;
                     }
@@ -56,6 +54,11 @@ namespace GestorFinanzas
 
             WindowRegistroUsuario ventana_REGISTROS = new WindowRegistroUsuario();
             ventana_REGISTROS.Show();
+        }
+
+        private void CerrarVentana(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
         }
     }
 }

@@ -31,6 +31,7 @@ namespace GestorFinanzas
         private void ButtonPeriodo_Click(object sender, RoutedEventArgs e)
         {
             Calendario.Visibility = Visibility.Visible;
+            Hide();
         }
         private void Calendario_DisplayModeChanged(object sender, CalendarModeChangedEventArgs e)
         {
@@ -49,27 +50,33 @@ namespace GestorFinanzas
         private void ButtonBalance_Click(object sender, RoutedEventArgs e)
         {
             WindowHistorial.InstanciaHistorial.Show();
+            Hide();
         }
 
         private void ButtonConsultar_Click(object sender, RoutedEventArgs e)
         {
             WindowCuentas.InstanciaCuentas.Show();
+            Hide();
         }
         private void MenuItemReportes_Click(object sender, RoutedEventArgs e)
         {
             WindowReportes.InstanciaReportes.Show();
+            Hide();
         }
         private void MenuItemIngresos_Click(object sender, RoutedEventArgs e)
         {
             WindowIngresos.InstanciaIngresos.Show();
+            Hide();
         }
         private void MenuItemGastos_Click(object sender, RoutedEventArgs e)
         {
             WindowGastos.InstanciaGastos.Show();
+            Hide();
         }
         private void MenuItemTransferir_Click(object sender, RoutedEventArgs e)
         {
             WindowTransferir.InstanciaTransferir.Show();
+            Hide();
         }
         #endregion
         public static MainWindow InstanciaMain
@@ -82,6 +89,11 @@ namespace GestorFinanzas
                 }
                 return Instancia;
             }
+        }
+
+        private void CerrarVentana(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
         }
     }
 }

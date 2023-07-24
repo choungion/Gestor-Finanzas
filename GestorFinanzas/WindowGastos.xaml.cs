@@ -84,5 +84,10 @@ namespace GestorFinanzas
             Balance.InstanciaBalance.IngresarListaMeses(FechaSeleccionada.Month);
             Balance.InstanciaBalance.IngresarListaAnual(FechaSeleccionada.Year);
         }
+
+        private void CerrarVentana(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
+        }
     }
 }
