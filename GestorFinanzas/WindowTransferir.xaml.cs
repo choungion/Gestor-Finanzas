@@ -23,24 +23,29 @@ namespace GestorFinanzas
         {
             InitializeComponent();
         }
-        private MainWindow main;
-
-        public WindowTransferir(MainWindow mainWindow)
+        private static WindowTransferir Instancia;
+        public static WindowTransferir InstanciaTransferir
         {
-            InitializeComponent();
-            main = mainWindow;
+            get
+            {
+                if (Instancia == null)
+                {
+                    Instancia = new WindowTransferir();
+                }
+                return Instancia;
+            }
         }
 
         private void ButtonTransferir_Click(object sender, RoutedEventArgs e)
         {
             Hide();
-            main.Show();
+            MainWindow.InstanciaMain.Show();
         }
 
         private void ButtonCancelar_Click(object sender, RoutedEventArgs e)
         {
             Hide();
-            main.Show();
+            MainWindow.InstanciaMain.Show();
         }
     }
 }

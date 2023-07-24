@@ -17,9 +17,10 @@
             <ComboBoxItem Content="Efectivo" />
             <ComboBoxItem Content="Banco" />
         </ComboBox>
-        <Image HorizontalAlignment="Center" Height="81" Margin="0,86,0,0" VerticalAlignment="Top" Width="80" Source="/transfer.png"/>
+        <Image HorizontalAlignment="Center" Height="48" Margin="0,100,0,0" VerticalAlignment="Top" Width="52" Source="/transfer.png"/>
         <Button x:Name="ButtonTransferir" Content="Transferir" HorizontalAlignment="Left" Margin="360,217,0,0" VerticalAlignment="Top" Height="36" Width="86" Click="ButtonTransferir_Click"/>
         <Button x:Name="ButtonCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="360,284,0,0" VerticalAlignment="Top" Height="36" Width="86" Click="ButtonCancelar_Click"/>
+        <TextBox x:Name="TextBoxCantidad" HorizontalAlignment="Left" Margin="343,153,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,9 +21,11 @@ namespace GestorFinanzas
     /// </summary>
     public partial class MainWindow : Window
     {
+        private static MainWindow Instancia;
         public MainWindow()
         {
             InitializeComponent();
+            LabelCantidadTotal.Content = "₡ " +Balance.InstanciaBalance.MostrarBalanceTotal();
         }
         #region Eventos de controlers
         private void ButtonPeriodo_Click(object sender, RoutedEventArgs e)
@@ -45,67 +48,40 @@ namespace GestorFinanzas
         }
         private void ButtonBalance_Click(object sender, RoutedEventArgs e)
         {
-            AbrirHistorial();
+            WindowHistorial.InstanciaHistorial.Show();
         }
 
         private void ButtonConsultar_Click(object sender, RoutedEventArgs e)
         {
-            AbrirConsultaCuentas();
+            WindowCuentas.InstanciaCuentas.Show();
         }
         private void MenuItemReportes_Click(object sender, RoutedEventArgs e)
         {
-            AbrirReportes();
+            WindowReportes.InstanciaReportes.Show();
         }
         private void MenuItemIngresos_Click(object sender, RoutedEventArgs e)
         {
-            AbrirIngresos();
+            WindowIngresos.InstanciaIngresos.Show();
         }
         private void MenuItemGastos_Click(object sender, RoutedEventArgs e)
         {
-            AbrirGastos();
+            WindowGastos.InstanciaGastos.Show();
         }
         private void MenuItemTransferir_Click(object sender, RoutedEventArgs e)
         {
-            AbrirTransferencias();
+            WindowTransferir.InstanciaTransferir.Show();
         }
         #endregion
-        #region Metodos para pasar las instancias de las ventanas como parametros
-        private void AbrirConsultaCuentas()
+        public static MainWindow InstanciaMain
         {
-            WindowCuentas CuentasWindow = new WindowCuentas(this);
-            CuentasWindow.Show();
-            Hide();
+            get
+            {
+                if (Instancia == null)
+                {
+                    Instancia = new MainWindow();
+                }
+                return Instancia;
+            }
         }
-        private void AbrirReportes()
-        {
-            WindowReportes ReportesWindow = new WindowReportes(this);
-            ReportesWindow.Show();
-            Hide();
-        }
-        private void AbrirIngresos()
-        {
-            WindowIngresos IngresosWindow = new WindowIngresos(this);
-            IngresosWindow.Show();
-            Hide();
-        }
-        private void AbrirGastos()
-        {
-            WindowGastos GastosWindow = new WindowGastos(this);
-            GastosWindow.Show();
-            Hide();
-        }
-        private void AbrirTransferencias()
-        {
-            WindowTransferir TransferirWindow = new WindowTransferir(this);
-            TransferirWindow.Show();
-            Hide();
-        }
-        private void AbrirHistorial()
-        {
-            WindowHistorial HistorialWindow = new WindowHistorial(this);
-            HistorialWindow.Show();
-            Hide();
-        }
-        #endregion
     }
 }

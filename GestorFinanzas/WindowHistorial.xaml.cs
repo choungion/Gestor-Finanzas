@@ -19,16 +19,18 @@ namespace GestorFinanzas
     /// </summary>
     public partial class WindowHistorial : Window
     {
-        public WindowHistorial()
+        private static WindowHistorial Instancia;
+        public static WindowHistorial InstanciaHistorial
         {
-            InitializeComponent();
-        }
-        private MainWindow main;
-
-        public WindowHistorial(MainWindow mainWindow)
-        {
-            InitializeComponent();
-            main = mainWindow;
+            get
+            {
+                if (Instancia == null)
+                {
+                    Instancia = new WindowHistorial();
+                }
+                return Instancia;
+            }
         }
     }
+    
 }

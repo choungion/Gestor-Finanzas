@@ -23,17 +23,22 @@ namespace GestorFinanzas
         {
             InitializeComponent();
         }
-        private MainWindow main;
-
-        public WindowReportes(MainWindow mainWindow)
+        private static WindowReportes Instancia;
+        public static WindowReportes InstanciaReportes
         {
-            InitializeComponent();
-            main = mainWindow;
+            get
+            {
+                if (Instancia == null)
+                {
+                    Instancia = new WindowReportes();
+                }
+                return Instancia;
+            }
         }
         private void MenuItemTransacciones_Click(object sender, RoutedEventArgs e)
         {
             Hide();
-            main.Show();
+            MainWindow.InstanciaMain.Show();
         }
     }
 }

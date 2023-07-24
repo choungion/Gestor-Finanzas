@@ -24,12 +24,19 @@ namespace GestorFinanzas
         {
             InitializeComponent();
         }
-        private MainWindow main;
-
-        public WindowIngresos(MainWindow mainWindow)
+        private DateTime FechaSeleccionada;
+        private Balance InstanciaBalance;
+        private static WindowIngresos Instancia;
+        public static WindowIngresos InstanciaIngresos
         {
-            InitializeComponent();
-            main = mainWindow;
+            get
+            {
+                if (Instancia == null)
+                {
+                    Instancia = new WindowIngresos();
+                }
+                return Instancia;
+            }
         }
         private void ComboBoxCuentas_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -55,21 +62,27 @@ namespace GestorFinanzas
             Calendar calendario = (Calendar)sender;
             if (calendario.SelectedDate.HasValue)
             {
-                var selectedDate = calendario.SelectedDate.Value;
-                MessageBox.Show($"Selected Date: {selectedDate.ToShortDateString()}");
+                var Fecha = calendario.SelectedDate.Value;
+                FechaSeleccionada = calendario.SelectedDate.Value;
+                MessageBox.Show($"Fecha Seleccionada: {Fecha.ToShortDateString()}");
                 Calendario.Visibility = Visibility.Hidden;
             }
         }
         private void ButtonCancelar_Click(object sender, RoutedEventArgs e)
         {
             Hide();
-            main.Show();
+            MainWindow.InstanciaMain.Show();
         }
 
         private void ButtonGuardar_Click(object sender, RoutedEventArgs e)
         {
             Hide();
-            main.Show();
+            MainWindow.InstanciaMain.Show();
+            Balance.InstanciaBalance.IngresarListaFlujoDinero(float.Parse(TxtBoxCantidad.Text));
+            Balance.InstanciaBalance.IngresarListaCuenta(((ComboBoxItem)ComboBoxCuentas.SelectedItem).Content.ToString());
+            Balance.InstanciaBalance.IngresarListaCategoria(((ComboBoxItem)ComboBoxCategorias.SelectedItem).Content.ToString());
+            Balance.InstanciaBalance.IngresarListaMeses(FechaSeleccionada.Month);
+            Balance.InstanciaBalance.IngresarListaAnual(FechaSeleccionada.Year);
         }
     }
 }

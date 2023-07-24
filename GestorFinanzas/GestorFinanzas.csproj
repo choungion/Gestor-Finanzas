@@ -12,12 +12,14 @@
     <None Remove="bank.png" />
     <None Remove="Calendar Icon.png" />
     <None Remove="Hamburger_icon.svg.png" />
+    <None Remove="tranfer.png" />
     <None Remove="transfer.png" />
     <None Remove="Wallet.png" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,6 +27,7 @@
     <Resource Include="bank.png" />
     <Resource Include="Calendar Icon.png" />
     <Resource Include="Hamburger_icon.svg.png" />
+    <Resource Include="tranfer.png" />
     <Resource Include="transfer.png" />
     <Resource Include="Wallet.png" />
   </ItemGroup>
