@@ -9,7 +9,7 @@ namespace GestorFinanzas
 {
     public class Balance
     {
-        private float BalanceTotal = 0, BalanceCuentaBanco, BalanceCuentaEfectivo, IngresoMensual, GastoMensual, BalanceMensual;
+        private float BalanceTotal = 0, BalanceCuentaBanco, BalanceCuentaEfectivo, IngresoMensual, GastoMensual, BalanceMensual, Transferencias;
         private static Balance Instancia;
 
         List<float> ListaFlujoDinero = new List<float>();
@@ -21,6 +21,10 @@ namespace GestorFinanzas
         List<int> MesesEncontrados = new List<int>();
         List<int> IndicesEncontrados = new List<int>();
         List<float> ListaBalanceMensual =  new List<float>();
+        List<float> ListaBalanceEfectivo = new List<float>();
+        List<float> ListaBalanceBanco = new List<float>();
+        List<string> CuentasEncontradas = new List<string>();
+        List<float> ListaTransferencias = new List<float>();
         #region Metodos para agregar elementos a las listas
         public void IngresarListaFlujoDinero(float Flujo)
         {
@@ -100,6 +104,7 @@ namespace GestorFinanzas
             {
                 GastoMensual += cantidad;
             }
+            GastoMensual = GastoMensual + BuscarTransferencias();
             return GastoMensual;
         }
         public float MostrarBalanceMensual()
@@ -110,6 +115,71 @@ namespace GestorFinanzas
                 BalanceMensual += cantidad;
             }
             return BalanceMensual;
+        }
+        public float MostrarBalanceEfectivo()
+        {
+            BalanceCuentaEfectivo = 0;
+            foreach (float cantidad in ListaBalanceEfectivo)
+            {
+                BalanceCuentaEfectivo += cantidad;
+            }
+            return BalanceMensual;
+        }
+        public float MostrarBalanceBanco()
+        {
+            BalanceCuentaBanco = 0;
+            foreach (float cantidad in ListaBalanceBanco)
+            {
+                BalanceCuentaBanco += cantidad;
+            }
+            return BalanceCuentaBanco;
+        }
+        public void BuscarCuentaEfectivo(string cuenta)
+        {
+            ListaBalanceEfectivo.Clear();
+            IndicesEncontrados.Clear();
+            CuentasEncontradas.Clear();
+            for (int i = 0; i < ListaCuenta.Count; i++)
+            {
+                if (ListaCuenta[i] == cuenta)
+                {
+                    ListaBalanceEfectivo.Add(ListaFlujoDinero[i]);
+                    IndicesEncontrados.Add(i);
+                    CuentasEncontradas.Add(ListaCuenta[i]);
+                }
+            }
+        }
+        public void BuscarCuentaBanco(string cuenta)
+        {
+            ListaBalanceBanco.Clear();
+            IndicesEncontrados.Clear();
+            CuentasEncontradas.Clear();
+            for (int i = 0; i < ListaCuenta.Count; i++)
+            {
+                if (ListaCuenta[i] == cuenta)
+                {
+                    ListaBalanceBanco.Add(ListaFlujoDinero[i]);
+                    IndicesEncontrados.Add(i);
+                    CuentasEncontradas.Add(ListaCuenta[i]);
+                }
+            }
+        }
+        public float BuscarTransferencias()
+        {
+            ListaTransferencias.Clear();
+            for (int i = 0; i < ListaCategoria.Count; i++)
+            {
+                if (ListaCategoria[i] == "Transferencia")
+                {
+                    ListaTransferencias.Add(ListaFlujoDinero[i]);
+                }
+            }
+            Transferencias = 0;
+            foreach (float cantidad in ListaTransferencias)
+            {
+                Transferencias += cantidad;
+            }
+            return Transferencias;
         }
     }
 }

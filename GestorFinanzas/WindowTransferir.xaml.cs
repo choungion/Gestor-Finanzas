@@ -68,6 +68,9 @@ namespace GestorFinanzas
             string hexLightRed = "#FF0000";
             BrushConverter converter = new BrushConverter();
             Brush RojoClaro = (Brush)converter.ConvertFromString(hexLightRed);
+            Balance.InstanciaBalance.BuscarCuentaEfectivo(((ComboBoxItem)ComboBoxCuentaOrigen.SelectedItem).Content.ToString());
+            Balance.InstanciaBalance.BuscarCuentaBanco(((ComboBoxItem)ComboBoxCuentaOrigen.SelectedItem).Content.ToString());
+
             if (string.IsNullOrEmpty(TxtBoxCantidad.Text))
             {
                 TxtBoxCantidad.Background = RojoClaro;
@@ -89,36 +92,36 @@ namespace GestorFinanzas
             if (Calendario.SelectedDate.HasValue)
             {
                 LabelFecha.Foreground = Brushes.Black;
+                FlagFecha = true;
             }
             else
             {
                 LabelFecha.Foreground = RojoClaro;
-                FlagFecha = true;
             }
             if (FlagCantidad == true && FlagCuentaOrigen == true && FlagFecha == true)
             {
-                Balance.InstanciaBalance.IngresarListaFlujoDinero(float.Parse(TxtBoxCantidad.Text));
-                Balance.InstanciaBalance.IngresarListaCuenta(((ComboBoxItem)ComboBoxCuentaDestino.SelectedItem).Content.ToString());
-                Balance.InstanciaBalance.IngresarListaCategoria("Transferencia");
-                Balance.InstanciaBalance.IngresarListaMeses(FechaSeleccionada.Month);
-                Balance.InstanciaBalance.IngresarListaAnual(FechaSeleccionada.Year);
-                Balance.InstanciaBalance.IngresarListaDias(FechaSeleccionada.Day);
-
-                Balance.InstanciaBalance.IngresarListaFlujoDinero(float.Parse(TxtBoxCantidad.Text) * -1);
-                Balance.InstanciaBalance.IngresarListaCuenta(((ComboBoxItem)ComboBoxCuentaOrigen.SelectedItem).Content.ToString());
-                Balance.InstanciaBalance.IngresarListaCategoria("Transferencia");
-                Balance.InstanciaBalance.IngresarListaMeses(FechaSeleccionada.Month);
-                Balance.InstanciaBalance.IngresarListaAnual(FechaSeleccionada.Year);
-                Balance.InstanciaBalance.IngresarListaDias(FechaSeleccionada.Day);
-
-                Balance.InstanciaBalance.BuscarMes(FechaSeleccionada.Month);
-                ComboBoxCuentaOrigen.SelectedIndex = -1;
-                ComboBoxCuentaDestino.SelectedIndex = -1;
-                TxtBoxCantidad.Text = string.Empty;
-                Calendario.SelectedDate = null;
-                FechaSeleccionada = DateTime.MinValue;
-                MainWindow.InstanciaMain.Show();
-                Hide();
+                if (ComboBoxCuentaOrigen.SelectedIndex == 0)
+                {
+                    if (Balance.InstanciaBalance.MostrarBalanceEfectivo() < int.Parse(TxtBoxCantidad.Text))
+                    {
+                        MessageBox.Show("La cuenta seleccionada no tiene fondos suficientes");
+                    }
+                    else
+                    {
+                        Transferir();
+                    }
+                }
+                else if(ComboBoxCuentaOrigen.SelectedIndex == 1)
+                {
+                    if (Balance.InstanciaBalance.MostrarBalanceBanco() < int.Parse(TxtBoxCantidad.Text))
+                    {
+                        MessageBox.Show("La cuenta seleccionada no tiene fondos suficientes");
+                    }
+                    else
+                    {
+                        Transferir();
+                    }
+                }
             }
         }
 
@@ -146,6 +149,32 @@ namespace GestorFinanzas
                 TxtBoxCantidad.Text = Texto.Substring(0, Texto.Length - 1);
                 TxtBoxCantidad.CaretIndex = TxtBoxCantidad.Text.Length;
             }
+        }
+
+        public void Transferir()
+        {
+            Balance.InstanciaBalance.IngresarListaFlujoDinero(float.Parse(TxtBoxCantidad.Text));
+            Balance.InstanciaBalance.IngresarListaCuenta(((ComboBoxItem)ComboBoxCuentaDestino.SelectedItem).Content.ToString());
+            Balance.InstanciaBalance.IngresarListaCategoria("Transferencia");
+            Balance.InstanciaBalance.IngresarListaMeses(FechaSeleccionada.Month);
+            Balance.InstanciaBalance.IngresarListaAnual(FechaSeleccionada.Year);
+            Balance.InstanciaBalance.IngresarListaDias(FechaSeleccionada.Day);
+
+            Balance.InstanciaBalance.IngresarListaFlujoDinero(float.Parse(TxtBoxCantidad.Text) * -1);
+            Balance.InstanciaBalance.IngresarListaCuenta(((ComboBoxItem)ComboBoxCuentaOrigen.SelectedItem).Content.ToString());
+            Balance.InstanciaBalance.IngresarListaCategoria("Transferencia");
+            Balance.InstanciaBalance.IngresarListaMeses(FechaSeleccionada.Month);
+            Balance.InstanciaBalance.IngresarListaAnual(FechaSeleccionada.Year);
+            Balance.InstanciaBalance.IngresarListaDias(FechaSeleccionada.Day);
+
+            Balance.InstanciaBalance.BuscarMes(FechaSeleccionada.Month);
+            ComboBoxCuentaOrigen.SelectedIndex = -1;
+            ComboBoxCuentaDestino.SelectedIndex = -1;
+            TxtBoxCantidad.Text = string.Empty;
+            Calendario.SelectedDate = null;
+            FechaSeleccionada = DateTime.MinValue;
+            MainWindow.InstanciaMain.Show();
+            Hide();
         }
     }
 }

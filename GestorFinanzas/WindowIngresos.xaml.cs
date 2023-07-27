@@ -110,11 +110,11 @@ namespace GestorFinanzas
             if (Calendario.SelectedDate.HasValue)
             {
                 LabelFecha.Foreground = Brushes.Black;
+                FlagFecha = true;
             }
             else
             {
                 LabelFecha.Foreground = RojoClaro;
-                FlagFecha = true;
             }
             if (ComboBoxCategorias.SelectedIndex == 4)
             {
@@ -122,7 +122,7 @@ namespace GestorFinanzas
             }
             else
             {
-               ComboBoxCategorias.Foreground = Brushes.Black;
+                ComboBoxCategorias.Foreground = Brushes.Black;
                 FlagCategoria = true;
             }
             if (FlagCantidad == true && FlagCategoria == true && FlagCuentas == true && FlagFecha == true)
@@ -134,14 +134,18 @@ namespace GestorFinanzas
                 Balance.InstanciaBalance.IngresarListaAnual(FechaSeleccionada.Year);
                 Balance.InstanciaBalance.IngresarListaDias(FechaSeleccionada.Day);
                 Balance.InstanciaBalance.BuscarMes(FechaSeleccionada.Month);
-                ComboBoxCuentas.SelectedIndex = -1;
-                ComboBoxCategorias.SelectedIndex = -1;
+                ComboBoxCuentas.SelectedIndex = 2;
+                ComboBoxCategorias.SelectedIndex = 4;
                 ImageIcono.Source = null;
                 TxtBoxCantidad.Text = string.Empty;
                 Calendario.SelectedDate = null;
                 FechaSeleccionada = DateTime.MinValue;
                 MainWindow.InstanciaMain.Show();
                 Hide();
+            }
+            else
+            {
+                //MessageBox.Show("Llene todos los campos");
             }
         }
 

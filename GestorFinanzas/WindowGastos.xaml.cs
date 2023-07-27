@@ -110,11 +110,11 @@ namespace GestorFinanzas
             if (Calendario.SelectedDate.HasValue)
             {
                 LabelFecha.Foreground = Brushes.Black;
+                FlagFecha = true;
             }
             else
             {
                 LabelFecha.Foreground = RojoClaro;
-                FlagFecha = true;
             }
             if (ComboBoxCategorias.SelectedIndex == 4)
             {
