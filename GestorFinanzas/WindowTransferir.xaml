@@ -9,9 +9,10 @@
     <Grid>
         <Label Content="Cuenta de origen" HorizontalAlignment="Left" Margin="183,86,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="16"/>
         <Label Content="Cuenta de destino" HorizontalAlignment="Left" Margin="483,86,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="16"/>
-        <ComboBox x:Name="ComboBoxCuentaOrigen" HorizontalAlignment="Left" Margin="189,119,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBoxCuentaOrigen_SelectionChanged">
+        <ComboBox x:Name="ComboBoxCuentaOrigen" HorizontalAlignment="Left" Margin="153,119,0,0" VerticalAlignment="Top" Width="192" SelectionChanged="ComboBoxCuentaOrigen_SelectionChanged" SelectedIndex="2">
             <ComboBoxItem Content="Efectivo" />
             <ComboBoxItem Content="Banco" />
+            <ComboBoxItem Content="Seleccione la cuenta de origen"/>
         </ComboBox>
         <ComboBox x:Name="ComboBoxCuentaDestino" HorizontalAlignment="Left" Margin="493,119,0,0" VerticalAlignment="Top" Width="120" IsEnabled="False">
             <ComboBoxItem Content="Efectivo" />
@@ -20,14 +21,14 @@
         <Image HorizontalAlignment="Center" Height="48" Margin="0,100,0,0" VerticalAlignment="Top" Width="52" Source="/transfer.png"/>
         <Button x:Name="ButtonTransferir" Content="Transferir" HorizontalAlignment="Left" Margin="360,247,0,0" VerticalAlignment="Top" Height="36" Width="86" Click="ButtonTransferir_Click"/>
         <Button x:Name="ButtonCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="360,316,0,0" VerticalAlignment="Top" Height="36" Width="86" Click="ButtonCancelar_Click"/>
-        <TextBox x:Name="TxtBoxCantidad" HorizontalAlignment="Left" Margin="343,153,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" />
+        <TextBox x:Name="TxtBoxCantidad" HorizontalAlignment="Left" Margin="343,153,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TxtBoxCantidad_TextChanged" />
         <Button x:Name="ButtonFechaingreso" HorizontalAlignment="Left" Margin="276,180,0,0" VerticalAlignment="Top" Click="ButtonFechaIngreso_Click" Height="42" Width="42" Background="Transparent" FontSize="18" BorderThickness="0,0,0,0">
             <Image Source="/Calendar Icon.png" Height="42" Width="41" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         </Button>
         <Calendar Name="Calendario" SelectionMode="SingleDate" 
           Margin="87,153,517,0" VerticalAlignment="Top" 
           SelectedDatesChanged="Calendario_SelectedDatesChanged" Visibility="Hidden"/>
-        <Label Content="Seleccione la fecha de la transferencia" HorizontalAlignment="Left" Margin="323,191,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LabelFecha" Content="Seleccione la fecha de la transferencia" HorizontalAlignment="Left" Margin="323,191,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
