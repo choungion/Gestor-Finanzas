@@ -20,11 +20,13 @@ namespace GestorFinanzas
         List<string> ListaCuenta = new List<string>();
         List<int> MesesEncontrados = new List<int>();
         List<int> IndicesEncontrados = new List<int>();
-        List<float> ListaBalanceMensual =  new List<float>();
+        List<float> ListaBalanceMensual = new List<float>();
         List<float> ListaBalanceEfectivo = new List<float>();
         List<float> ListaBalanceBanco = new List<float>();
         List<string> CuentasEncontradas = new List<string>();
         List<float> ListaTransferencias = new List<float>();
+        List<string> CategoriasEncontradas = new List<string>();
+        List<string> FechaFlujo = new List<string>();
         #region Metodos para agregar elementos a las listas
         public void IngresarListaFlujoDinero(float Flujo)
         {
@@ -34,7 +36,7 @@ namespace GestorFinanzas
         {
             ListaMeses.Add(Meses);
         }
-        public void IngresarListaAnual(int Anual) 
+        public void IngresarListaAnual(int Anual)
         {
             ListaAnual.Add(Anual);
         }
@@ -42,7 +44,7 @@ namespace GestorFinanzas
         {
             ListaCategoria.Add(Categoria);
         }
-        public void IngresarListaCuenta(string Cuenta) 
+        public void IngresarListaCuenta(string Cuenta)
         {
             ListaCuenta.Add(Cuenta);
         }
@@ -51,26 +53,7 @@ namespace GestorFinanzas
             ListaDias.Add(Dia);
         }
         #endregion
-        public float MostrarBalanceTotal ()
-        {
-            BalanceTotal = 0;
-            foreach (float cantidad in ListaFlujoDinero)
-            {
-                BalanceTotal += cantidad;
-            }
-            return BalanceTotal;
-        }
-        public static Balance InstanciaBalance
-        {
-            get
-            {
-                if ( Instancia== null)
-                {
-                    Instancia = new Balance();
-                }
-                return Instancia;
-            }
-        }
+        #region Metodos para Buscar el flujo de dinero por categoria, tipo de cuenta, mes, ano, dia
         public void BuscarMes(int mes)
         {
             ListaBalanceMensual.Clear();
@@ -86,25 +69,94 @@ namespace GestorFinanzas
                 }
             }
         }
+        public void BuscarCuentaBanco(string cuenta)
+        {
+            ListaBalanceBanco.Clear();
+            IndicesEncontrados.Clear();
+            CuentasEncontradas.Clear();
+            CategoriasEncontradas.Clear();
+            for (int i = 0; i < ListaCuenta.Count; i++)
+            {
+                if (ListaCuenta[i] == cuenta)
+                {
+                    ListaBalanceBanco.Add(ListaFlujoDinero[i]);
+                    CategoriasEncontradas.Add(ListaCategoria[i]);
+                    IndicesEncontrados.Add(i);
+                    CuentasEncontradas.Add(ListaCuenta[i]);
+                }
+            }
+        }
+        public void BuscarTransferencias()
+        {
+            ListaTransferencias.Clear();
+            for (int i = 0; i < ListaCategoria.Count; i++)
+            {
+                if (ListaCategoria[i] == "Transferencia" && ListaFlujoDinero[i] > 0)
+                {
+                    ListaTransferencias.Add(ListaFlujoDinero[i]);
+                }
+            }
+        }
+        public void BuscarCuentaEfectivo(string cuenta)
+        {
+            ListaBalanceEfectivo.Clear();
+            IndicesEncontrados.Clear();
+            CuentasEncontradas.Clear();
+            CategoriasEncontradas.Clear();
+            for (int i = 0; i < ListaCuenta.Count; i++)
+            {
+                if (ListaCuenta[i] == cuenta)
+                {
+                    CategoriasEncontradas.Add(ListaCategoria[i]);
+                    ListaBalanceEfectivo.Add(ListaFlujoDinero[i]);
+                    IndicesEncontrados.Add(i);
+                    CuentasEncontradas.Add(ListaCuenta[i]);
+                }
+            }
+        }
+        #endregion
+        #region Metodos para obtener la suma de las cantidades obtenidas
+        public float MostrarBalanceTotal()
+        {
+            BalanceTotal = 0;
+            foreach (float cantidad in ListaFlujoDinero)
+            {
+                BalanceTotal += cantidad;
+            }
+            return BalanceTotal;
+        }
+
+        public float MostrarTransferencias()
+        {
+            Transferencias = 0;
+            foreach (float cantidad in ListaTransferencias)
+            {
+                Transferencias += cantidad;
+            }
+            return Transferencias;
+        }
         public float MostrarIngresoMensual()
         {
             IngresoMensual = 0;
+            BuscarTransferencias();
             var ingresos = ListaBalanceMensual.Where(n => n > 0);
             foreach (float cantidad in ingresos)
             {
                 IngresoMensual += cantidad;
             }
+            IngresoMensual = IngresoMensual - MostrarTransferencias();
             return IngresoMensual;
         }
         public float MostrarGastoMensual()
         {
             GastoMensual = 0;
+            BuscarTransferencias();
             var gastos = ListaBalanceMensual.Where(n => n < 0);
             foreach (float cantidad in gastos)
             {
                 GastoMensual += cantidad;
             }
-            GastoMensual = GastoMensual + BuscarTransferencias();
+            GastoMensual = GastoMensual + MostrarTransferencias();
             return GastoMensual;
         }
         public float MostrarBalanceMensual()
@@ -123,7 +175,7 @@ namespace GestorFinanzas
             {
                 BalanceCuentaEfectivo += cantidad;
             }
-            return BalanceMensual;
+            return BalanceCuentaEfectivo;
         }
         public float MostrarBalanceBanco()
         {
@@ -134,52 +186,43 @@ namespace GestorFinanzas
             }
             return BalanceCuentaBanco;
         }
-        public void BuscarCuentaEfectivo(string cuenta)
+        #endregion
+        #region Metodos para obtener las listas completas
+        public List<string> ObtenerCategorias()
         {
-            ListaBalanceEfectivo.Clear();
-            IndicesEncontrados.Clear();
-            CuentasEncontradas.Clear();
+            return CategoriasEncontradas;
+        }
+        public List<float> ObtenerListaBalanceBanco()
+        {
+            return ListaBalanceBanco;
+        }
+        public List<float> ObtenerListaBalanceEfectivo()
+        {
+            return ListaBalanceEfectivo;
+        }
+        public List<string> ObtenerFecha(string cuenta)
+        {
+            FechaFlujo.Clear();
             for (int i = 0; i < ListaCuenta.Count; i++)
             {
                 if (ListaCuenta[i] == cuenta)
                 {
-                    ListaBalanceEfectivo.Add(ListaFlujoDinero[i]);
-                    IndicesEncontrados.Add(i);
-                    CuentasEncontradas.Add(ListaCuenta[i]);
+                    FechaFlujo.Add(ListaDias[i] + "/" + ListaMeses[i] + "/" + ListaAnual[i]);
                 }
             }
+            return FechaFlujo;
         }
-        public void BuscarCuentaBanco(string cuenta)
+        #endregion
+        public static Balance InstanciaBalance
         {
-            ListaBalanceBanco.Clear();
-            IndicesEncontrados.Clear();
-            CuentasEncontradas.Clear();
-            for (int i = 0; i < ListaCuenta.Count; i++)
+            get
             {
-                if (ListaCuenta[i] == cuenta)
+                if (Instancia == null)
                 {
-                    ListaBalanceBanco.Add(ListaFlujoDinero[i]);
-                    IndicesEncontrados.Add(i);
-                    CuentasEncontradas.Add(ListaCuenta[i]);
+                    Instancia = new Balance();
                 }
+                return Instancia;
             }
-        }
-        public float BuscarTransferencias()
-        {
-            ListaTransferencias.Clear();
-            for (int i = 0; i < ListaCategoria.Count; i++)
-            {
-                if (ListaCategoria[i] == "Transferencia")
-                {
-                    ListaTransferencias.Add(ListaFlujoDinero[i]);
-                }
-            }
-            Transferencias = 0;
-            foreach (float cantidad in ListaTransferencias)
-            {
-                Transferencias += cantidad;
-            }
-            return Transferencias;
         }
     }
 }

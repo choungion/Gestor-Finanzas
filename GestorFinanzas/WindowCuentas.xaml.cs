@@ -38,12 +38,14 @@ namespace GestorFinanzas
 
         private void ButtonBanco_Click(object sender, RoutedEventArgs e)
         {
-
+            WindowBanco.InstanciaBanco.Show();
+            Hide();
         }
 
         private void ButtonEfectivo_Click(object sender, RoutedEventArgs e)
         {
-
+            WindowEfectivo.InstanciaEfectivo.Show();
+            Hide();
         }
 
         private void ButtonRegrear_Click(object sender, RoutedEventArgs e)
