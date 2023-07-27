@@ -37,7 +37,6 @@ namespace GestorFinanzas
         private void Calendario_DisplayModeChanged(object sender, CalendarModeChangedEventArgs e)
         {
             Calendario.DisplayMode = CalendarMode.Year;
-            Calendario.Visibility = Visibility.Hidden;
         }
         private void Calendario_DisplayDateChanged(object sender, CalendarDateChangedEventArgs e)
         {
@@ -46,11 +45,11 @@ namespace GestorFinanzas
             {
                 FechaSeleccionada = fecha.Value;
                 LabelPeriodo.Content = $"{FechaSeleccionada: MMMM yyyy}";
-                Calendario.Visibility = Visibility.Hidden;
                 Balance.InstanciaBalance.BuscarMes(FechaSeleccionada.Month);
                 LabelGastos.Content = $"₡ {Balance.InstanciaBalance.MostrarGastoMensual()}";
                 LabelIngresos.Content = $"₡ {Balance.InstanciaBalance.MostrarIngresoMensual()}";
                 LabelBalanceMensual.Content = $"₡ {Balance.InstanciaBalance.MostrarBalanceMensual()}";
+                Calendario.Visibility = Visibility.Hidden;
             }
         }
         private void ButtonBalance_Click(object sender, RoutedEventArgs e)
@@ -84,6 +83,18 @@ namespace GestorFinanzas
             WindowTransferir.InstanciaTransferir.Show();
             Hide();
         }
+        private void CerrarVentana(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
+        }
+        private void VentanaCargada(object sender, EventArgs e)
+        {
+            Balance.InstanciaBalance.BuscarMes(FechaSeleccionada.Month);
+            LabelCantidadTotal.Content = $"₡ {Balance.InstanciaBalance.MostrarBalanceTotal()}";
+            LabelGastos.Content = $"₡ {Balance.InstanciaBalance.MostrarGastoMensual()}";
+            LabelIngresos.Content = $"₡ {Balance.InstanciaBalance.MostrarIngresoMensual()}";
+            LabelBalanceMensual.Content = $"₡ {Balance.InstanciaBalance.MostrarBalanceMensual()}";
+        }
         #endregion
         public static MainWindow InstanciaMain
         {
@@ -99,17 +110,5 @@ namespace GestorFinanzas
 
         }
 
-        private void CerrarVentana(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            System.Windows.Application.Current.Shutdown();
-        }
-        private void VentanaCargada(object sender, EventArgs e)
-        {
-            LabelCantidadTotal.Content = $"₡ {Balance.InstanciaBalance.MostrarBalanceTotal()}";
-            LabelGastos.Content = $"₡ {Balance.InstanciaBalance.MostrarGastoMensual()}";
-            LabelIngresos.Content = $"₡ {Balance.InstanciaBalance.MostrarIngresoMensual()}";
-            Balance.InstanciaBalance.BuscarMes(FechaSeleccionada.Month);
-            LabelBalanceMensual.Content = $"₡ {Balance.InstanciaBalance.MostrarBalanceMensual()}";
-        }
     }
 }

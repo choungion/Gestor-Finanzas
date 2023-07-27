@@ -38,7 +38,7 @@
         <Label Content="Balance Mensual" HorizontalAlignment="Center" Margin="0,267,0,0" VerticalAlignment="Top" FontSize="16"/>
         <Label x:Name="LabelBalanceMensual" Content="₡ 0" HorizontalAlignment="Left" Margin="336,303,0,0" VerticalAlignment="Top"/>
         <Button x:Name="ButtonConsultarCuentas" Content="Consultar Cuentas" Click="ButtonConsultar_Click" HorizontalAlignment="Center" Margin="0,104,0,0" VerticalAlignment="Top" Height="41" Width="182" Background="Transparent" FontSize="18" BorderThickness="0,0,0,0" FontFamily="Arial"/>
-        <Calendar Name="Calendario" DisplayMode="Year" SelectionMode="None" 
+        <Calendar Name="Calendario" DisplayMode="Year" SelectionMode="None" Visibility="Hidden"
           DisplayModeChanged="Calendario_DisplayModeChanged" Margin="12,30,593,78" VerticalAlignment="Bottom" 
           DisplayDateChanged="Calendario_DisplayDateChanged"/>
         <Button x:Name="ButtonPeriodo" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Bottom" Click="ButtonPeriodo_Click" Height="62" Width="62" Background="Transparent" FontSize="18" BorderThickness="0,0,0,0">
