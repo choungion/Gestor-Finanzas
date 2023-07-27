@@ -19,6 +19,7 @@ namespace GestorFinanzas
         List<string> ListaCategoria = new List<string>();
         List<string> ListaCuenta = new List<string>();
         List<int> MesesEncontrados = new List<int>();
+        List<int> AnosEncontrados = new List<int>();
         List<int> IndicesEncontrados = new List<int>();
         List<float> ListaBalanceMensual = new List<float>();
         List<float> ListaBalanceEfectivo = new List<float>();
@@ -111,6 +112,19 @@ namespace GestorFinanzas
                     ListaBalanceEfectivo.Add(ListaFlujoDinero[i]);
                     IndicesEncontrados.Add(i);
                     CuentasEncontradas.Add(ListaCuenta[i]);
+                }
+            }
+        }
+        public void BuscarAno(string ano)
+        {
+            AnosEncontrados.Clear();
+            IndicesEncontrados.Clear();
+            for (int i = 0; i < ListaAnual.Count; i++)
+            {
+                if (ListaAnual[i].Equals(ano))
+                {
+                    AnosEncontrados.Add(ListaAnual[i]);
+                    IndicesEncontrados.Add(i);
                 }
             }
         }

@@ -6,28 +6,41 @@
         xmlns:local="clr-namespace:GestorFinanzas"
         xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         mc:Ignorable="d"
-        Title="WindowReportes" Height="450" Width="800"
+        Title="WindowReportes" Height="901" Width="800"
         ResizeMode="NoResize" Closing="CerrarVentana">
     <Grid>
-        <lvc:PieChart Margin="0,0,538,0">
+        <lvc:PieChart x:Name="PieChartGastoCategorias" Margin="0,0,538,442">
             <lvc:PieChart.Series>
-                <lvc:PieSeries Title="Series 1" Values="10" />
-                <lvc:PieSeries Title="Series 2" Values="20" />
-                <!-- Add more PieSeries here with their respective values -->
+                <lvc:PieSeries Title="Comida" Values="0" />
+                <lvc:PieSeries Title="Facturas" Values="0" />
+                <lvc:PieSeries Title="Transporte" Values="0" />
+                <lvc:PieSeries Title="Compras" Values="0" />
+                <lvc:PieSeries Title="Regalos" Values="0" />
+                <lvc:PieSeries Title="Educacion" Values="0" />
+                <lvc:PieSeries Title="Renta" Values="0" />
+                <lvc:PieSeries Title="Viajes" Values="0" />
             </lvc:PieChart.Series>
         </lvc:PieChart>
-        <lvc:PieChart Margin="267,0,263,0">
+        <lvc:PieChart x:Name="PieChartGastoCuentas" Margin="267,0,263,442">
             <lvc:PieChart.Series>
-                <lvc:PieSeries Title="Series 1" Values="10" />
-                <lvc:PieSeries Title="Series 2" Values="20" />
-                <!-- Add more PieSeries here with their respective values -->
+                <lvc:PieSeries Title="Banco" Values="0" />
+                <lvc:PieSeries Title="Efectivo" Values="0" />
             </lvc:PieChart.Series>
         </lvc:PieChart>
-        <lvc:PieChart Margin="542,0,0,0">
+        <lvc:PieChart x:Name="PieChartGastoMes" Margin="542,0,0,442">
             <lvc:PieChart.Series>
-                <lvc:PieSeries Title="Series 1" Values="10" />
-                <lvc:PieSeries Title="Series 2" Values="20" />
-                <!-- Add more PieSeries here with their respective values -->
+                <lvc:PieSeries Title="Enero" Values="0" />
+                <lvc:PieSeries Title="Febrero" Values="0" />
+                <lvc:PieSeries Title="Marzo" Values="0" />
+                <lvc:PieSeries Title="Abril" Values="0" />
+                <lvc:PieSeries Title="Mayo" Values="0" />
+                <lvc:PieSeries Title="Junio" Values="0" />
+                <lvc:PieSeries Title="Julio" Values="0" />
+                <lvc:PieSeries Title="Agosto" Values="0" />
+                <lvc:PieSeries Title="Septiembre" Values="0" />
+                <lvc:PieSeries Title="Octubre" Values="0" />
+                <lvc:PieSeries Title="Noviembre" Values="0" />
+                <lvc:PieSeries Title="Diciembre" Values="0" />
             </lvc:PieChart.Series>
         </lvc:PieChart>
         <Menu Height="46" Name="MenuPrincipal" Width="46" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="2">
@@ -42,5 +55,53 @@
         <Label Content="Gastos por categorias" HorizontalAlignment="Left" Margin="69,56,0,0" VerticalAlignment="Top"/>
         <Label Content="Gastos por cuentas" HorizontalAlignment="Center" Margin="0,56,0,0" VerticalAlignment="Top"/>
         <Label Content="Gastos por mes" HorizontalAlignment="Left" Margin="625,56,0,0" VerticalAlignment="Top"/>
+        <lvc:PieChart x:Name="PieChartIngresoCategorias" Margin="0,442,538,0">
+            <lvc:PieChart.Series>
+                <lvc:PieSeries Title="Salario" Values="0" />
+                <lvc:PieSeries Title="Inversiones" Values="0" />
+                <lvc:PieSeries Title="Renta" Values="0" />
+                <lvc:PieSeries Title="Regalo" Values="0" />
+            </lvc:PieChart.Series>
+        </lvc:PieChart>
+        <lvc:PieChart x:Name="PieChartIngresoCuentas" Margin="267,443,263,-1">
+            <lvc:PieChart.Series>
+                <lvc:PieSeries Title="Banco" Values="0" />
+                <lvc:PieSeries Title="Efectivo" Values="0" />
+            </lvc:PieChart.Series>
+        </lvc:PieChart>
+        <lvc:PieChart x:Name="PieChartIngresoMes" Margin="542,443,0,-1">
+            <lvc:PieChart.Series>
+                <lvc:PieSeries Title="Enero" Values="0" />
+                <lvc:PieSeries Title="Febrero" Values="0" />
+                <lvc:PieSeries Title="Marzo" Values="0" />
+                <lvc:PieSeries Title="Abril" Values="0" />
+                <lvc:PieSeries Title="Mayo" Values="0" />
+                <lvc:PieSeries Title="Junio" Values="0" />
+                <lvc:PieSeries Title="Julio" Values="0" />
+                <lvc:PieSeries Title="Agosto" Values="0" />
+                <lvc:PieSeries Title="Septiembre" Values="0" />
+                <lvc:PieSeries Title="Octubre" Values="0" />
+                <lvc:PieSeries Title="Noviembre" Values="0" />
+                <lvc:PieSeries Title="Diciembre" Values="0" />
+            </lvc:PieChart.Series>
+        </lvc:PieChart>
+        <Label Content="Ingresos por categorias" HorizontalAlignment="Left" Margin="64,490,0,0" VerticalAlignment="Top"/>
+        <Label Content="Ingresos por cuentas" HorizontalAlignment="Center" Margin="0,490,0,0" VerticalAlignment="Top"/>
+        <Label Content="Ingresos por mes" HorizontalAlignment="Left" Margin="609,490,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="ComboBoxAno" HorizontalAlignment="Left" Margin="625,10,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="12" SelectionChanged="ComboBoxAno_SelectionChanged">
+            <ComboBoxItem Content="Enero"/>
+            <ComboBoxItem Content="Febrero"/>
+            <ComboBoxItem Content="Marzo"/>
+            <ComboBoxItem Content="Abril"/>
+            <ComboBoxItem Content="Mayo"/>
+            <ComboBoxItem Content="Junio"/>
+            <ComboBoxItem Content="Julio"/>
+            <ComboBoxItem Content="Agosto"/>
+            <ComboBoxItem Content="Septiembre"/>
+            <ComboBoxItem Content="Octubre"/>
+            <ComboBoxItem Content="Noviembre"/>
+            <ComboBoxItem Content="Diciembre"/>
+            <ComboBoxItem Content="Seleccione el año"/>
+        </ComboBox>
     </Grid>
 </Window>
