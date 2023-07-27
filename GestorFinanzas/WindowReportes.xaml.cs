@@ -45,5 +45,10 @@ namespace GestorFinanzas
         {
             System.Windows.Application.Current.Shutdown();
         }
+
+        private void ComboBoxAno_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Balance.InstanciaBalance.BuscarAno(((ComboBoxItem)ComboBoxAno.SelectedItem).Content.ToString());
+        }
     }
 }
