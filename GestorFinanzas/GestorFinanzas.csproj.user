@@ -7,7 +7,13 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="WindowBanco.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="WindowCuentas.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="WindowEfectivo.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="WindowGastos.xaml.cs">
@@ -36,7 +42,13 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="WindowBanco.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="WindowCuentas.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="WindowEfectivo.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="WindowGastos.xaml">

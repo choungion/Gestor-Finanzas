@@ -116,7 +116,7 @@ namespace GestorFinanzas
             {
                 LabelFecha.Foreground = RojoClaro;
             }
-            if (ComboBoxCategorias.SelectedIndex == 4)
+            if (ComboBoxCategorias.SelectedIndex == 8)
             {
                 ComboBoxCategorias.Foreground = RojoClaro;
             }

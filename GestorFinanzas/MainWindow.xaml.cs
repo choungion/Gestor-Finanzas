@@ -90,10 +90,10 @@ namespace GestorFinanzas
         private void VentanaCargada(object sender, EventArgs e)
         {
             Balance.InstanciaBalance.BuscarMes(FechaSeleccionada.Month);
-            LabelCantidadTotal.Content = $"₡ {Balance.InstanciaBalance.MostrarBalanceTotal()}";
-            LabelGastos.Content = $"₡ {Balance.InstanciaBalance.MostrarGastoMensual()}";
-            LabelIngresos.Content = $"₡ {Balance.InstanciaBalance.MostrarIngresoMensual()}";
-            LabelBalanceMensual.Content = $"₡ {Balance.InstanciaBalance.MostrarBalanceMensual()}";
+            LabelCantidadTotal.Content = "₡ " + Balance.InstanciaBalance.MostrarBalanceTotal().ToString("F0");
+            LabelGastos.Content = "₡ " + Balance.InstanciaBalance.MostrarGastoMensual().ToString("F0");
+            LabelIngresos.Content = "₡ " + Balance.InstanciaBalance.MostrarIngresoMensual().ToString("F0");
+            LabelBalanceMensual.Content = "₡ " + Balance.InstanciaBalance.MostrarBalanceMensual().ToString("F0");
         }
         #endregion
         public static MainWindow InstanciaMain
