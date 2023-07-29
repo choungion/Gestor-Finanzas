@@ -23,28 +23,40 @@ namespace GestorFinanzas
         {
             InitializeComponent();
         }
-        private MainWindow main;
-
-        public WindowCuentas(MainWindow mainWindow)
+        private static WindowCuentas Instancia;
+        public static WindowCuentas InstanciaCuentas
         {
-            InitializeComponent();
-            main = mainWindow;
+            get
+            {
+                if (Instancia == null)
+                {
+                    Instancia = new WindowCuentas();
+                }
+                return Instancia;
+            }
         }
 
         private void ButtonBanco_Click(object sender, RoutedEventArgs e)
         {
-
+            WindowBanco.InstanciaBanco.Show();
+            Hide();
         }
 
         private void ButtonEfectivo_Click(object sender, RoutedEventArgs e)
         {
-
+            WindowEfectivo.InstanciaEfectivo.Show();
+            Hide();
         }
 
         private void ButtonRegrear_Click(object sender, RoutedEventArgs e)
         {
-            main.Show();
+            MainWindow.InstanciaMain.Show();
             Hide();
+        }
+
+        private void CerrarVentana(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
         }
     }
 }

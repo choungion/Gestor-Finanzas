@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Imagenes\bank.png = Imagenes\bank.png
 		Imagenes\Calendar Icon.png = Imagenes\Calendar Icon.png
 		Imagenes\Hamburger_icon.svg.png = Imagenes\Hamburger_icon.svg.png
-		Imagenes\transfer.png = Imagenes\transfer.png
+		Imagenes\tranfer.png = Imagenes\tranfer.png
 		Imagenes\Wallet.png = Imagenes\Wallet.png
 	EndProjectSection
 EndProject

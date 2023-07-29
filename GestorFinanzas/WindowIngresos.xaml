@@ -5,31 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestorFinanzas"
         mc:Ignorable="d"
-        Title="WindowIngresos" Height="450" Width="800">
+        Title="WindowIngresos" Height="450" Width="800" Closing="CerrarVentana">
 
     <Grid>
         <Label Content="Ingrese la cantidad a registrar" HorizontalAlignment="Center" Margin="0,42,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="18"/>
-        <TextBox x:Name="TxtBoxCantidad" HorizontalAlignment="Center" Margin="0,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="202" Height="29"/>
+        <TextBox x:Name="TxtBoxCantidad" HorizontalAlignment="Center" Margin="0,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="202" Height="29" TextChanged="TxtBoxCantidad_TextChanged"/>
         <Button x:Name="ButtonGuardar" Content="Guardar" HorizontalAlignment="Left" Margin="461,377,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="16" Click="ButtonGuardar_Click"/>
         <Button x:Name="ButtonCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="276,377,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="16" Click="ButtonCancelar_Click"/>
-        <ComboBox x:Name="ComboBoxCuentas" HorizontalAlignment="Left" Margin="372,139,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBoxCuentas_SelectionChanged">
+        <ComboBox x:Name="ComboBoxCuentas" HorizontalAlignment="Left" Margin="372,139,0,0" VerticalAlignment="Top" Width="152" SelectionChanged="ComboBoxCuentas_SelectionChanged" SelectedIndex="2">
             <ComboBoxItem Content="Efectivo" />
             <ComboBoxItem Content="Banco" />
+            <ComboBoxItem Content="Seleccione la cuenta"/>
         </ComboBox>
         <Image x:Name="ImageIcono" HorizontalAlignment="Left" Height="65" Margin="299,118,0,0" VerticalAlignment="Top" Width="65"/>
         <Calendar Name="Calendario" SelectionMode="SingleDate" 
-          Margin="302,146,302,0" VerticalAlignment="Top" 
+          Margin="88,146,516,0" VerticalAlignment="Top" 
           SelectedDatesChanged="Calendario_SelectedDatesChanged" Visibility="Hidden"/>
         <Button x:Name="ButtonFechaingreso" HorizontalAlignment="Center" Margin="-180,20,0,0" VerticalAlignment="Center" Click="ButtonFechaIngreso_Click" Height="42" Width="42" Background="Transparent" FontSize="18" BorderThickness="0,0,0,0">
             <Image Source="/Calendar Icon.png" Height="42" Width="41" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         </Button>
-        <Label Content="Seleccione la fecha del ingreso" HorizontalAlignment="Left" Margin="336,217,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LabelFecha" Content="Seleccione la fecha del ingreso" HorizontalAlignment="Left" Margin="336,217,0,0" VerticalAlignment="Top"/>
         <Label Content="Categoria" HorizontalAlignment="Left" Margin="289,296,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="ComboBoxCategorias" HorizontalAlignment="Left" Margin="372,300,0,0" VerticalAlignment="Top" Width="120" >
+        <ComboBox x:Name="ComboBoxCategorias" HorizontalAlignment="Left" Margin="372,300,0,0" VerticalAlignment="Top" Width="152" SelectedIndex="4" >
             <ComboBoxItem Content="Salario" />
             <ComboBoxItem Content="Inversiones" />
             <ComboBoxItem Content="Renta" />
             <ComboBoxItem Content="Regalo" />
+            <ComboBoxItem Content="Seleccione la categoria"/>
         </ComboBox>
     </Grid>
 </Window>

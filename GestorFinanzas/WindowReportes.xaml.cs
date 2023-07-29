@@ -23,17 +23,32 @@ namespace GestorFinanzas
         {
             InitializeComponent();
         }
-        private MainWindow main;
-
-        public WindowReportes(MainWindow mainWindow)
+        private static WindowReportes Instancia;
+        public static WindowReportes InstanciaReportes
         {
-            InitializeComponent();
-            main = mainWindow;
+            get
+            {
+                if (Instancia == null)
+                {
+                    Instancia = new WindowReportes();
+                }
+                return Instancia;
+            }
         }
         private void MenuItemTransacciones_Click(object sender, RoutedEventArgs e)
         {
+            MainWindow.InstanciaMain.Show();
             Hide();
-            main.Show();
+        }
+
+        private void CerrarVentana(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
+        }
+
+        private void ComboBoxAno_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Balance.InstanciaBalance.BuscarAno(((ComboBoxItem)ComboBoxAno.SelectedItem).Content.ToString());
         }
     }
 }
