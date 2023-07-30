@@ -20,7 +20,7 @@ namespace GestorFinanzas
         public WindowInicioSesion()
         {
             InitializeComponent();
-            DATOS_PERSONA ADMINISTRADOR = new DATOS_PERSONA("ADMIN", "");
+            DATOS_PERSONA ADMINISTRADOR = new DATOS_PERSONA("administrador","0000","0000","","ADMIN");
             REGISTROS_STATICOS.ARREGLO_DE_USUARIOS[0] = ADMINISTRADOR;
         }
 
@@ -31,11 +31,15 @@ namespace GestorFinanzas
             {
                 if (REGISTROS_STATICOS.ARREGLO_DE_USUARIOS[i] != null)
                 {
-                    if (this.txt_USERNAME.Text == REGISTROS_STATICOS.ARREGLO_DE_USUARIOS[i].User1 && this.txt_PASSWORD.Password == REGISTROS_STATICOS.ARREGLO_DE_USUARIOS[i].Password)
+                    if (this.txt_USERNAME.Text == REGISTROS_STATICOS.ARREGLO_DE_USUARIOS[i].get_USUARIO() && this.txt_PASSWORD.Password == REGISTROS_STATICOS.ARREGLO_DE_USUARIOS[i].get_CONTRASENA())
                     {
+                       
                         MessageBox.Show("the password has been passed ");
-                        MainWindow.InstanciaMain.Show();
-                        Hide();
+                        MainWindow.indicePERSONA_APP = i;
+                       MainWindow mainWindow = new MainWindow();
+                        mainWindow.Show();
+                        
+                        //Hide();
                         break;
                     }
                     else if (this.txt_USERNAME.Text == "admin" && this.txt_PASSWORD.Password == "admin")

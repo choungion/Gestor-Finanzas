@@ -22,13 +22,20 @@ namespace GestorFinanzas
     /// </summary>
     public partial class MainWindow : Window
     {
-        private static MainWindow Instancia;
+        public static MainWindow Instancia;
         private DateTime? fecha = DateTime.Now;
         DateTime FechaSeleccionada = DateTime.Now;
+
+        public static int indicePERSONA_APP;
+
         public MainWindow()
         {
             InitializeComponent();
+             LBL_principal.Content = REGISTROS_STATICOS.ARREGLO_DE_USUARIOS[indicePERSONA_APP].get_USUARIO();
         }
+
+       
+
         #region Eventos de controlers
         private void ButtonPeriodo_Click(object sender, RoutedEventArgs e)
         {
@@ -83,10 +90,7 @@ namespace GestorFinanzas
             WindowTransferir.InstanciaTransferir.Show();
             Hide();
         }
-        private void CerrarVentana(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            System.Windows.Application.Current.Shutdown();
-        }
+       
         private void VentanaCargada(object sender, EventArgs e)
         {
             Balance.InstanciaBalance.BuscarMes(FechaSeleccionada.Month);
@@ -96,6 +100,7 @@ namespace GestorFinanzas
             LabelBalanceMensual.Content = "₡ " + Balance.InstanciaBalance.MostrarBalanceMensual().ToString("F0");
         }
         #endregion
+
         public static MainWindow InstanciaMain
         {
             get
@@ -103,6 +108,8 @@ namespace GestorFinanzas
                 if (Instancia == null)
                 {
                     Instancia = new MainWindow();
+                   
+
                 }
 
                 return Instancia;
@@ -110,5 +117,11 @@ namespace GestorFinanzas
 
         }
 
+        private void BTN_SALIR(object sender, RoutedEventArgs e)
+        {
+           this.Close();
+        }
     }
+    
+
 }

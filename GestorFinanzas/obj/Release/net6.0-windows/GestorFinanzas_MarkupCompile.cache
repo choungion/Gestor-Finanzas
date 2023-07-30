@@ -10,11 +10,11 @@ none
 false
 TRACE;RELEASE;NET;NET6_0;NETCOREAPP
 C:\Users\josea\Documents\GitHub\Gestor-Finanzas\GestorFinanzas\App.xaml
-9-2115952547
+11-2146646771
 
-14129244590
-196-1041040108
-MainWindow.xaml;WindowCuentas.xaml;WindowGastos.xaml;WindowHistorial.xaml;WindowIngresos.xaml;WindowInicioSesion.xaml;WindowRegistroUsuario.xaml;WindowReportes.xaml;WindowTransferir.xaml;
+17611165928
+1972114220503
+MainWindow.xaml;WindowBanco.xaml;WindowCuentas.xaml;WindowEfectivo.xaml;WindowGastos.xaml;WindowHistorial.xaml;WindowIngresos.xaml;WindowInicioSesion.xaml;WindowRegistroUsuario.xaml;WindowReportes.xaml;WindowTransferir.xaml;
 
 True
 

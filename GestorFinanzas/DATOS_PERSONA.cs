@@ -10,34 +10,28 @@ namespace GestorFinanzas
     {
         #region ATRIBUTOS GENERALES DE LA CLASE -----------------------------------------------------
         //ATRIBUTOS
-        private static double iD = 0;
-        private string NAME;
+       
+        private string NOMBRE;
         private string NUM_TELEFONO;
         private string CEDULA;
-        private string password;
-        private string User;
+        private string CONTRASENA;
+        private string USUARIO;
 
         #endregion
 
         #region CONSTRUCTORES -----------------------------------------------------------------------
 
         //ESTE CONSTRUCTOR ES PARA INICIAR UN USUARIO ADMIN DE PRUEBA A LA APP
-        public DATOS_PERSONA(string nombre_USUARIO, string Password)
-        {
-            iD++;
-            this.User = nombre_USUARIO;
-            this.password = Password;
-
-        }
+       
 
         public DATOS_PERSONA(string nAME, string nUM_TELEFONO, string cEDULA, string password, string user)
         {
-            this.NAME = nAME;
+            this.NOMBRE = nAME;
             this.NUM_TELEFONO = nUM_TELEFONO;
             this.CEDULA = cEDULA;
-            this.password = password;
-            this.User = user;
-            iD++;
+            this.CONTRASENA = password;
+            this.USUARIO = user;
+            
         }
 
 
@@ -47,11 +41,53 @@ namespace GestorFinanzas
 
         #region METODOS PARA RETORNAR O IMPLEMENTAR DATOS--------------------------------------------
         //GETS Y SETS DE LOS ATRIBUTOS
-        public string NAME1 { get => NAME; set => NAME = value; }
-        public string NUM_TELEFONO1 { get => NUM_TELEFONO; set => NUM_TELEFONO = value; }
-        public string CEDULA1 { get => CEDULA; set => CEDULA = value; }
-        public string Password { get => password; set => password = value; }
-        public string User1 { get => User; set => User = value; }
+
+        public void set_NOMBRE(string nombre) 
+        { 
+            this.NOMBRE=nombre;
+        }
+        public string get_NOMBRE()
+        {
+            return this.NOMBRE;
+        }
+
+
+        public void set_NUMERO(string numero_TEL) 
+        {
+            this.NUM_TELEFONO=numero_TEL;
+        }
+        public string get_NUMERO()
+        {
+            return (this.NUM_TELEFONO);
+        }
+
+
+        public void set_CEDULA(string cedula)
+        {
+            this.CEDULA = cedula;
+        }
+        public string get_CEDULA() 
+        {
+            return this.CEDULA;
+        }
+
+        public void set_CONTRASENA(string contrasena) 
+        {
+            this.CONTRASENA = contrasena;
+        }
+        public string get_CONTRASENA() {
+
+          return (this.CONTRASENA);
+        }
+
+        public void set_USUARIO(string usuario) 
+        {
+            this.USUARIO=usuario;
+        }
+        public string get_USUARIO()
+        {
+            return(this.USUARIO);
+        }
 
         #endregion
 
