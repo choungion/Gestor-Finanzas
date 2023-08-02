@@ -18,7 +18,7 @@
             </MenuItem>
         </Menu>
         <Menu Height="46" Name="MenuAgregar" Width="46" Margin="10,10,0,0" HorizontalAlignment="Right" VerticalAlignment="Bottom" BorderThickness="2">
-            <MenuItem Header="" Width="45" Height="45">
+            <MenuItem Header="" Width="45" Height="45" >
                 <MenuItem.Icon>
                     <Image Source="/Add Icon.png" Width="35" Margin="0,-15,-19,-14"/>
                 </MenuItem.Icon>

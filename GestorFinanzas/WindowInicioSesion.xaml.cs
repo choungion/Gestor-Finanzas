@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace GestorFinanzas
 {
@@ -36,18 +24,17 @@ namespace GestorFinanzas
                        
                         MessageBox.Show("the password has been passed ");
                         MainWindow.indicePERSONA_APP = i;
-                       MainWindow mainWindow = new MainWindow();
+
+
+
+                        //por cada inicio de sesion se crea una nueva instancia 
+                        MainWindow mainWindow = new MainWindow();
                         mainWindow.Show();
-                        
-                        //Hide();
-                        break;
-                    }
-                    else if (this.txt_USERNAME.Text == "admin" && this.txt_PASSWORD.Password == "admin")
-                    {
-                        MainWindow.InstanciaMain.Show();
+
                         Hide();
                         break;
                     }
+                    
                 }
                 else {
                     MessageBox.Show("NO HAS INICIADO SESSION");
