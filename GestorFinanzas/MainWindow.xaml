@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:GestorFinanzas"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
-        ResizeMode="NoResize" Closing="CerrarVentana" Activated="VentanaCargada">
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None"    >
     <Grid>
         <Menu Height="46" Name="MenuPrincipal" Width="46" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="2">
             <MenuItem Header="" Width="45" Height="45">
@@ -18,7 +18,7 @@
             </MenuItem>
         </Menu>
         <Menu Height="46" Name="MenuAgregar" Width="46" Margin="10,10,0,0" HorizontalAlignment="Right" VerticalAlignment="Bottom" BorderThickness="2">
-            <MenuItem Header="" Width="45" Height="45">
+            <MenuItem Header="" Width="45" Height="45" >
                 <MenuItem.Icon>
                     <Image Source="/Add Icon.png" Width="35" Margin="0,-15,-19,-14"/>
                 </MenuItem.Icon>
@@ -44,6 +44,10 @@
         <Button x:Name="ButtonPeriodo" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Bottom" Click="ButtonPeriodo_Click" Height="62" Width="62" Background="Transparent" FontSize="18" BorderThickness="0,0,0,0">
             <Image Source="/Calendar Icon.png" Height="62" Width="62" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         </Button>
+        <Label Margin="527,33,10,320" Content="BIENVENIDO USUARIO:" x:Name="LBL_principal"/>
+
+        <Button Click="BTN_SALIR" Content="SALIR"  Margin="205,400,195,0"/>
+
     </Grid>
 
 </Window>

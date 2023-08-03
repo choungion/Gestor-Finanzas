@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace GestorFinanzas
 {
@@ -20,7 +8,7 @@ namespace GestorFinanzas
         public WindowInicioSesion()
         {
             InitializeComponent();
-            DATOS_PERSONA ADMINISTRADOR = new DATOS_PERSONA("ADMIN", "");
+            DATOS_PERSONA ADMINISTRADOR = new DATOS_PERSONA("administrador","0000","0000","","ADMIN");
             REGISTROS_STATICOS.ARREGLO_DE_USUARIOS[0] = ADMINISTRADOR;
         }
 
@@ -31,19 +19,26 @@ namespace GestorFinanzas
             {
                 if (REGISTROS_STATICOS.ARREGLO_DE_USUARIOS[i] != null)
                 {
-                    if (this.txt_USERNAME.Text == REGISTROS_STATICOS.ARREGLO_DE_USUARIOS[i].User1 && this.txt_PASSWORD.Password == REGISTROS_STATICOS.ARREGLO_DE_USUARIOS[i].Password)
+                    if (this.txt_USERNAME.Text == REGISTROS_STATICOS.ARREGLO_DE_USUARIOS[i].get_USUARIO() && this.txt_PASSWORD.Password == REGISTROS_STATICOS.ARREGLO_DE_USUARIOS[i].get_CONTRASENA())
                     {
+                       
                         MessageBox.Show("the password has been passed ");
-                        MainWindow.InstanciaMain.Show();
+                        MainWindow.indicePERSONA_APP = i;
+
+
+
+                        //por cada inicio de sesion se crea una nueva instancia 
+                        MainWindow mainWindow = new MainWindow();
+                        mainWindow.Show();
+
                         Hide();
                         break;
                     }
-                    else if (this.txt_USERNAME.Text == "admin" && this.txt_PASSWORD.Password == "admin")
-                    {
-                        MainWindow.InstanciaMain.Show();
-                        Hide();
-                        break;
-                    }
+                    
+                }
+                else {
+                    MessageBox.Show("NO HAS INICIADO SESSION");
+                    break;
                 }
             }
 
