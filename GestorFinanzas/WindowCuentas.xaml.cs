@@ -37,34 +37,26 @@ namespace GestorFinanzas
         }
 
         private void ButtonBanco_Click(object sender, RoutedEventArgs e)
-        { 
-            WindowBanco windowBanco = new WindowBanco();
-            windowBanco.Show();
-            //Hide();
-            Close();
+        {
+            WindowBanco.InstanciaBanco.Show();
+            Hide();
         }
 
         private void ButtonEfectivo_Click(object sender, RoutedEventArgs e)
-        {           
-            WindowEfectivo windowEfectivo = new WindowEfectivo();
-            windowEfectivo.Show();
-
-            //Hide();
-            Close();
+        {
+            WindowEfectivo.InstanciaEfectivo.Show();
+            Hide();
         }
 
-
-
-        // botones de regresar y cerrar ventana
         private void ButtonRegrear_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
-            //MainWindow.InstanciaMain.Show();
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-           
+            MainWindow.InstanciaMain.Show();
+            Hide();
         }
 
-        
+        private void CerrarVentana(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
+        }
     }
 }

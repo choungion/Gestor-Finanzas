@@ -45,16 +45,18 @@ namespace GestorFinanzas
             ListBoxFecha.ItemsSource = Balance.InstanciaBalance.ObtenerFecha("Efectivo");
         }
 
-       
+        private void CerrarVentana(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
+        }
 
         private void ButtonRegresar_Click(object sender, RoutedEventArgs e)
         {
             ListBoxFecha.ItemsSource = new List<string>();
             ListBoxCantidades.ItemsSource = new List<string>();
             ListBoxCategoria.ItemsSource = new List<string>();
-            WindowCuentas cuentas = new WindowCuentas();    
-            cuentas.Show();
-            Close();
+            WindowCuentas.InstanciaCuentas.Show();
+            Hide();
         }
     }
 }

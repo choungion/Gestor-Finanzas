@@ -1,7 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
 
 namespace GestorFinanzas
 {
@@ -36,17 +45,18 @@ namespace GestorFinanzas
             ListBoxFecha.ItemsSource = Balance.InstanciaBalance.ObtenerFecha("Banco");
         }
 
-       
+        private void CerrarVentana(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
+        }
 
         private void ButtonRegresar_Click(object sender, RoutedEventArgs e)
         {
             ListBoxFecha.ItemsSource = new List<string>();
             ListBoxCantidades.ItemsSource = new List<string>();
             ListBoxCategoria.ItemsSource = new List<string>();
-            WindowCuentas cuentas = new WindowCuentas();
-            cuentas.Show();
-            this.Close();
-           
+            WindowCuentas.InstanciaCuentas.Show();
+            Hide();
         }
     }
 }

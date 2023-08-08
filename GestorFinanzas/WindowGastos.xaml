@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestorFinanzas"
         mc:Ignorable="d"
-        Title="WindowGastos" Height="450" Width="800" >
+        Title="WindowGastos" Height="450" Width="800" Closing="CerrarVentana">
     <Grid>
         <Label Content="Ingrese la cantidad a registrar" HorizontalAlignment="Center" Margin="0,42,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="18"/>
         <TextBox x:Name="TxtBoxCantidad" HorizontalAlignment="Center" Margin="0,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="202" Height="29" TextChanged="TxtBoxCantidad_TextChanged"/>

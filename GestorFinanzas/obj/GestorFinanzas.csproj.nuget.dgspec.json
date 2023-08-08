@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\josea\\Documents\\GitHub\\Gestor-Finanzas\\GestorFinanzas\\GestorFinanzas.csproj": {}
+    "C:\\Users\\Choungion\\Documents\\Projects\\C#\\GestorFinanzas\\Gestor-Finanzas\\GestorFinanzas\\GestorFinanzas.csproj": {}
   },
   "projects": {
-    "C:\\Users\\josea\\Documents\\GitHub\\Gestor-Finanzas\\GestorFinanzas\\GestorFinanzas.csproj": {
+    "C:\\Users\\Choungion\\Documents\\Projects\\C#\\GestorFinanzas\\Gestor-Finanzas\\GestorFinanzas\\GestorFinanzas.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\josea\\Documents\\GitHub\\Gestor-Finanzas\\GestorFinanzas\\GestorFinanzas.csproj",
+        "projectUniqueName": "C:\\Users\\Choungion\\Documents\\Projects\\C#\\GestorFinanzas\\Gestor-Finanzas\\GestorFinanzas\\GestorFinanzas.csproj",
         "projectName": "GestorFinanzas",
-        "projectPath": "C:\\Users\\josea\\Documents\\GitHub\\Gestor-Finanzas\\GestorFinanzas\\GestorFinanzas.csproj",
-        "packagesPath": "C:\\Users\\josea\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\josea\\Documents\\GitHub\\Gestor-Finanzas\\GestorFinanzas\\obj\\",
+        "projectPath": "C:\\Users\\Choungion\\Documents\\Projects\\C#\\GestorFinanzas\\Gestor-Finanzas\\GestorFinanzas\\GestorFinanzas.csproj",
+        "packagesPath": "C:\\Users\\Choungion\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Choungion\\Documents\\Projects\\C#\\GestorFinanzas\\Gestor-Finanzas\\GestorFinanzas\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\josea\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Choungion\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -40,10 +45,6 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "dependencies": {
-            "LiveCharts": {
-              "target": "Package",
-              "version": "[0.9.7, )"
-            },
             "LiveCharts.Wpf": {
               "target": "Package",
               "version": "[0.9.7, )"
@@ -72,7 +73,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

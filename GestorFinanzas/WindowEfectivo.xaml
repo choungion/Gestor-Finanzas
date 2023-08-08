@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestorFinanzas"
         mc:Ignorable="d"
-        Title="WindowEfectivo" Height="450" Width="800" Activated="VentanaCargada" >
+        Title="WindowEfectivo" Height="450" Width="800" Activated="VentanaCargada" Closing="CerrarVentana">
     <Grid>
         <ListBox x:Name="ListBoxCategoria" Margin="0,26,676,30" BorderThickness="0,0,0,0"/>
         <ListBox x:Name="ListBoxCantidades"  Margin="249,26,0,30" BorderThickness="0,0,0,0" HorizontalAlignment="Left" Width="541"/>

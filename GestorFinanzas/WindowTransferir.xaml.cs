@@ -127,16 +127,18 @@ namespace GestorFinanzas
 
         private void ButtonCancelar_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            Close();
+            MainWindow.InstanciaMain.Show();
+            Hide();
         }
         private void ButtonFechaIngreso_Click(object sender, RoutedEventArgs e)
         {
             Calendario.Visibility = Visibility.Visible;
         }
 
-       
+        private void CerrarVentana(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
+        }
         private void TxtBoxCantidad_TextChanged(object sender, TextChangedEventArgs e)
         {
             string ValoresAceptados = "^[0-9]*\\.?[0-9]*$";
@@ -171,9 +173,8 @@ namespace GestorFinanzas
             TxtBoxCantidad.Text = string.Empty;
             Calendario.SelectedDate = null;
             FechaSeleccionada = DateTime.MinValue;
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            Close();
+            MainWindow.InstanciaMain.Show();
+            Hide();
         }
     }
 }
