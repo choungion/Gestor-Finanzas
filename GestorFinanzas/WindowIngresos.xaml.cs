@@ -80,10 +80,8 @@ namespace GestorFinanzas
             ComboBoxCuentas.Foreground = Brushes.Black;
             LabelFecha.Foreground = Brushes.Black;
             ComboBoxCategorias.Foreground = Brushes.Black;
-
-            Close();
-            MainWindow main = new MainWindow();
-            main.Show();
+            Hide();
+            MainWindow.InstanciaMain.Show();
         }
 
         private void ButtonGuardar_Click(object sender, RoutedEventArgs e)
@@ -142,9 +140,8 @@ namespace GestorFinanzas
                 TxtBoxCantidad.Text = string.Empty;
                 Calendario.SelectedDate = null;
                 FechaSeleccionada = DateTime.MinValue;
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.Show();
-                Close();
+                MainWindow.InstanciaMain.Show();
+                Hide();
             }
             else
             {
@@ -152,7 +149,10 @@ namespace GestorFinanzas
             }
         }
 
-       
+        private void CerrarVentana(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
+        }
         private void TxtBoxCantidad_TextChanged(object sender, TextChangedEventArgs e)
         {
             string ValoresAceptados = "^[0-9]*\\.?[0-9]*$";

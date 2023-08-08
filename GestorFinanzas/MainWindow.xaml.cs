@@ -1,8 +1,19 @@
 ﻿using System;
-
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Net.NetworkInformation;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 
 namespace GestorFinanzas
 {
@@ -11,21 +22,13 @@ namespace GestorFinanzas
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static MainWindow Instancia;
+        private static MainWindow Instancia;
         private DateTime? fecha = DateTime.Now;
         DateTime FechaSeleccionada = DateTime.Now;
-
-        public static int indicePERSONA_APP;
-
         public MainWindow()
         {
             InitializeComponent();
-             LBL_principal.Content = "BIENVENIDO USUARIO>>> "+
-                REGISTROS_STATICOS.ARREGLO_DE_USUARIOS[indicePERSONA_APP].get_USUARIO();
         }
-
-       
-
         #region Eventos de controlers
         private void ButtonPeriodo_Click(object sender, RoutedEventArgs e)
         {
@@ -49,57 +52,41 @@ namespace GestorFinanzas
                 Calendario.Visibility = Visibility.Hidden;
             }
         }
-
         private void ButtonBalance_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
-            WindowHistorial windowHistorial = new WindowHistorial();
-            windowHistorial.Show();
-           /* Hide()*/;
-            
+            WindowHistorial.InstanciaHistorial.Show();
+            Hide();
         }
 
         private void ButtonConsultar_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
-            WindowCuentas consulta = new WindowCuentas();
-            consulta.Show();   
-            //Hide();
-            
+            WindowCuentas.InstanciaCuentas.Show();
+            Hide();
         }
         private void MenuItemReportes_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
-            WindowReportes windowReportes = new WindowReportes();
-            windowReportes.Show();
-            //Hide();
-            
+            WindowReportes.InstanciaReportes.Show();
+            Hide();
         }
         private void MenuItemIngresos_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
-            WindowIngresos windowIngresos = new WindowIngresos();
-            windowIngresos.Show();
-            //Hide();
-            
+            WindowIngresos.InstanciaIngresos.Show();
+            Hide();
         }
         private void MenuItemGastos_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
-            WindowGastos windowGastos = new WindowGastos();
-            windowGastos.Show();
-            //Hide();
-            
+            WindowGastos.InstanciaGastos.Show();
+            Hide();
         }
         private void MenuItemTransferir_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
-            WindowTransferir windowTransferir = new WindowTransferir();
-            windowTransferir.Show();
-            //Hide();
-           
+            WindowTransferir.InstanciaTransferir.Show();
+            Hide();
         }
-
+        private void CerrarVentana(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
+        }
         private void VentanaCargada(object sender, EventArgs e)
         {
             Balance.InstanciaBalance.BuscarMes(FechaSeleccionada.Month);
@@ -109,7 +96,6 @@ namespace GestorFinanzas
             LabelBalanceMensual.Content = "₡ " + Balance.InstanciaBalance.MostrarBalanceMensual().ToString("F0");
         }
         #endregion
-
         public static MainWindow InstanciaMain
         {
             get
@@ -117,8 +103,6 @@ namespace GestorFinanzas
                 if (Instancia == null)
                 {
                     Instancia = new MainWindow();
-                   
-
                 }
 
                 return Instancia;
@@ -126,15 +110,5 @@ namespace GestorFinanzas
 
         }
 
-        private void BTN_SALIR(object sender, RoutedEventArgs e)
-        {
-           this.Close();
-           WindowInicioSesion ventana_inicio = new WindowInicioSesion();
-            ventana_inicio.Show();
-        }
-
-        
     }
-    
-
 }
