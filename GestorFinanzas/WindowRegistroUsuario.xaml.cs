@@ -44,5 +44,31 @@ namespace GestorFinanzas
         {
             System.Windows.Application.Current.Shutdown();
         }
+
+        private void TXTBOX_SOLONUMEROS(object sender, TextChangedEventArgs e)
+        {
+            if (!int.TryParse(this.numero_telefono.Text, out _))
+            {
+                this.numero_telefono.Text = string.Empty;
+                MessageBox.Show("Por favor, ingrese solo números.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                this.numero_telefono.Focus(); // Regresar el enfoque al TextBox para corregir la entrada
+                
+            }
+        }
+
+        private void TXTBOX_CEDULA(object sender, TextChangedEventArgs e)
+        {
+            if (!int.TryParse(this.cedula_persona.Text, out _))
+            {
+                this.cedula_persona.Text = string.Empty;
+                MessageBox.Show("Por favor, ingrese solo números.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                this.cedula_persona.Focus();
+            }
+            else
+            {
+                this.cedula_persona.Focus();
+
+            }
+        }
     }
 }

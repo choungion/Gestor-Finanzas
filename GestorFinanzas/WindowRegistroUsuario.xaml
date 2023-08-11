@@ -12,10 +12,10 @@
         <TextBox Name="nombre_persona" />
         <Label Content="NUMERO DE TELEFONO"/>
         <TextBlock/>
-        <TextBox Name="numero_telefono"  />
+        <TextBox Name="numero_telefono" TextChanged="TXTBOX_SOLONUMEROS" />
         <Label Content="CEDULA"/>
         <TextBlock/>
-        <TextBox Name="cedula_persona"  />
+        <TextBox Name="cedula_persona" TextChanged="TXTBOX_CEDULA" />
         <Label Content="DIGITE EL NUEVO NOMBRE DE USUARIO"/>
         <TextBlock/>
         <TextBox Name="nuevo_nombre_usuario"  />
