@@ -8,7 +8,8 @@ namespace GestorFinanzas
         public WindowInicioSesion()
         {
             InitializeComponent();
-            DATOS_PERSONA ADMINISTRADOR = new DATOS_PERSONA("administrador","0000","0000","","ADMIN");
+            Balance balanceADMIN = new Balance();
+            DATOS_PERSONA ADMINISTRADOR = new DATOS_PERSONA("administrador","0000","0000","","ADMIN",balanceADMIN);
             REGISTROS_STATICOS.ARREGLO_DE_USUARIOS[0] = ADMINISTRADOR;
         }
 
@@ -25,12 +26,11 @@ namespace GestorFinanzas
                         MessageBox.Show("the password has been passed ");
                         MainWindow.indicePERSONA_APP = i;
 
-
+                        
 
                         //por cada inicio de sesion se crea una nueva instancia 
                         MainWindow mainWindow = new MainWindow();
                         mainWindow.Show();
-
                         Hide();
                         break;
                     }

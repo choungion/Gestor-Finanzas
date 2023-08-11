@@ -12,22 +12,40 @@ namespace GestorFinanzas
         private float BalanceTotal = 0, BalanceCuentaBanco, BalanceCuentaEfectivo, IngresoMensual, GastoMensual, BalanceMensual, Transferencias;
         private static Balance Instancia;
 
+        
+
         List<float> ListaFlujoDinero = new List<float>();
+
         List<int> ListaDias = new List<int>();
+
         List<int> ListaMeses = new List<int>();
+
         List<int> ListaAnual = new List<int>();
+
         List<string> ListaCategoria = new List<string>();
+
         List<string> ListaCuenta = new List<string>();
+
         List<int> MesesEncontrados = new List<int>();
+
         List<int> AnosEncontrados = new List<int>();
+
         List<int> IndicesEncontrados = new List<int>();
+
         List<float> ListaBalanceMensual = new List<float>();
+
         List<float> ListaBalanceEfectivo = new List<float>();
+
         List<float> ListaBalanceBanco = new List<float>();
+
         List<string> CuentasEncontradas = new List<string>();
+
         List<float> ListaTransferencias = new List<float>();
+
         List<string> CategoriasEncontradas = new List<string>();
+
         List<string> FechaFlujo = new List<string>();
+
         #region Metodos para agregar elementos a las listas
         public void IngresarListaFlujoDinero(float Flujo)
         {
@@ -182,6 +200,7 @@ namespace GestorFinanzas
             }
             return BalanceMensual;
         }
+
         public float MostrarBalanceEfectivo()
         {
             BalanceCuentaEfectivo = 0;
@@ -191,6 +210,7 @@ namespace GestorFinanzas
             }
             return BalanceCuentaEfectivo;
         }
+
         public float MostrarBalanceBanco()
         {
             BalanceCuentaBanco = 0;
@@ -200,6 +220,20 @@ namespace GestorFinanzas
             }
             return BalanceCuentaBanco;
         }
+
+
+        public int numero1 = 0;
+
+        public int retornarnum() {
+            return numero1;
+        }
+
+        public void setnum(int numero) {
+            this.numero1 = numero;
+        }
+       
+
+
         #endregion
         #region Metodos para obtener las listas completas
         public List<string> ObtenerCategorias()

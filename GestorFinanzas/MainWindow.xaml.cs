@@ -16,12 +16,19 @@ namespace GestorFinanzas
         DateTime FechaSeleccionada = DateTime.Now;
 
         public static int indicePERSONA_APP;
+        public DATOS_PERSONA persona;
+
 
         public MainWindow()
         {
             InitializeComponent();
-             LBL_principal.Content = "BIENVENIDO USUARIO>>> "+
-                REGISTROS_STATICOS.ARREGLO_DE_USUARIOS[indicePERSONA_APP].get_USUARIO();
+            persona = REGISTROS_STATICOS.ARREGLO_DE_USUARIOS[indicePERSONA_APP];
+
+            LBL_principal.Content = "BIENVENIDO USUARIO>>> "+
+             persona.get_USUARIO();
+
+           
+
         }
 
        
@@ -55,7 +62,7 @@ namespace GestorFinanzas
             this.Close();
             WindowHistorial windowHistorial = new WindowHistorial();
             windowHistorial.Show();
-           /* Hide()*/;
+           
             
         }
 
@@ -67,6 +74,9 @@ namespace GestorFinanzas
             //Hide();
             
         }
+
+
+
         private void MenuItemReportes_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -75,14 +85,23 @@ namespace GestorFinanzas
             //Hide();
             
         }
+
+
+
         private void MenuItemIngresos_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-            WindowIngresos windowIngresos = new WindowIngresos();
-            windowIngresos.Show();
+            WindowIngresos window_ingresos = new WindowIngresos();
+            WindowIngresos.indicePERSONA_APP = indicePERSONA_APP;
+            window_ingresos.Show();
+
+            
             //Hide();
             
         }
+
+
+
         private void MenuItemGastos_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -91,6 +110,9 @@ namespace GestorFinanzas
             //Hide();
             
         }
+
+
+
         private void MenuItemTransferir_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -100,14 +122,29 @@ namespace GestorFinanzas
            
         }
 
+
+
         private void VentanaCargada(object sender, EventArgs e)
         {
+
+            // persona.transacciones_usuario.BuscarMes(FechaSeleccionada.Month);
+            // LabelCantidadTotal.Content = "₡ " + persona.transacciones_usuario.MostrarBalanceTotal().ToString(); ya        
+            // LabelGastos.Content = "₡ " + persona.transacciones_usuario.MostrarGastoMensual().ToString();   ya           
+            //LabelIngresos.Content = "₡ " + persona.transacciones_usuario.MostrarIngresoMensual().ToString("F0");  ya   
+            // LabelBalanceMensual.Content = "₡ " + persona.transacciones_usuario.MostrarBalanceMensual().ToString("F0");
+
             Balance.InstanciaBalance.BuscarMes(FechaSeleccionada.Month);
-            LabelCantidadTotal.Content = "₡ " + Balance.InstanciaBalance.MostrarBalanceTotal().ToString("F0");
-            LabelGastos.Content = "₡ " + Balance.InstanciaBalance.MostrarGastoMensual().ToString("F0");
+
             LabelIngresos.Content = "₡ " + Balance.InstanciaBalance.MostrarIngresoMensual().ToString("F0");
+            LabelGastos.Content = "₡ "+ Balance.InstanciaBalance.MostrarGastoMensual().ToString("F0");
+
+            LabelCantidadTotal.Content = "₡ " + Balance.InstanciaBalance.MostrarBalanceTotal().ToString("F0");
             LabelBalanceMensual.Content = "₡ " + Balance.InstanciaBalance.MostrarBalanceMensual().ToString("F0");
         }
+
+
+
+
         #endregion
 
         public static MainWindow InstanciaMain
@@ -130,7 +167,8 @@ namespace GestorFinanzas
         {
            this.Close();
            WindowInicioSesion ventana_inicio = new WindowInicioSesion();
-            ventana_inicio.Show();
+           ventana_inicio.Show();
+            
         }
 
         

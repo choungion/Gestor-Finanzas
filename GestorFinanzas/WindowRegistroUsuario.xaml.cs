@@ -23,8 +23,9 @@ namespace GestorFinanzas
 
         private void Registrando_persona(object sender, RoutedEventArgs e)
         {
+            Balance nuevobalance = new Balance();
             DATOS_PERSONA persona_nueva = new DATOS_PERSONA(this.nombre_persona.Text, this.numero_telefono.Text,
-                this.cedula_persona.Text, this.nueva_password.Text, this.nuevo_nombre_usuario.Text);
+                this.cedula_persona.Text, this.nueva_password.Text, this.nuevo_nombre_usuario.Text,nuevobalance);
 
             for (int i = 0; i < REGISTROS_STATICOS.ARREGLO_DE_USUARIOS.Length; i++)
             {

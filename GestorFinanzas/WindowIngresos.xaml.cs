@@ -1,18 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
+
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using static System.Net.Mime.MediaTypeNames;
+
 
 namespace GestorFinanzas
 {
@@ -21,17 +16,24 @@ namespace GestorFinanzas
     /// </summary>
     public partial class WindowIngresos : Window
     {
+
+
         public WindowIngresos()
         {
             InitializeComponent();
         }
         private DateTime FechaSeleccionada;
-        private Balance InstanciaBalance;
+
         private static WindowIngresos Instancia;
         bool FlagCantidad = false;
         bool FlagCuentas = false;
         bool FlagFecha = false;
         bool FlagCategoria = false;
+
+        //PERSONA QUE ENTRA EN LA APLICACION
+        public static int indicePERSONA_APP;
+        
+
         public static WindowIngresos InstanciaIngresos
         {
             get
@@ -46,13 +48,13 @@ namespace GestorFinanzas
         #region Eventos de controladores
         private void ComboBoxCuentas_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(ComboBoxCuentas.SelectedIndex == 1)
+            if (ComboBoxCuentas.SelectedIndex == 1)
             {
                 Uri imagePath = new Uri("/bank.png", UriKind.RelativeOrAbsolute);
                 BitmapImage imagen = new BitmapImage(imagePath);
-                ImageIcono.Source = imagen; 
+                ImageIcono.Source = imagen;
             }
-            else if(ComboBoxCuentas.SelectedIndex == 0) 
+            else if (ComboBoxCuentas.SelectedIndex == 0)
             {
                 Uri imagePath = new Uri("/Wallet.png", UriKind.RelativeOrAbsolute);
                 BitmapImage imagen = new BitmapImage(imagePath);
@@ -136,6 +138,17 @@ namespace GestorFinanzas
                 Balance.InstanciaBalance.IngresarListaAnual(FechaSeleccionada.Year);
                 Balance.InstanciaBalance.IngresarListaDias(FechaSeleccionada.Day);
                 Balance.InstanciaBalance.BuscarMes(FechaSeleccionada.Month);
+
+                //persona.transacciones_usuario.IngresarListaFlujoDinero(float.Parse(TxtBoxCantidad.Text));
+                //persona.transacciones_usuario.IngresarListaCuenta(((ComboBoxItem)ComboBoxCuentas.SelectedItem).Content.ToString());
+                //persona.transacciones_usuario.IngresarListaCategoria(((ComboBoxItem)ComboBoxCategorias.SelectedItem).Content.ToString());
+                //persona.transacciones_usuario.IngresarListaMeses(FechaSeleccionada.Month);
+                //persona.transacciones_usuario.IngresarListaAnual(FechaSeleccionada.Year);
+                //persona.transacciones_usuario.IngresarListaDias(FechaSeleccionada.Day);
+                //persona.transacciones_usuario.BuscarMes(FechaSeleccionada.Month);
+
+
+
                 ComboBoxCuentas.SelectedIndex = 2;
                 ComboBoxCategorias.SelectedIndex = 4;
                 ImageIcono.Source = null;
@@ -152,7 +165,8 @@ namespace GestorFinanzas
             }
         }
 
-       
+
+
         private void TxtBoxCantidad_TextChanged(object sender, TextChangedEventArgs e)
         {
             string ValoresAceptados = "^[0-9]*\\.?[0-9]*$";

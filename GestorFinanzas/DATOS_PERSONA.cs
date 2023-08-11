@@ -16,6 +16,7 @@ namespace GestorFinanzas
         private string CEDULA;
         private string CONTRASENA;
         private string USUARIO;
+        public Balance transacciones_usuario;
 
         #endregion
 
@@ -24,14 +25,14 @@ namespace GestorFinanzas
         //ESTE CONSTRUCTOR ES PARA INICIAR UN USUARIO ADMIN DE PRUEBA A LA APP
        
 
-        public DATOS_PERSONA(string nAME, string nUM_TELEFONO, string cEDULA, string password, string user)
+        public DATOS_PERSONA(string nAME, string nUM_TELEFONO, string cEDULA, string password, string user, Balance balance)
         {
             this.NOMBRE = nAME;
             this.NUM_TELEFONO = nUM_TELEFONO;
             this.CEDULA = cEDULA;
             this.CONTRASENA = password;
             this.USUARIO = user;
-            
+            this.transacciones_usuario = balance;
         }
 
 
