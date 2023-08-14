@@ -19,6 +19,11 @@ namespace GestorFinanzas
     /// </summary>
     public partial class WindowHistorial : Window
     {
+        public WindowHistorial()
+        {
+            InitializeComponent();
+            WindowStyle = WindowStyle.None;
+        }
         private static WindowHistorial Instancia;
         public static WindowHistorial InstanciaHistorial
         {
@@ -31,11 +36,54 @@ namespace GestorFinanzas
                 return Instancia;
             }
         }
+        private void MostrarHistorial(string cuenta)
+        {
+            List<string> categorias = Balance.InstanciaBalance.ObtenerCategorias();
 
+            List<string> fechas = Balance.InstanciaBalance.ObtenerFecha(cuenta);
+
+            List<float> cantidades = new List<float>();
+            if (cuenta == "Banco")
+            {
+                cantidades = Balance.InstanciaBalance.ObtenerListaBalanceBanco();
+            }
+            else if (cuenta == "Efectivo")
+            {
+                cantidades = Balance.InstanciaBalance.ObtenerListaBalanceEfectivo();
+            }
+            for (int i = 0; i < categorias.Count; i++)
+            {
+                ListBoxCategoria.Items.Add(categorias[i]);
+                ListBoxFecha.Items.Add(fechas[i]);
+                ListBoxCantidades.Items.Add(cantidades[i]);
+            }
+        }
         private void CerrarVentana(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            System.Windows.Application.Current.Shutdown();
+            if (e.Cancel == false)
+            {
+                e.Cancel = true;
+                Hide();
+            }
+        }
+        private void VentanaCargada(object sender, EventArgs e)
+        {
+            Balance.InstanciaBalance.BuscarCuentaBanco("Banco");
+            LabelTotal.Content = $"₡ {Balance.InstanciaBalance.MostrarBalanceTotal().ToString()}";
+            MostrarHistorial("Banco");
+
+            Balance.InstanciaBalance.BuscarCuentaEfectivo("Efectivo");
+            LabelTotal.Content = $"₡ {Balance.InstanciaBalance.MostrarBalanceTotal().ToString()}";
+            MostrarHistorial("Efectivo");
+        }
+        private void ButtonRegresar_Click(object sender, RoutedEventArgs e)
+        {
+            ListBoxFecha.Items.Clear();
+            ListBoxCantidades.Items.Clear();
+            ListBoxCategoria.Items.Clear();
+            MainWindow.InstanciaMain.Show();
+            Hide();
         }
     }
-    
 }
+

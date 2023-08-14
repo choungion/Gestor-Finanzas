@@ -23,6 +23,7 @@ namespace GestorFinanzas
         public WindowTransferir()
         {
             InitializeComponent();
+            WindowStyle = WindowStyle.None;
         }
         private DateTime FechaSeleccionada;
         private static WindowTransferir Instancia;
@@ -102,7 +103,7 @@ namespace GestorFinanzas
             {
                 if (ComboBoxCuentaOrigen.SelectedIndex == 0)
                 {
-                    if (Balance.InstanciaBalance.MostrarBalanceEfectivo() < int.Parse(TxtBoxCantidad.Text))
+                    if (Balance.InstanciaBalance.MostrarBalanceEfectivo() < float.Parse(TxtBoxCantidad.Text))
                     {
                         MessageBox.Show("La cuenta seleccionada no tiene fondos suficientes");
                     }
@@ -113,7 +114,7 @@ namespace GestorFinanzas
                 }
                 else if(ComboBoxCuentaOrigen.SelectedIndex == 1)
                 {
-                    if (Balance.InstanciaBalance.MostrarBalanceBanco() < int.Parse(TxtBoxCantidad.Text))
+                    if (Balance.InstanciaBalance.MostrarBalanceBanco() < float.Parse(TxtBoxCantidad.Text))
                     {
                         MessageBox.Show("La cuenta seleccionada no tiene fondos suficientes");
                     }
@@ -137,7 +138,12 @@ namespace GestorFinanzas
 
         private void CerrarVentana(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            System.Windows.Application.Current.Shutdown();
+            if (e.Cancel == false)
+            {
+                e.Cancel = true;
+                Hide();
+                WindowSalir.InstanciaSalir.Show();
+            }
         }
         private void TxtBoxCantidad_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -153,6 +159,7 @@ namespace GestorFinanzas
 
         public void Transferir()
         {
+            Balance.InstanciaBalance.IngresarListaUsuarios();
             Balance.InstanciaBalance.IngresarListaFlujoDinero(float.Parse(TxtBoxCantidad.Text));
             Balance.InstanciaBalance.IngresarListaCuenta(((ComboBoxItem)ComboBoxCuentaDestino.SelectedItem).Content.ToString());
             Balance.InstanciaBalance.IngresarListaCategoria("Transferencia");
@@ -160,6 +167,7 @@ namespace GestorFinanzas
             Balance.InstanciaBalance.IngresarListaAnual(FechaSeleccionada.Year);
             Balance.InstanciaBalance.IngresarListaDias(FechaSeleccionada.Day);
 
+            Balance.InstanciaBalance.IngresarListaUsuarios();
             Balance.InstanciaBalance.IngresarListaFlujoDinero(float.Parse(TxtBoxCantidad.Text) * -1);
             Balance.InstanciaBalance.IngresarListaCuenta(((ComboBoxItem)ComboBoxCuentaOrigen.SelectedItem).Content.ToString());
             Balance.InstanciaBalance.IngresarListaCategoria("Transferencia");

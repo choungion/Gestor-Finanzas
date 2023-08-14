@@ -22,6 +22,7 @@ namespace GestorFinanzas
         public WindowBanco()
         {
             InitializeComponent();
+            WindowStyle = WindowStyle.None;
         }
         private static WindowBanco Instancia;
         public static WindowBanco InstanciaBanco
@@ -47,7 +48,11 @@ namespace GestorFinanzas
 
         private void CerrarVentana(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            System.Windows.Application.Current.Shutdown();
+            if (e.Cancel == false)
+            {
+                e.Cancel = true;
+                Hide();
+            }
         }
 
         private void ButtonRegresar_Click(object sender, RoutedEventArgs e)

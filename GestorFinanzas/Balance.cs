@@ -11,6 +11,7 @@ namespace GestorFinanzas
     {
         private float BalanceTotal = 0, BalanceCuentaBanco, BalanceCuentaEfectivo, IngresoMensual, GastoMensual, BalanceMensual, Transferencias;
         private static Balance Instancia;
+        private string UsuarioActivo;
 
         List<float> ListaFlujoDinero = new List<float>();
         List<int> ListaDias = new List<int>();
@@ -28,6 +29,7 @@ namespace GestorFinanzas
         List<float> ListaTransferencias = new List<float>();
         List<string> CategoriasEncontradas = new List<string>();
         List<string> FechaFlujo = new List<string>();
+        List<string> ListaUsuarios = new List<string>();
         #region Metodos para agregar elementos a las listas
         public void IngresarListaFlujoDinero(float Flujo)
         {
@@ -53,6 +55,14 @@ namespace GestorFinanzas
         {
             ListaDias.Add(Dia);
         }
+        public void IngresarListaUsuarios()
+        {
+            ListaUsuarios.Add(UsuarioActivo);
+        }
+        public void IngresarUsuarioActivo(string Usuario)
+        {
+            UsuarioActivo = Usuario;
+        }
         #endregion
         #region Metodos para Buscar el flujo de dinero por categoria, tipo de cuenta, mes, ano, dia
         public void BuscarMes(int mes)
@@ -62,7 +72,7 @@ namespace GestorFinanzas
             MesesEncontrados.Clear();
             for (int i = 0; i < ListaMeses.Count; i++)
             {
-                if (ListaMeses[i] == mes)
+                if (ListaMeses[i] == mes && ListaUsuarios[i] == UsuarioActivo)
                 {
                     ListaBalanceMensual.Add(ListaFlujoDinero[i]);
                     IndicesEncontrados.Add(i);
@@ -78,7 +88,7 @@ namespace GestorFinanzas
             CategoriasEncontradas.Clear();
             for (int i = 0; i < ListaCuenta.Count; i++)
             {
-                if (ListaCuenta[i] == cuenta)
+                if (ListaCuenta[i] == cuenta && ListaUsuarios[i] == UsuarioActivo)
                 {
                     ListaBalanceBanco.Add(ListaFlujoDinero[i]);
                     CategoriasEncontradas.Add(ListaCategoria[i]);
@@ -92,7 +102,7 @@ namespace GestorFinanzas
             ListaTransferencias.Clear();
             for (int i = 0; i < ListaCategoria.Count; i++)
             {
-                if (ListaCategoria[i] == "Transferencia" && ListaFlujoDinero[i] > 0)
+                if (ListaCategoria[i] == "Transferencia" && ListaFlujoDinero[i] > 0 && ListaUsuarios[i] == UsuarioActivo)
                 {
                     ListaTransferencias.Add(ListaFlujoDinero[i]);
                 }
@@ -106,7 +116,7 @@ namespace GestorFinanzas
             CategoriasEncontradas.Clear();
             for (int i = 0; i < ListaCuenta.Count; i++)
             {
-                if (ListaCuenta[i] == cuenta)
+                if (ListaCuenta[i] == cuenta && ListaUsuarios[i] == UsuarioActivo)
                 {
                     CategoriasEncontradas.Add(ListaCategoria[i]);
                     ListaBalanceEfectivo.Add(ListaFlujoDinero[i]);
@@ -121,7 +131,7 @@ namespace GestorFinanzas
             IndicesEncontrados.Clear();
             for (int i = 0; i < ListaAnual.Count; i++)
             {
-                if (ListaAnual[i].Equals(ano))
+                if (ListaAnual[i].Equals(ano) && ListaUsuarios[i] == UsuarioActivo)
                 {
                     AnosEncontrados.Add(ListaAnual[i]);
                     IndicesEncontrados.Add(i);
@@ -133,9 +143,12 @@ namespace GestorFinanzas
         public float MostrarBalanceTotal()
         {
             BalanceTotal = 0;
-            foreach (float cantidad in ListaFlujoDinero)
+            for (int i = 0; i < ListaUsuarios.Count; i++)
             {
-                BalanceTotal += cantidad;
+                if (ListaUsuarios[i] == UsuarioActivo)
+                {
+                    BalanceTotal += ListaFlujoDinero[i];
+                }
             }
             return BalanceTotal;
         }
@@ -143,9 +156,12 @@ namespace GestorFinanzas
         public float MostrarTransferencias()
         {
             Transferencias = 0;
-            foreach (float cantidad in ListaTransferencias)
+            for (int i = 0; i < ListaTransferencias.Count; i++)
             {
-                Transferencias += cantidad;
+                if (ListaUsuarios[i] == UsuarioActivo)
+                {
+                    Transferencias += ListaTransferencias[i];
+                }
             }
             return Transferencias;
         }
@@ -153,10 +169,12 @@ namespace GestorFinanzas
         {
             IngresoMensual = 0;
             BuscarTransferencias();
-            var ingresos = ListaBalanceMensual.Where(n => n > 0);
-            foreach (float cantidad in ingresos)
+            for (int i = 0; i < ListaBalanceMensual.Count; i++)
             {
-                IngresoMensual += cantidad;
+                if (ListaBalanceMensual[i] >= 0)
+                {
+                    IngresoMensual += ListaBalanceMensual[i];
+                }
             }
             IngresoMensual = IngresoMensual - MostrarTransferencias();
             return IngresoMensual;
@@ -165,10 +183,12 @@ namespace GestorFinanzas
         {
             GastoMensual = 0;
             BuscarTransferencias();
-            var gastos = ListaBalanceMensual.Where(n => n < 0);
-            foreach (float cantidad in gastos)
+            for (int i = 0; i < ListaBalanceMensual.Count; i++)
             {
-                GastoMensual += cantidad;
+                if (ListaBalanceMensual[i] <= 0)
+                {
+                    GastoMensual += ListaBalanceMensual[i];
+                }
             }
             GastoMensual = GastoMensual + MostrarTransferencias();
             return GastoMensual;
@@ -176,27 +196,27 @@ namespace GestorFinanzas
         public float MostrarBalanceMensual()
         {
             BalanceMensual = 0;
-            foreach (float cantidad in ListaBalanceMensual)
+            for (int i = 0; i < ListaBalanceMensual.Count; i++)
             {
-                BalanceMensual += cantidad;
+                BalanceMensual += ListaBalanceMensual[i];
             }
             return BalanceMensual;
         }
         public float MostrarBalanceEfectivo()
         {
             BalanceCuentaEfectivo = 0;
-            foreach (float cantidad in ListaBalanceEfectivo)
+            for (int i = 0; i < ListaBalanceEfectivo.Count; i++)
             {
-                BalanceCuentaEfectivo += cantidad;
+                BalanceCuentaEfectivo += ListaBalanceEfectivo[i];
             }
             return BalanceCuentaEfectivo;
         }
         public float MostrarBalanceBanco()
         {
             BalanceCuentaBanco = 0;
-            foreach (float cantidad in ListaBalanceBanco)
+            for (int i = 0; i < ListaBalanceBanco.Count; i++)
             {
-                BalanceCuentaBanco += cantidad;
+                BalanceCuentaBanco += ListaBalanceBanco[i];
             }
             return BalanceCuentaBanco;
         }
@@ -219,7 +239,7 @@ namespace GestorFinanzas
             FechaFlujo.Clear();
             for (int i = 0; i < ListaCuenta.Count; i++)
             {
-                if (ListaCuenta[i] == cuenta)
+                if (ListaCuenta[i] == cuenta && ListaUsuarios[i] == UsuarioActivo)
                 {
                     FechaFlujo.Add(ListaDias[i] + "/" + ListaMeses[i] + "/" + ListaAnual[i]);
                 }

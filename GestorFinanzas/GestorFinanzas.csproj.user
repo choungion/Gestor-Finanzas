@@ -34,6 +34,9 @@
     <Compile Update="WindowReportes.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="WindowSalir.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="WindowTransferir.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -67,6 +70,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="WindowReportes.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="WindowSalir.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="WindowTransferir.xaml">

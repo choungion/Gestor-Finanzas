@@ -22,6 +22,7 @@ namespace GestorFinanzas
         public WindowReportes()
         {
             InitializeComponent();
+            WindowStyle = WindowStyle.None;
         }
         private static WindowReportes Instancia;
         public static WindowReportes InstanciaReportes
@@ -43,7 +44,11 @@ namespace GestorFinanzas
 
         private void CerrarVentana(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            System.Windows.Application.Current.Shutdown();
+            if (e.Cancel == false)
+            {
+                e.Cancel = true;
+                Hide();
+            }
         }
 
         private void ComboBoxAno_SelectionChanged(object sender, SelectionChangedEventArgs e)

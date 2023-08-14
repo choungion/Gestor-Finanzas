@@ -23,7 +23,18 @@ namespace GestorFinanzas
             DATOS_PERSONA ADMINISTRADOR = new DATOS_PERSONA("ADMIN", "");
             REGISTROS_STATICOS.ARREGLO_DE_USUARIOS[0] = ADMINISTRADOR;
         }
-
+        private static WindowInicioSesion Instancia;
+        public static WindowInicioSesion InstanciaInicioSesion
+        {
+            get
+            {
+                if (Instancia == null)
+                {
+                    Instancia = new WindowInicioSesion();
+                }
+                return Instancia;
+            }
+        }
 
         private void INICIAR_sesion(object sender, RoutedEventArgs e)
         {
@@ -33,14 +44,17 @@ namespace GestorFinanzas
                 {
                     if (this.txt_USERNAME.Text == REGISTROS_STATICOS.ARREGLO_DE_USUARIOS[i].User1 && this.txt_PASSWORD.Password == REGISTROS_STATICOS.ARREGLO_DE_USUARIOS[i].Password)
                     {
-                        MessageBox.Show("the password has been passed ");
+                        Balance.InstanciaBalance.IngresarUsuarioActivo(this.txt_USERNAME.Text);
                         MainWindow.InstanciaMain.Show();
+                        WindowSalir.InstanciaSalir.Hide();
                         Hide();
                         break;
                     }
                     else if (this.txt_USERNAME.Text == "admin" && this.txt_PASSWORD.Password == "admin")
                     {
+                        Balance.InstanciaBalance.IngresarUsuarioActivo(this.txt_USERNAME.Text);
                         MainWindow.InstanciaMain.Show();
+                        WindowSalir.InstanciaSalir.Hide();
                         Hide();
                         break;
                     }
@@ -53,6 +67,7 @@ namespace GestorFinanzas
         {
 
             WindowRegistroUsuario ventana_REGISTROS = new WindowRegistroUsuario();
+            Hide();
             ventana_REGISTROS.Show();
         }
 

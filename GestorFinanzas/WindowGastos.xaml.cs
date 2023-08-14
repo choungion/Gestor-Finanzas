@@ -24,6 +24,7 @@ namespace GestorFinanzas
         public WindowGastos()
         {
             InitializeComponent();
+            WindowStyle = WindowStyle.None;
         }
         private DateTime FechaSeleccionada;
         private Balance InstanciaBalance;
@@ -127,6 +128,7 @@ namespace GestorFinanzas
             }
             if (FlagCantidad == true && FlagCategoria == true && FlagCuentas == true && FlagFecha == true)
             {
+                Balance.InstanciaBalance.IngresarListaUsuarios();
                 Balance.InstanciaBalance.IngresarListaFlujoDinero(float.Parse(TxtBoxCantidad.Text) * -1);
                 Balance.InstanciaBalance.IngresarListaCuenta(((ComboBoxItem)ComboBoxCuentas.SelectedItem).Content.ToString());
                 Balance.InstanciaBalance.IngresarListaCategoria(((ComboBoxItem)ComboBoxCategorias.SelectedItem).Content.ToString());
@@ -147,7 +149,11 @@ namespace GestorFinanzas
 
         private void CerrarVentana(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            System.Windows.Application.Current.Shutdown();
+            if (e.Cancel == false)
+            {
+                e.Cancel = true;
+                Hide();
+            }
         }
         private void TxtBoxCantidad_TextChanged(object sender, TextChangedEventArgs e)
         {

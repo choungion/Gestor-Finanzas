@@ -85,7 +85,12 @@ namespace GestorFinanzas
         }
         private void CerrarVentana(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            System.Windows.Application.Current.Shutdown();
+            if (e.Cancel == false)
+            {
+                e.Cancel = true;
+                Hide();
+                WindowSalir.InstanciaSalir.Show();
+            }
         }
         private void VentanaCargada(object sender, EventArgs e)
         {
