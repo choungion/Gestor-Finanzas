@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +19,8 @@ namespace GestorFinanzas
     /// <summary>
     /// Interaction logic for WindowReportes.xaml
     /// </summary>
+    /// 
+    
     public partial class WindowReportes : Window
     {
         public WindowReportes()
@@ -54,6 +58,7 @@ namespace GestorFinanzas
         private void ComboBoxAno_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Balance.InstanciaBalance.BuscarAno(((ComboBoxItem)ComboBoxAno.SelectedItem).Content.ToString());
+            Balance.InstanciaBalance.ObtenerCategorias();
         }
     }
 }

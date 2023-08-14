@@ -12,16 +12,16 @@
         <TextBox Name="nombre_persona" PreviewTextInput="Nombre_Persona_PreviewTextInput"/>
         <Label Content="NUMERO DE TELEFONO"/>
         <TextBlock/>
-        <TextBox Name="numero_telefono"/>
+        <TextBox Name="numero_telefono" PreviewTextInput="Numero_Telefono_PreviewTextInput" PreviewKeyDown="Numero_Telefono_PreviewKeyDown"/>
         <Label Content="CEDULA"/>
         <TextBlock/>
-        <TextBox Name="cedula_persona" />
+        <TextBox Name="cedula_persona" PreviewKeyDown="Cedula_Persona_PreviewKeyDown" TextChanged="Cedula_Persona_TextChanged" />
         <Label Content="DIGITE EL NUEVO NOMBRE DE USUARIO"/>
         <TextBlock/>
-        <TextBox Name="nuevo_nombre_usuario"  />
+        <TextBox Name="nuevo_nombre_usuario" PreviewKeyDown="Nombre_Usuario_PreviewKeyDown"  />
         <Label Content="DIGITE SU CLAVE "/>
         <TextBlock/>
-        <TextBox Name ="nueva_password" />
+        <TextBox Name ="nueva_password" PreviewKeyDown="Nueva_Password_PreviewKeyDown" />
         <TextBlock/>
         <TextBlock/>
         <TextBlock/>

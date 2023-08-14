@@ -28,6 +28,7 @@ namespace GestorFinanzas
         List<string> CuentasEncontradas = new List<string>();
         List<float> ListaTransferencias = new List<float>();
         List<string> CategoriasEncontradas = new List<string>();
+        List<float> FlujoReporte = new List<float>();
         List<string> FechaFlujo = new List<string>();
         List<string> ListaUsuarios = new List<string>();
         #region Metodos para agregar elementos a las listas
@@ -138,6 +139,14 @@ namespace GestorFinanzas
                 }
             }
         }
+        public void BuscarCategorias()
+        {
+            for (int i = 0; i < ListaCategoria.Count; i++)
+            {
+                CategoriasEncontradas.Add(ListaCategoria[IndicesEncontrados[i]]);
+                FlujoReporte.Add(ListaFlujoDinero[IndicesEncontrados[i]]);
+            }
+        }
         #endregion
         #region Metodos para obtener la suma de las cantidades obtenidas
         public float MostrarBalanceTotal()
@@ -176,7 +185,14 @@ namespace GestorFinanzas
                     IngresoMensual += ListaBalanceMensual[i];
                 }
             }
-            IngresoMensual = IngresoMensual - MostrarTransferencias();
+            if (IngresoMensual == 0)
+            {
+                IngresoMensual = 0;
+            }
+            else
+            {
+                IngresoMensual = IngresoMensual - MostrarTransferencias();
+            }
             return IngresoMensual;
         }
         public float MostrarGastoMensual()
@@ -190,7 +206,14 @@ namespace GestorFinanzas
                     GastoMensual += ListaBalanceMensual[i];
                 }
             }
-            GastoMensual = GastoMensual + MostrarTransferencias();
+            if (GastoMensual == 0)
+            {
+                GastoMensual = 0;
+            }
+            else
+            {
+                GastoMensual = GastoMensual + MostrarTransferencias();
+            }
             return GastoMensual;
         }
         public float MostrarBalanceMensual()
@@ -226,6 +249,10 @@ namespace GestorFinanzas
         {
             return CategoriasEncontradas;
         }
+        public List<float> ObtenerFlujoReportes()
+        {
+            return FlujoReporte;
+        }
         public List<float> ObtenerListaBalanceBanco()
         {
             return ListaBalanceBanco;
@@ -246,6 +273,7 @@ namespace GestorFinanzas
             }
             return FechaFlujo;
         }
+        
         #endregion
         public static Balance InstanciaBalance
         {

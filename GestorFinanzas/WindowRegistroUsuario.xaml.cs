@@ -31,12 +31,63 @@ namespace GestorFinanzas
 
         private void Nombre_Persona_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            // Regular expression pattern to allow only letters and up to two spaces
-            string pattern = "^[a-zA-Z]*([ ][a-zA-Z]*){0,2}$";
+            string pattern = "^[a-zA-Z]*(?: [a-zA-Z]*){0,2}$";
             Regex regex = new Regex(pattern);
 
             string newText = nombre_persona.Text + e.Text;
             if (!regex.IsMatch(newText))
+            {
+                e.Handled = true;
+            }
+        }
+        private void Numero_Telefono_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Space)
+            {
+                e.Handled = true;
+            }
+        }
+        private void Numero_Telefono_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            string pattern = "^[0-9]{0,8}$";
+            Regex regex = new Regex(pattern);
+
+            string newText = numero_telefono.Text + e.Text;
+            if (!regex.IsMatch(newText))
+            {
+                e.Handled = true;
+            }
+        }
+        private void Cedula_Persona_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Space)
+            {
+                e.Handled = true;
+            }
+        }
+        private void Cedula_Persona_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string pattern = "^[0-9]*$";
+            Regex regex = new Regex(pattern);
+
+            TextBox textBox = (TextBox)sender;
+            if (!regex.IsMatch(textBox.Text) || textBox.Text.Length > 9)
+            {
+                int caretIndex = textBox.CaretIndex;
+                textBox.Text = textBox.Text.Substring(0, textBox.Text.Length - 1);
+                textBox.CaretIndex = caretIndex - 1;
+            }
+        }
+        private void Nombre_Usuario_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Space)
+            {
+                e.Handled = true;
+            }
+        }
+        private void Nueva_Password_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Space)
             {
                 e.Handled = true;
             }
