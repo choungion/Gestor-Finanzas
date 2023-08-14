@@ -76,6 +76,10 @@ namespace GestorFinanzas
             {
                 TxtBoxCantidad.Background = RojoClaro;
             }
+            else if (int.Parse(TxtBoxCantidad.Text) == 0)
+            {
+                TxtBoxCantidad.Background = RojoClaro;
+            }
             else
             {
                 TxtBoxCantidad.Background = null;
@@ -134,16 +138,6 @@ namespace GestorFinanzas
         private void ButtonFechaIngreso_Click(object sender, RoutedEventArgs e)
         {
             Calendario.Visibility = Visibility.Visible;
-        }
-
-        private void CerrarVentana(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            if (e.Cancel == false)
-            {
-                e.Cancel = true;
-                Hide();
-                WindowSalir.InstanciaSalir.Show();
-            }
         }
         private void TxtBoxCantidad_TextChanged(object sender, TextChangedEventArgs e)
         {

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="WindowReportes" Height="941" Width="800"
-        ResizeMode="NoResize" Closing="CerrarVentana">
+        ResizeMode="NoResize" Activated="VentanaCargada">
     <Grid>
         <Menu Height="46" Name="MenuPrincipal" Width="46" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="2">
             <MenuItem Header="" Width="45" Height="45">
@@ -22,26 +22,25 @@
         <Label Content="Ingresos por categorias" HorizontalAlignment="Left" Margin="64,490,0,0" VerticalAlignment="Top"/>
         <Label Content="Ingresos por cuentas" HorizontalAlignment="Center" Margin="0,490,0,0" VerticalAlignment="Top"/>
         <Label Content="Ingresos por mes" HorizontalAlignment="Left" Margin="609,490,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="ComboBoxAno" HorizontalAlignment="Left" Margin="625,10,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="12" SelectionChanged="ComboBoxAno_SelectionChanged">
-            <ComboBoxItem Content="Enero"/>
-            <ComboBoxItem Content="Febrero"/>
-            <ComboBoxItem Content="Marzo"/>
-            <ComboBoxItem Content="Abril"/>
-            <ComboBoxItem Content="Mayo"/>
-            <ComboBoxItem Content="Junio"/>
-            <ComboBoxItem Content="Julio"/>
-            <ComboBoxItem Content="Agosto"/>
-            <ComboBoxItem Content="Septiembre"/>
-            <ComboBoxItem Content="Octubre"/>
-            <ComboBoxItem Content="Noviembre"/>
-            <ComboBoxItem Content="Diciembre"/>
-            <ComboBoxItem Content="Seleccione el año"/>
+        <ComboBox x:Name="ComboBoxAno" HorizontalAlignment="Left" Margin="625,10,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="11" SelectionChanged="ComboBoxAno_SelectionChanged" IsEditable="False">
+            <ComboBoxItem Content="2012"/>
+            <ComboBoxItem Content="2013"/>
+            <ComboBoxItem Content="2014"/>
+            <ComboBoxItem Content="2015"/>
+            <ComboBoxItem Content="2016"/>
+            <ComboBoxItem Content="2017"/>
+            <ComboBoxItem Content="2018"/>
+            <ComboBoxItem Content="2019"/>
+            <ComboBoxItem Content="2020"/>
+            <ComboBoxItem Content="2021"/>
+            <ComboBoxItem Content="2022"/>
+            <ComboBoxItem Content="2023"/>
         </ComboBox>
-        <TextBlock x:Name="TxtBoxGastosCategorias" HorizontalAlignment="Left" Margin="0,82,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="408" Width="252"/>
-        <TextBlock x:Name="TxtBoxGastosCuentas" HorizontalAlignment="Center" Margin="0,82,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="408" Width="252"/>
-        <TextBlock x:Name="TxtBoxGastosMes" HorizontalAlignment="Right" Margin="548,82,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="408" Width="252"/>
-        <TextBlock x:Name="TxtBoxIngresosCategorias" HorizontalAlignment="Left" Margin="0,516,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Height="408" Width="252"/>
-        <TextBlock x:Name="TxtBoxIngresosCuentas" HorizontalAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Height="408" Width="252" Margin="0,516,0,0"/>
-        <TextBlock x:Name="TxtBoxIngresosMes" HorizontalAlignment="Right" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Height="408" Width="252" Margin="548,517,0,0"/>
+        <ListBox x:Name="LstBoxGastosCategorias" HorizontalAlignment="Left" Margin="0,82,0,0" VerticalAlignment="Top" Height="408" Width="252"/>
+        <ListBox x:Name="LstBoxGastosCuentas" HorizontalAlignment="Center" Margin="0,82,0,0" VerticalAlignment="Top" Height="408" Width="252"/>
+        <ListBox x:Name="LstBoxGastosMes" HorizontalAlignment="Right" Margin="548,82,0,0" VerticalAlignment="Top" Height="408" Width="252"/>
+        <ListBox x:Name="LstBoxIngresosCategorias" HorizontalAlignment="Left" Margin="0,516,0,0" VerticalAlignment="Bottom" Height="408" Width="252"/>
+        <ListBox x:Name="LstBoxIngresosCuentas" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="408" Width="252" Margin="0,516,0,0"/>
+        <ListBox x:Name="LstBoxIngresosMes" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="408" Width="252" Margin="548,517,0,0"/>
     </Grid>
 </Window>

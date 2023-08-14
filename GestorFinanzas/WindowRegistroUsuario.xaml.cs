@@ -113,12 +113,20 @@ namespace GestorFinanzas
             {
                 numero_telefono.Background = RojoClaro;
             }
+            else if(numero_telefono.Text.Length < 8)
+            {
+                numero_telefono.Background = RojoClaro;
+            }
             else
             {
                 numero_telefono.Background = null;
                 FlagNumero = true;
             }
             if (string.IsNullOrEmpty(cedula_persona.Text))
+            {
+                cedula_persona.Background = RojoClaro;
+            }
+            else if(cedula_persona.Text.Length < 9)
             {
                 cedula_persona.Background = RojoClaro;
             }

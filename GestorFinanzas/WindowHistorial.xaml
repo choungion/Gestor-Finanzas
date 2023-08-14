@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestorFinanzas"
         mc:Ignorable="d"
-        Title="WindowHistorial" Height="450" Width="800" Activated="VentanaCargada" Closing="CerrarVentana">
+        Title="WindowHistorial" Height="450" Width="800" Activated="VentanaCargada">
     <Grid>
         <Button x:Name="ButtonRegresar" Content="Regresar" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Click="ButtonRegresar_Click"/>
         <Label Content="Categoria" HorizontalAlignment="Left" Margin="1,0,0,0" VerticalAlignment="Top"/>

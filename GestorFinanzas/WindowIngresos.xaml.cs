@@ -94,6 +94,10 @@ namespace GestorFinanzas
             {
                 TxtBoxCantidad.Background = RojoClaro;
             }
+            else if (int.Parse(TxtBoxCantidad.Text) == 0)
+            {
+                TxtBoxCantidad.Background = RojoClaro;
+            }
             else
             {
                 TxtBoxCantidad.Background = null;
