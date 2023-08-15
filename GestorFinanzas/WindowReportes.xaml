@@ -22,20 +22,7 @@
         <Label Content="Ingresos por categorias" HorizontalAlignment="Left" Margin="64,490,0,0" VerticalAlignment="Top"/>
         <Label Content="Ingresos por cuentas" HorizontalAlignment="Center" Margin="0,490,0,0" VerticalAlignment="Top"/>
         <Label Content="Ingresos por mes" HorizontalAlignment="Left" Margin="609,490,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="ComboBoxAno" HorizontalAlignment="Left" Margin="625,10,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="11" SelectionChanged="ComboBoxAno_SelectionChanged" IsEditable="False">
-            <ComboBoxItem Content="2012"/>
-            <ComboBoxItem Content="2013"/>
-            <ComboBoxItem Content="2014"/>
-            <ComboBoxItem Content="2015"/>
-            <ComboBoxItem Content="2016"/>
-            <ComboBoxItem Content="2017"/>
-            <ComboBoxItem Content="2018"/>
-            <ComboBoxItem Content="2019"/>
-            <ComboBoxItem Content="2020"/>
-            <ComboBoxItem Content="2021"/>
-            <ComboBoxItem Content="2022"/>
-            <ComboBoxItem Content="2023"/>
-        </ComboBox>
+        <ComboBox x:Name="ComboBoxAno" HorizontalAlignment="Left" Margin="625,10,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBoxAno_SelectionChanged" IsEditable="False" SelectedIndex="0"/>
         <ListBox x:Name="LstBoxGastosCategorias" HorizontalAlignment="Left" Margin="0,82,0,0" VerticalAlignment="Top" Height="408" Width="252"/>
         <ListBox x:Name="LstBoxGastosCuentas" HorizontalAlignment="Center" Margin="0,82,0,0" VerticalAlignment="Top" Height="408" Width="252"/>
         <ListBox x:Name="LstBoxGastosMes" HorizontalAlignment="Right" Margin="548,82,0,0" VerticalAlignment="Top" Height="408" Width="252"/>

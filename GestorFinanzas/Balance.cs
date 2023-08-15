@@ -39,6 +39,7 @@ namespace GestorFinanzas
         public void IngresarListaMeses(int Meses)
         {
             ListaMeses.Add(Meses);
+            MessageBox.Show(ListaMeses[0].ToString());
         }
         public void IngresarListaAnual(int Anual)
         {
@@ -126,25 +127,25 @@ namespace GestorFinanzas
                 }
             }
         }
-        public void BuscarAno(string ano)
+        public void BuscarAno(int ano)
         {
             AnosEncontrados.Clear();
             IndicesEncontrados.Clear();
+            CategoriasEncontradas.Clear();
+            CuentasEncontradas.Clear();
+            MesesEncontrados.Clear();
+            FlujoReporte.Clear();
             for (int i = 0; i < ListaAnual.Count; i++)
             {
                 if (ListaAnual[i].Equals(ano) && ListaUsuarios[i] == UsuarioActivo)
                 {
                     AnosEncontrados.Add(ListaAnual[i]);
                     IndicesEncontrados.Add(i);
+                    CategoriasEncontradas.Add(ListaCategoria[i]);
+                    CuentasEncontradas.Add(ListaCuenta[i]);
+                    MesesEncontrados.Add(ListaMeses[i]);
+                    FlujoReporte.Add(ListaFlujoDinero[i]);
                 }
-            }
-        }
-        public void BuscarCategorias()
-        {
-            for (int i = 0; i < ListaCategoria.Count; i++)
-            {
-                CategoriasEncontradas.Add(ListaCategoria[IndicesEncontrados[i]]);
-                FlujoReporte.Add(ListaFlujoDinero[IndicesEncontrados[i]]);
             }
         }
         #endregion
@@ -248,6 +249,14 @@ namespace GestorFinanzas
         public List<string> ObtenerCategorias()
         {
             return CategoriasEncontradas;
+        }
+        public List<string> ObtenerCuentas()
+        {
+            return CuentasEncontradas;
+        }
+        public List<int> ObtenerMeses()
+        {
+            return MesesEncontrados;
         }
         public List<float> ObtenerFlujoReportes()
         {
