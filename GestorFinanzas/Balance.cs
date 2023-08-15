@@ -39,7 +39,6 @@ namespace GestorFinanzas
         public void IngresarListaMeses(int Meses)
         {
             ListaMeses.Add(Meses);
-            MessageBox.Show(ListaMeses[0].ToString());
         }
         public void IngresarListaAnual(int Anual)
         {

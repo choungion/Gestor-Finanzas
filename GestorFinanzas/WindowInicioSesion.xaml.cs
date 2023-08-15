@@ -46,7 +46,6 @@ namespace GestorFinanzas
                     {
                         Balance.InstanciaBalance.IngresarUsuarioActivo(this.txt_USERNAME.Text);
                         MainWindow.InstanciaMain.Show();
-                        WindowSalir.InstanciaSalir.Hide();
                         Hide();
                         break;
                     }
