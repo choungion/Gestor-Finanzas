@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "XuAb/16RCNQkYeMabGDafDicC8YboX+AF468PVBPBz9obvcJD1yYU42jemPgY/oIKcumvkjL8bGMUIbNqFNhBw==",
+  "dgSpecHash": "WWmC2MiWIUVcrJgiftq86M/f0Ky0IuPi6aldCYJpHKOEiXSFbhhECPVHYr9yNorT/dRvxzDW6jwlvXc1Ky/yXA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Choungion\\Documents\\Projects\\C#\\GestorFinanzas\\Gestor-Finanzas\\GestorFinanzas\\GestorFinanzas.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Choungion\\.nuget\\packages\\dotnetprojects.wpftoolkit.datavisualization\\6.1.94\\dotnetprojects.wpftoolkit.datavisualization.6.1.94.nupkg.sha512",
     "C:\\Users\\Choungion\\.nuget\\packages\\livecharts\\0.9.7\\livecharts.0.9.7.nupkg.sha512",
     "C:\\Users\\Choungion\\.nuget\\packages\\livecharts.wpf\\0.9.7\\livecharts.wpf.0.9.7.nupkg.sha512",
     "C:\\Users\\Choungion\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",

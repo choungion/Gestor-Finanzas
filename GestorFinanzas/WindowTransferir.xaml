@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestorFinanzas"
         mc:Ignorable="d"
-        Title="WindowTransferir" Height="450" Width="800" Closing="CerrarVentana">
+        Title="WindowTransferir" Height="450" Width="800">
     <Grid>
         <Label Content="Cuenta de origen" HorizontalAlignment="Left" Margin="183,86,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="16"/>
         <Label Content="Cuenta de destino" HorizontalAlignment="Left" Margin="483,86,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="16"/>
