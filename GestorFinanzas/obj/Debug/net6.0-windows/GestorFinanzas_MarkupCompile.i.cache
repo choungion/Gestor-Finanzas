@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Choungion\Documents\Projects\C#\GestorFinanzas\Gestor-Finanzas\GestorFinanzas\obj\Debug\net6.0-windows\
+C:\Users\Jose\Desktop\Universidad 2023 respaldo Local\Cuatri 5\Diseño Aplicaciones\Proyecto\Gestor-Finanzas\GestorFinanzas\obj\Debug\net6.0-windows\
 GestorFinanzas
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\Choungion\Documents\Projects\C#\GestorFinanzas\Gestor-Finanzas\GestorFinanzas\App.xaml
+C:\Users\Jose\Desktop\Universidad 2023 respaldo Local\Cuatri 5\Diseño Aplicaciones\Proyecto\Gestor-Finanzas\GestorFinanzas\App.xaml
 12-1169796025
 
 191499662721
-198-2141121366
+198-829149237
 MainWindow.xaml;WindowBanco.xaml;WindowCuentas.xaml;WindowEfectivo.xaml;WindowGastos.xaml;WindowHistorial.xaml;WindowIngresos.xaml;WindowInicioSesion.xaml;WindowRegistroUsuario.xaml;WindowReportes.xaml;WindowSalir.xaml;WindowTransferir.xaml;
 
-False
+True
 

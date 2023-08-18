@@ -37,6 +37,7 @@ namespace GestorFinanzas
             }
         }
 
+
         private void ButtonBanco_Click(object sender, RoutedEventArgs e)
         {
             WindowBanco.InstanciaBanco.Show();
