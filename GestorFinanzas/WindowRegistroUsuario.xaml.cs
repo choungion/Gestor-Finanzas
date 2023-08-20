@@ -179,5 +179,14 @@ namespace GestorFinanzas
             Close();
             WindowInicioSesion.InstanciaInicioSesion.Show();
         }
+
+        private void txtbox_Mouse_Enter(object sender, MouseEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            string mensaje = tb.Tag as string;
+            tb.ToolTip = mensaje;
+        }
+
+
     }
 }

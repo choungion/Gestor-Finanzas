@@ -9,25 +9,23 @@
     <StackPanel>
         <Label Content="NOMBRE COMPLETO"/>
         <TextBlock/>
-        <TextBox Name="nombre_persona" PreviewTextInput="Nombre_Persona_PreviewTextInput"/>
+        <TextBox Name="nombre_persona" PreviewTextInput="Nombre_Persona_PreviewTextInput" MouseEnter="txtbox_Mouse_Enter" Tag="Solo usar letras y espacios"/>
         <Label Content="NUMERO DE TELEFONO"/>
         <TextBlock/>
-        <TextBox Name="numero_telefono" PreviewTextInput="Numero_Telefono_PreviewTextInput" PreviewKeyDown="Numero_Telefono_PreviewKeyDown"/>
+        <TextBox Name="numero_telefono" PreviewTextInput="Numero_Telefono_PreviewTextInput" PreviewKeyDown="Numero_Telefono_PreviewKeyDown" MouseEnter="txtbox_Mouse_Enter" Tag="Solo ingresar números, un máximo de 8 y sin espacios,símbolos o guiones"/>
         <Label Content="CEDULA"/>
         <TextBlock/>
-        <TextBox Name="cedula_persona" PreviewKeyDown="Cedula_Persona_PreviewKeyDown" TextChanged="Cedula_Persona_TextChanged" />
+        <TextBox Name="cedula_persona" PreviewKeyDown="Cedula_Persona_PreviewKeyDown" TextChanged="Cedula_Persona_TextChanged" MouseEnter="txtbox_Mouse_Enter" Tag="Solo se permiten números, sin guiones ni espacios o símbolos"/>
         <Label Content="DIGITE EL NUEVO NOMBRE DE USUARIO"/>
         <TextBlock/>
-        <TextBox Name="nuevo_nombre_usuario" PreviewKeyDown="Nombre_Usuario_PreviewKeyDown"  />
+        <TextBox Name="nuevo_nombre_usuario" PreviewKeyDown="Nombre_Usuario_PreviewKeyDown" MouseEnter="txtbox_Mouse_Enter" Tag="Solo usar letras y espacios"/>
         <Label Content="DIGITE SU CLAVE "/>
         <TextBlock/>
-        <TextBox Name ="nueva_password" PreviewKeyDown="Nueva_Password_PreviewKeyDown" />
+        <TextBox Name ="nueva_password" PreviewKeyDown="Nueva_Password_PreviewKeyDown" MouseEnter="txtbox_Mouse_Enter" Tag="Solo se permiten números"/>
         <TextBlock/>
-        <TextBlock/>
-        <TextBlock/>
-        <TextBlock/>
-        <Button Content="REGISTRAR NUEVO USUARIO AL SISTEMA" Height="50" Click="Registrando_persona"/>
-        <Button x:Name="ButtonCancelar" Content="Cancelar" Click="ButtonCancelar_Click"/>
+        <TextBlock Height="22"/>
+        <Button Content="REGISTRAR NUEVO USUARIO AL SISTEMA" Height="50" Click="Registrando_persona" BorderThickness="2,2,2,2"/>
+        <Button x:Name="ButtonCancelar" Content="CANCELAR" Click="ButtonCancelar_Click" BorderThickness="2,2,2,2" Height="50"/>
 
     </StackPanel>
 </Window>

@@ -17,7 +17,7 @@
                      VerticalAlignment="Top"
                      Width="200"
                      Height="27"
-                     Name="txt_PASSWORD"/>
+                     Name="txt_PASSWORD" />
         <StackPanel VerticalAlignment="Bottom" Orientation="Vertical" >
             <Button Click="INICIAR_sesion" 
                     Content="INICIAR SESION"
@@ -32,7 +32,7 @@
             <Button Content="SALIR"
                     Height="60" Width="528"
                      FontSize="18" FontWeight="Medium"
-                    BorderThickness="2,2,2,2"/>
+                    BorderThickness="2,2,2,2" Click="Button_Click_Salir"/>
 
 
         </StackPanel>

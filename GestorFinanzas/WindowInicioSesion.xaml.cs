@@ -78,6 +78,14 @@ namespace GestorFinanzas
         {
             System.Windows.Application.Current.Shutdown();
         }
+
+        private void Button_Click_Salir(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
+        }
+
+        
+        
     }
 }
 
