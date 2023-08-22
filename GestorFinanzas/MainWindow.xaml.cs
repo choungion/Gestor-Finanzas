@@ -29,7 +29,7 @@ namespace GestorFinanzas
         {
             InitializeComponent();
         }
-        #region Eventos de controlers
+        #region ------------------------------Eventos de controlers-----------------------------------------
         private void ButtonPeriodo_Click(object sender, RoutedEventArgs e)
         {
             Calendario.Visibility = Visibility.Visible;
@@ -100,7 +100,22 @@ namespace GestorFinanzas
             LabelIngresos.Content = "₡ " + Balance.InstanciaBalance.MostrarIngresoMensual().ToString("F0");
             LabelBalanceMensual.Content = "₡ " + Balance.InstanciaBalance.MostrarBalanceMensual().ToString("F0");
         }
-        #endregion
+
+        private void Button_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            Button btn = (Button)sender;
+            string mensaje = btn.Tag as string;
+            btn.ToolTip = mensaje;
+        }
+
+        private void MenuItem_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            MenuItem mi = (MenuItem)sender;
+            string mensaje = mi.Tag as string;
+            mi.ToolTip = mensaje;
+        }
+
+        #endregion-----------------------Eventos de controladores------------------------------------------
         public static MainWindow InstanciaMain
         {
             get
@@ -116,4 +131,5 @@ namespace GestorFinanzas
         }
 
     }
+
 }

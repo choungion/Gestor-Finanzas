@@ -10,25 +10,29 @@
         WindowStartupLocation="CenterScreen" WindowStyle="SingleBorderWindow"
          ResizeMode="CanResizeWithGrip" Closing="CerrarVentana">
     <Grid>
-        <Label HorizontalContentAlignment="Center"  Content="USERNAME" HorizontalAlignment="Center" Margin="0,178,0,0" VerticalAlignment="Top" Width="152"/>
-        <Label HorizontalContentAlignment="Center"  Content="PASSWORD" HorizontalAlignment="Center" Margin="0,256,0,0" VerticalAlignment="Top" Width="152"/>
+        <Label HorizontalContentAlignment="Center" FontSize="14" Content="USERNAME" HorizontalAlignment="Center" Margin="0,178,0,0" VerticalAlignment="Top" Width="152"/>
+        <Label HorizontalContentAlignment="Center" FontSize="14" Content="PASSWORD" HorizontalAlignment="Center" Margin="0,256,0,0" VerticalAlignment="Top" Width="152"/>
         <PasswordBox HorizontalAlignment="Center"
                      Margin="0,287,0,0" 
                      VerticalAlignment="Top"
                      Width="200"
                      Height="27"
-                     Name="txt_PASSWORD"/>
-
-
+                     Name="txt_PASSWORD" />
         <StackPanel VerticalAlignment="Bottom" Orientation="Vertical" >
             <Button Click="INICIAR_sesion" 
                     Content="INICIAR SESION"
-                    Height="89" Width="200"
-                     FontSize="25" FontWeight="Medium"/>
+                    Height="60" Width="528"
+                     FontSize="18" FontWeight="Medium"
+                    BorderThickness="2,2,2,2"/>
             <Button Click="REGISTRO_usuario"
                     Content="REGISTRAR USUARIO"
-                    Height="89" Width="300"
-                     FontSize="25" FontWeight="Medium"/>
+                    Height="60" Width="528"
+                     FontSize="18" FontWeight="Medium"
+                    BorderThickness="2,2,2,2"/>
+            <Button Content="SALIR"
+                    Height="60" Width="528"
+                     FontSize="18" FontWeight="Medium"
+                    BorderThickness="2,2,2,2" Click="Button_Click_Salir"/>
 
 
         </StackPanel>

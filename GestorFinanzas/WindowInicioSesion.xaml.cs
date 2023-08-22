@@ -57,10 +57,6 @@ namespace GestorFinanzas
                         Hide();
                         break;
                     }
-                    else
-                    {
-                        MessageBox.Show("Nombre de usuario y/o contraseña incorrectos");
-                    }
                 }
             }
 
@@ -78,6 +74,14 @@ namespace GestorFinanzas
         {
             System.Windows.Application.Current.Shutdown();
         }
+
+        private void Button_Click_Salir(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
+        }
+
+        
+        
     }
 }
 

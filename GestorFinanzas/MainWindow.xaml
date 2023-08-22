@@ -9,12 +9,12 @@
         ResizeMode="NoResize" Closing="CerrarVentana" Activated="VentanaCargada">
     <Grid>
         <Menu Height="46" Name="MenuPrincipal" Width="46" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="2">
-            <MenuItem Header="" Width="45" Height="45">
+            <MenuItem Header="" Width="45" Height="45" BorderThickness="2,2,2,2">
                 <MenuItem.Icon>
                     <Image Source="/Hamburger_icon.svg.png" Width="35" Margin="0,-15,-19,-14"/>
                 </MenuItem.Icon>
                 <MenuItem x:Name="MenuItemTransacciones" Header="Transacciones" IsCheckable="False"/>
-                <MenuItem x:Name="MenuItemReportes" Header="Reportes" IsCheckable="False" Click="MenuItemReportes_Click"/>
+                <MenuItem x:Name="MenuItemReportes" Header="Reportes" IsCheckable="False" Click="MenuItemReportes_Click" MouseEnter="MenuItem_MouseEnter" Tag="Acá podrá ver el reporte anual de sus movimientos financieros y el desglose del mismo"/>
             </MenuItem>
         </Menu>
         <Menu Height="46" Name="MenuAgregar" Width="46" Margin="10,10,0,0" HorizontalAlignment="Right" VerticalAlignment="Bottom" BorderThickness="2">
@@ -27,22 +27,22 @@
                 <MenuItem x:Name="MenuItemTransferir" Header="Transferir" IsCheckable="False" Click="MenuItemTransferir_Click"/>
             </MenuItem>
         </Menu>
-        <Label Content="Ingresos" HorizontalAlignment="Left" Margin="191,186,0,0" VerticalAlignment="Top" FontSize="16"/>
-        <Label Content="Gastos" HorizontalAlignment="Left" Margin="514,186,0,0" VerticalAlignment="Top" FontSize="16"/>
-        <Label x:Name="LabelIngresos" Content="₡ 0" HorizontalAlignment="Left" Margin="191,222,0,0" VerticalAlignment="Top" FontSize="14" Foreground="Green"/>
-        <Label x:Name="LabelGastos" Content="₡ 0" HorizontalAlignment="Left" Margin="514,222,0,0" VerticalAlignment="Top" FontSize="14" Foreground="Red"/>
-        <Button x:Name="ButtonBalance" Content="Balance Total" HorizontalAlignment="Center" Margin="0,15,0,0" VerticalAlignment="Top" Click="ButtonBalance_Click" Height="41" Width="146" Background="Transparent" FontSize="24" BorderThickness="0,0,0,0" FontFamily="Arial"/>
-        <Label x:Name="LabelCantidadTotal" Content="" HorizontalAlignment="Center" Margin="0,66,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="18"/>
+        <Label Content="Ingresos" HorizontalAlignment="Left" Margin="338,126,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="Gastos" HorizontalAlignment="Left" Margin="340,198,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label x:Name="LabelIngresos" Content="₡ 0" HorizontalAlignment="Left" Margin="338,162,0,0" VerticalAlignment="Top" FontSize="14" Foreground="Green"/>
+        <Label x:Name="LabelGastos" Content="₡ 0" HorizontalAlignment="Left" Margin="341,234,0,0" VerticalAlignment="Top" FontSize="14" Foreground="Red"/>
+        <Button x:Name="ButtonBalance" Content="Balance Total" HorizontalAlignment="Center" Margin="0,15,0,0" VerticalAlignment="Top" Click="ButtonBalance_Click" Height="41" Width="165" Background="Transparent" FontSize="24" BorderThickness="2,2,2,2" FontFamily="Arial" MouseEnter="Button_MouseEnter" Tag="Acá podrá observar todo el flujo de dinero entre sus dos cuentas"/>
+        <Label x:Name="LabelCantidadTotal" Content="₡ 0" HorizontalAlignment="Center" Margin="0,66,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="18"/>
         <Label Content="Periodo" HorizontalAlignment="Left" Margin="77,359,0,0" VerticalAlignment="Top" FontSize="16"/>
         <Label x:Name="LabelPeriodo" Content="Enero 2023" HorizontalAlignment="Left" Margin="77,10,0,0" VerticalAlignment="Bottom" FontSize="16" FontWeight="Bold"/>
-        <Label Content="Balance Mensual" HorizontalAlignment="Center" Margin="0,267,0,0" VerticalAlignment="Top" FontSize="16"/>
-        <Label x:Name="LabelBalanceMensual" Content="₡ 0" HorizontalAlignment="Left" Margin="336,303,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="ButtonConsultarCuentas" Content="Consultar Cuentas" Click="ButtonConsultar_Click" HorizontalAlignment="Center" Margin="0,104,0,0" VerticalAlignment="Top" Height="41" Width="182" Background="Transparent" FontSize="18" BorderThickness="0,0,0,0" FontFamily="Arial"/>
+        <Label Content="Balance Mensual" HorizontalAlignment="Left" Margin="339,269,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label x:Name="LabelBalanceMensual" Content="₡ 0" HorizontalAlignment="Left" Margin="339,305,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="ButtonConsultarCuentas" Content="Consultar Cuentas" Click="ButtonConsultar_Click" HorizontalAlignment="Center" Margin="0,344,0,0" VerticalAlignment="Top" Height="41" Width="182" Background="Transparent" FontSize="18" BorderThickness="2,2,2,2" FontFamily="Arial" MouseEnter="Button_MouseEnter" Tag="Acá puede consultar los movimientos de sus cuentas de forma individual"/>
         <Calendar Name="Calendario" DisplayMode="Year" SelectionMode="None" Visibility="Hidden"
           DisplayModeChanged="Calendario_DisplayModeChanged" Margin="12,30,593,78" VerticalAlignment="Bottom" 
           DisplayDateChanged="Calendario_DisplayDateChanged"/>
-        <Button x:Name="ButtonPeriodo" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Bottom" Click="ButtonPeriodo_Click" Height="62" Width="62" Background="Transparent" FontSize="18" BorderThickness="0,0,0,0">
-            <Image Source="/Calendar Icon.png" Height="62" Width="62" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Button x:Name="ButtonPeriodo" HorizontalAlignment="Left" Margin="10,0,0,5" VerticalAlignment="Bottom" Click="ButtonPeriodo_Click" Height="62" Width="62" Background="Transparent" FontSize="18" BorderThickness="2,2,2,2" MouseEnter="Button_MouseEnter" Tag="Acá podrá ver los distintos periodos en que se realizan movimientos">
+            <Image Source="/Calendar Icon.png" Height="52" Width="62" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         </Button>
     </Grid>
 
